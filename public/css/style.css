@@ -1,0 +1,68 @@
+.wrapper {
+  position: absolute;
+  left: 220px;
+} 
+
+/* APP CSS */
+.side-nav-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  height: 689px;
+  width: 220px;
+  font-size: 20px;
+  padding-top: 200px;
+  line-height: 50px;
+}
+
+.side-nav-wrapper a {
+  text-decoration: none;
+}
+
+.side-nav-wrapper li {
+  display: block;
+} 
+.top-nav-wrapper {
+  margin-left: 200px;
+  height: 60px;
+  padding: 10px;
+  background-color: #240707;
+}
+
+.top-nav-wrapper a {
+  text-decoration: none;
+}
+ 
+.top-nav-wrapper li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.top-list {
+  margin-left: 800px;
+}
+
+/* DASHBOARD CSS */
+
+.card-wrapper {
+  margin-top: 50px;
+  display: flex;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.card-3 {
+  width: 120px;
+}
+
+.card {
+  padding: 15px;
+  text-align: center;
+}
+
+

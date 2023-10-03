@@ -17,7 +17,7 @@
                 <li type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: #0244FD">
                     Email
                 </li>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" style="height: 50px; padding-top:-90px">
                   <li><a class="dropdown-item" href="create-incident">Logout</a></li>
                 </ul>
               </div>
@@ -40,7 +40,7 @@
                 </ul>
               </div>
                 <li><a href="#">Report</a></li>
-                <li><a href="#">Users</a></li>
+                <li><a href="/view-users">Users</a></li>
             </ul>
         </div>
 <!-- Side Navigation -->

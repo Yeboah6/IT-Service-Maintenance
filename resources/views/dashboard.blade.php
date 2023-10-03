@@ -23,18 +23,20 @@
                 <thead>
                <th>Reporter Name</th>
                <th>Issue Type</th>
+               <th>Issue</th>
                <th>Urgency</th>
                <th>Summary</th>
-               <th>Asigned To</th> 
+               <th>From (Unit/Department)</th> 
             </thead>
 
                 <tbody>
                     <tr>
                         <td>Solomon</td>
-                        <td>Network</td>
+                        <td>Hardware</td>
+                        <td>screen</td>
                         <td>High</td>
                         <td>wifi not working</td>
-                        <td>Sir Philip</td>
+                        <td>Programming cell</td>
                     </tr>
                 </tbody>
             </table>

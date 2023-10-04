@@ -27,3 +27,6 @@ Route::get('/user-dashboard', [IncidentController::class, 'userDashboard']) ->na
 
 
 Route::get('/register', [AuthController::class, 'show']) ->name('register');
+Route::post('/register', [AuthController::class, 'store']) ->name('register');
+
+Route::get('/login', [AuthController::class, 'showLogin']) ->name('login');

@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('incidents', function (Blueprint $table) {
             $table->id();
-            $table->string('task');
+            $table->string('issue');
             $table->string('issue_type');
-            $table->string('summary');
+            $table->string('description');
             $table->string('reporter');
             $table->string('urgency');
-            $table->string('assgined_to');
+            $table->string('from');
             $table->timestamps();
         });
     }

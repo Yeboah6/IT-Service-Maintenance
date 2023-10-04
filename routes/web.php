@@ -20,13 +20,18 @@ use App\Http\Controllers\AuthController;
 // });
 
 Route::get('/dashboard', [IncidentController::class, 'index']) -> name('dashboard');
+
+// Incident Route
 Route::get('/create-incident', [IncidentController::class, 'create']) ->name('create-incident');
 Route::get('/view-incident', [IncidentController::class, 'view']) ->name('view-incident');
+
+
 Route::get('/view-users', [IncidentController::class, 'showUsers']) ->name('view-users');
 Route::get('/user-dashboard', [IncidentController::class, 'userDashboard']) ->name('user-dashboard');
 
-
+// Register Route
 Route::get('/register', [AuthController::class, 'show']) ->name('register');
 Route::post('/register', [AuthController::class, 'store']) ->name('register');
 
+// Login Route
 Route::get('/login', [AuthController::class, 'showLogin']) ->name('login');

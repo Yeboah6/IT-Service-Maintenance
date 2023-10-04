@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container wrapper" >
-<form action="/register" method="POST" class="form-control" style="margin-top: 170px; margin-left: 150px;width: 600px; height: 300px; padding-top: 40px">
+<form action="{{url('/register')}}" method="POST" class="form-control" style="margin-top: 170px; margin-left: 150px;width: 600px; height: 300px; padding-top: 40px">
 @csrf
   <div class="row mb-3">
   <div class="input-group mb-3">
@@ -27,7 +27,7 @@
     <div class="input-group mb-3">
   <span class="input-group-text"><i class="fa fa-eye" aria-hidden="true"></i></span>
   <div class="form-floating">
-    <input type="text" class="form-control" name="email" placeholder="Username">
+    <input type="text" class="form-control" name="password" placeholder="Password">
     <label for="floatingInputGroup1">Password</label>
   </div>
 </div>

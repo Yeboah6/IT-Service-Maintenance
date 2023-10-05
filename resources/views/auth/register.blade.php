@@ -9,7 +9,7 @@
   <div class="input-group mb-3">
   <span class="input-group-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
   <div class="form-floating">
-    <input type="text" class="form-control" name="name" placeholder="Name">
+    <input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="Name">
     <label for="floatingInputGroup1">Name</label>
   </div>
  </div>
@@ -17,7 +17,7 @@
     <div class="input-group mb-3">
   <span class="input-group-text">@</span>
   <div class="form-floating">
-    <input type="text" class="form-control" name="email" placeholder="Username">
+    <input type="email" class="form-control" name="email" value="{{old('email')}}" placeholder="Username">
     <label for="floatingInputGroup1">Email</label>
   </div>
  </div>
@@ -27,7 +27,7 @@
     <div class="input-group mb-3">
   <span class="input-group-text"><i class="fa fa-eye" aria-hidden="true"></i></span>
   <div class="form-floating">
-    <input type="text" class="form-control" name="password" placeholder="Password">
+    <input type="password" class="form-control" name="password" placeholder="Password">
     <label for="floatingInputGroup1">Password</label>
   </div>
 </div>

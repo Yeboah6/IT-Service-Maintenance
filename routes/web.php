@@ -35,3 +35,4 @@ Route::post('/register', [AuthController::class, 'store']) ->name('register');
 
 // Login Route
 Route::get('/login', [AuthController::class, 'showLogin']) ->name('login');
+Route::post('/login', [AuthController::class, 'login']) ->name('login');

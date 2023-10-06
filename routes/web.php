@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IncidentController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MaiDashboardController;
+
 
 
 /*
@@ -16,8 +17,6 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/dashboard', DashboardController::class);
 
 // Incident Route
 Route::get('/create-incident', [IncidentController::class, 'create']) ->name('create-incident');
@@ -37,4 +36,3 @@ Route::post('/login', [AuthController::class, 'login']) ->name('login');
 
 // Logout Route
 Route::get('/logout', [AuthController::class, 'logout']) ->name('logout');
-

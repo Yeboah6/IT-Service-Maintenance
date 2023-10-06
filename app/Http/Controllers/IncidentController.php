@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class IncidentController extends Controller
 {
-    
     // Display Create Incident
     public function create() {
         return view('pages.create-incident');

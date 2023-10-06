@@ -13,11 +13,15 @@ class AuthController extends Controller
     }
 
     public function store(Request $request) {
-        $data = request() -> validate([
-            'name' => ['string', 'required'],
+
+        validator(request() -> all(), [
+            'name' => ['required'],
             'email' => ['required', 'unique'],
             'password' => ['required']
-        ]);
+        ]) -> validate();
+        // $data = request() -> validate([
+            
+        // ]);
 
         User::create($data);
         return redirect('/dashboard');

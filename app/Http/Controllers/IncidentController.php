@@ -6,11 +6,6 @@ use Illuminate\Http\Request;
 
 class IncidentController extends Controller
 {
-
-    // Display Dashboard
-    public function index() {
-        return view('dashboard');
-    }
     
     // Display Create Incident
     public function create() {

@@ -27,17 +27,22 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function login(Request $request) {
-        validator(request() -> all(), [
-            'email' => ['required', 'email'],
+    public function login() {
+        validator(request() ->all(), [
+            'email' => ['email', 'required'],
             'password' => ['required']
         ]) -> validate();
 
         if (auth() -> attempt(request() -> only(['email', 'password']))) {
             return redirect('/dashboard');
-        } else {
-
-            return redirect() -> back();
         }
+
+        return redirect() -> back();
+    }
+
+    public function logout() {
+        auth() -> logout();
+
+        return redirect('/login');
     }
 }

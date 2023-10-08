@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.user-dashboard')
 
 @section('content')
-<div class="container wrapper">
-<h1>View Incident</h1>
-</div>
 
+<div class="container wrapper">
+<h1>User Dashboard</h1>
+</div>
 
 @endsection

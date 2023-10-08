@@ -9,14 +9,13 @@ class Incident extends Model
 {
     use HasFactory;
 
-    protected $table = 'Incident';
+    protected $table = 'incidents';
     protected $fillable = [
-        'task_type',
+        'issue',
         'issue_type',
-        'request_type',
-        'summary',
+        'description',
         'reporter',
         'urgency',
-        'assginee',
+        'from',
     ];
 }

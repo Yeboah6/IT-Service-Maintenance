@@ -24,7 +24,7 @@ class AuthController extends Controller
         // ]);
 
         User::create($data);
-        return redirect('/dashboard');
+        return redirect('/admin-view');
     }
 
     public function showLogin() {
@@ -38,7 +38,7 @@ class AuthController extends Controller
         ]) -> validate();
 
         if (auth() -> attempt(request() -> only(['email', 'password']))) {
-            return redirect('/dashboard');
+            return redirect('/admin-view');
         }
 
         return redirect() -> back();

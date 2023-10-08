@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IncidentController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\MaiDashboardController;
+use App\Http\Controllers\DashboardController;
 
 
 
@@ -18,8 +18,14 @@ use App\Http\Controllers\MaiDashboardController;
 |
 */
 
-// Incident Route
+
+// Admin View Route
+Route::get('/admin-view', [DashboardController::class, 'adminView']);
+
+// Incident Routes
 Route::get('/create-incident', [IncidentController::class, 'create']) ->name('create-incident');
+Route::post('/create-incident', [IncidentController::class, 'store']);
+
 Route::get('/view-incident', [IncidentController::class, 'view']) ->name('view-incident');
 
 // User Dashboard Route
@@ -28,7 +34,7 @@ Route::get('/user-dashboard', [IncidentController::class, 'userDashboard']) ->na
 
 // Register Route
 Route::get('/register', [AuthController::class, 'show']) ->name('register');
-Route::post('/register', [AuthController::class, 'store']) ->name('register');
+Route::post('/register', [AuthController::class, 'store']);
 
 // Login Route
 Route::get('/login', [AuthController::class, 'showLogin']) ->name('login');

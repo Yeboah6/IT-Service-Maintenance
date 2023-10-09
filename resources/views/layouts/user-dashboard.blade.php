@@ -27,7 +27,7 @@
 <!-- Side Navigation -->
 <div class="side-nav-wrapper">
             <ul>
-                <li><a href="/admin-view">Dashboard</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="create-incident">Create Incident</a></li> 
             </ul>
         </div>

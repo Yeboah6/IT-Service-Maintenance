@@ -14,17 +14,20 @@ class AuthController extends Controller
 
     public function store(Request $request) {
 
-        validator(request() -> all(), [
-            'name' => ['required'],
+        // validator(request() -> all(), [
+        //     'name' => ['required'],
+        //     'email' => ['required', 'unique'],
+        //     'password' => ['required']
+        // ]) -> validate();
+
+        $data = request() -> validate([
+            'name',
             'email' => ['required', 'unique'],
             'password' => ['required']
-        ]) -> validate();
-        // $data = request() -> validate([
-            
-        // ]);
+        ]);
 
         User::create($data);
-        return redirect('/admin-view');
+        return redirect('/dashboard');
     }
 
     public function showLogin() {
@@ -38,7 +41,11 @@ class AuthController extends Controller
         ]) -> validate();
 
         if (auth() -> attempt(request() -> only(['email', 'password']))) {
-            return redirect('/admin-view');
+            if (auth() -> user() -> email === 'admin@gmail.com') {
+                return redirect('/dashboard');
+            } else {
+                return redirect('/user-dashboard');
+            }
         }
 
         return redirect() -> back();

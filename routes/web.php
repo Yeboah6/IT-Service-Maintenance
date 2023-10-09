@@ -20,17 +20,17 @@ use App\Http\Controllers\DashboardController;
 
 
 // Admin View Route
-Route::get('/admin-view', [DashboardController::class, 'adminView']);
+Route::get('/dashboard', [DashboardController::class, 'adminView']);
 
 // Incident Routes
 Route::get('/create-incident', [IncidentController::class, 'create']) ->name('create-incident');
 Route::post('/create-incident', [IncidentController::class, 'store']);
 
 Route::get('/view-incident', [IncidentController::class, 'view']) ->name('view-incident');
-
-// User Dashboard Route
 Route::get('/view-users', [IncidentController::class, 'showUsers']) ->name('view-users');
-Route::get('/user-dashboard', [IncidentController::class, 'userDashboard']) ->name('user-dashboard');
+
+// User Dashboard Routes
+Route::get('/user-dashboard', [DashboardController::class, 'userDashboard']) ->name('user-dashboard');
 
 // Register Route
 Route::get('/register', [AuthController::class, 'show']) ->name('register');

@@ -30,7 +30,7 @@
 <!-- Side Navigation -->
 <div class="side-nav-wrapper">
             <ul>
-                <li><a href="/admin-view">Dashboard</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
                 <div class="btn-group" role="group" >
                 <li type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: #0244FD">
                     Incident

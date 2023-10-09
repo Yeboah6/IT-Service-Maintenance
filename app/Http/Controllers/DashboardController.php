@@ -9,6 +9,11 @@ class DashboardController extends Controller
 {
     public function adminView() {
         $data = Incident::all();
-        return view('layouts.view', ['data' => $data]);
+        return view('Dashboards.Admin-Dashboard.view', ['data' => $data]);
     }
-}
+
+        // Display User Dashboard
+        public function userDashboard() {
+            return view('Dashboards.User-Dashboard.user-dashboard');
+        }
+} 

@@ -23,7 +23,7 @@ class IncidentController extends Controller
         $data -> from = $request -> input('from');
 
         $data -> save();
-        return redirect('/admin-view');
+        return redirect('/dashboard');
     }
 
     // Display View Incident
@@ -35,10 +35,5 @@ class IncidentController extends Controller
     // Display User Account
     public function showUsers() {
         return view('pages.users');
-    }
-
-    // Display User Dashboard
-    public function userDashboard() {
-        return view('pages.user-dashboard');
     }
 }

@@ -11,7 +11,7 @@
     <!-- Top Navigation -->
     <div class="top-nav-wrapper">
     <ul>
-        <li><a href="/dashboard">IT SERVICE MAINTENANCE</a></li>
+        <li><a href="/user-dashboard">IT SERVICE MAINTENANCE</a></li>
         <div class="btn-group top-list" role="group" >
                 <li type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: #0244FD">
                    Email
@@ -23,15 +23,6 @@
     </ul>
 </div>
 <!-- Top Navigation -->
-
-<!-- Side Navigation -->
-<div class="side-nav-wrapper">
-            <ul>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="create-incident">Create Incident</a></li> 
-            </ul>
-        </div>
-<!-- Side Navigation -->
 <body>
     @yield('content')
 </body>

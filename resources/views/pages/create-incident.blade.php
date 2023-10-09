@@ -1,6 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.authLayout')
 
-@section('content')
 <div class="container wrapper" style="margin-top: 80px;">
 <form action="{{ url('create-incident') }}" method="POST" class="row g-3">
   @csrf
@@ -41,6 +40,3 @@
   </div>
 </form>
 </div>
-
-
-@endsection

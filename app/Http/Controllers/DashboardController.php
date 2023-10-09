@@ -14,6 +14,7 @@ class DashboardController extends Controller
 
         // Display User Dashboard
         public function userDashboard() {
-            return view('Dashboards.User-Dashboard.user-dashboard');
+            $data = Incident::all();
+            return view('Dashboards.User-Dashboard.user-dashboard', ['data' => $data]);
         }
 } 

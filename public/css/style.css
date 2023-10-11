@@ -1,0 +1,33 @@
+
+.side-nav-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    height: 689px;
+    width: 220px;
+    font-size: 20px;
+    padding-top: 200px;
+    line-height: 50px;
+  }
+
+.card-wrapper {
+  margin-top: 50px;
+  display: flex;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.card-3 {
+  width: 120px;
+}
+
+.card {
+  padding: 15px;
+  text-align: center;
+}
+  

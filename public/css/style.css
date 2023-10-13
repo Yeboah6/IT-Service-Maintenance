@@ -1,15 +1,19 @@
 
 .side-nav-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    height: 689px;
-    width: 220px;
-    font-size: 20px;
-    padding-top: 200px;
-    line-height: 50px;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  height: 689px;
+  width: 220px;
+  
+  padding-top: 200px;
+  line-height: 50px;
+}
+
+.font {
+  font-size: 1.5rem;
+}
 
 .card-wrapper {
   margin-top: 50px;

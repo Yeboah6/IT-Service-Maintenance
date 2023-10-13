@@ -35,7 +35,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/create-incident', [IncidentController::class, 'create'])->name('create-incident');
     Route::post('/create-incident', [IncidentController::class, 'store'])->name('create-incident');
 
-    Route::get('/view-incident', [IncidentController::class, 'viewIncident'])->name('view-incident');
+    // Assign Routes
+    Route::get('/assign-incident', [IncidentController::class, 'viewAssign'])->name('assign-incident');
+    Route::get('/assign-to', [IncidentController::class, 'assigneTo'])->name('assign-to');
+
     Route::get('/report', [IncidentController::class, 'report'])->name('report');
     Route::get('/users', [IncidentController::class, 'viewusers'])->name('users');
 });

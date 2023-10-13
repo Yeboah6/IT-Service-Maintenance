@@ -8,20 +8,26 @@
                     @csrf
                     <div class="col-md-6">
                       <label class="form-label">Type of Issue</label>
-                      <input type="text" class="form-control" style="width: 500px; border-radius:6px" name="issue_type">
+                      <select name="issue_type" class="form-select" style="width: 500px;border-radius:6px">
+                      <option selected>-----</option>
+                        <option>Hardware</option>
+                        <option>Network</option>
+                        <option>Software</option>
+                      </select>
+                      <!-- <input type="text" class="form-control" style="width: 500px; border-radius:6px" name="issue_type"> -->
                     </div>
                     <div class="col-md-6">
                       <label class="form-label">Issue</label>
-                      <input type="text" class="form-control" style="width: 575px;border-radius:6px" name="issue">
+                      <input type="text" class="form-control" style="width: 535px;border-radius:6px" name="issue">
                     </div>
   
                     <div class="col-md-6">
                       <label class="form-label">Reported By</label>
-                      <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="reporter">
+                      <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="reporter" value="{{Auth::user()->name}}" readonly>
                     </div>
                     <div class="col-md-4">
                       <label class="form-label">Urgency</label>
-                      <select class="form-select" style="width: 150px;border-radius:6px" name="urgency">
+                      <select class="form-select " style="width: 150px;border-radius:6px" name="urgency">
                         <option selected>-----</option>
                         <option>High</option>
                         <option>Medium</option>

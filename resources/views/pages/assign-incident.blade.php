@@ -13,7 +13,22 @@
                                     <th>Urgency</th>
                                     <th>Summary</th>
                                     <th>From (Unit/Department)</th> 
+                                    <th>Action</th> 
                                 </thead>
+
+                                <tbody>
+                                    @foreach($incident as $incidnet)
+                                    <tr>
+                                        <td>{{$incidnet -> reporter}}</td>
+                                        <td>{{$incidnet -> issue_type}}</td>
+                                        <td>{{$incidnet -> issue}}</td>
+                                        <td>{{$incidnet -> urgency}}</td>
+                                        <td>{{$incidnet -> description}}</td>
+                                        <td>{{$incidnet -> from}}</td>
+                                        <td><a href="/assign-to" class="btn btn-primary">Assign To</a></td>
+                                    </tr> 
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>

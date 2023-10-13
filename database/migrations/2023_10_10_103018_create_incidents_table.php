@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('reporter');
             $table->string('urgency');
             $table->string('from');
+            $table->string('assigne_to')->nullable();
             $table->timestamps();
         });
     }

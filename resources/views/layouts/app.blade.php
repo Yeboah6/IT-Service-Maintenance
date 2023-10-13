@@ -19,7 +19,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" style="margin-left:200px;">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
                 @php
                     $user = auth()->user()-> email == "admin@gmail.com"; // detecting the user type
@@ -27,8 +27,10 @@
                 
                 @if($user)
                     @include('layouts.navigation')
+                    @include('Dashboards.Admin.sideNav')
                 @else
                     @include('layouts.user-navigation')
+                    @include('Dashboards.User.sideNav')
                 @endif
                 
 

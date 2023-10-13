@@ -46,11 +46,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        // if (auth() -> User() -> email === "admin@gmail.com") {
             return redirect(RouteServiceProvider::HOME);
-        // } else {
-            // return redirect(RouteServiceProvider::USER);
-        // }
         
     }
 }

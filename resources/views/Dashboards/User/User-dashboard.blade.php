@@ -14,6 +14,19 @@
                                     <th>Summary</th>
                                     <th>From (Unit/Department)</th> 
                                 </thead>
+
+                                <tbody>
+                                    @foreach($incident as $incidnet)
+                                    <tr>
+                                        <td>{{$incidnet -> reporter}}</td>
+                                        <td>{{$incidnet -> issue_type}}</td>
+                                        <td>{{$incidnet -> issue}}</td>
+                                        <td>{{$incidnet -> urgency}}</td>
+                                        <td>{{$incidnet -> description}}</td>
+                                        <td>{{$incidnet -> from}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>

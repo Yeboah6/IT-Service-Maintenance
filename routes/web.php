@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\IncidentController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -21,13 +22,9 @@ Route::get('/', function () {
 });
 
 // Dashboard Routes
-Route::get('/dashboard', function () {
-    return view('Dashboards.Admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('Dashboards.User.user-dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/user-dashboard', [DashboardController::class, 'userDashboard'])->middleware(['auth', 'verified'])->name('user-dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,6 +33,8 @@ Route::middleware('auth')->group(function () {
 
     // Incident Routes
     Route::get('/create-incident', [IncidentController::class, 'create'])->name('create-incident');
+    Route::post('/create-incident', [IncidentController::class, 'store'])->name('create-incident');
+
     Route::get('/view-incident', [IncidentController::class, 'viewIncident'])->name('view-incident');
     Route::get('/report', [IncidentController::class, 'report'])->name('report');
     Route::get('/users', [IncidentController::class, 'viewusers'])->name('users');

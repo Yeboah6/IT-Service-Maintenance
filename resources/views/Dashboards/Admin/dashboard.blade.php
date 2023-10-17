@@ -11,15 +11,15 @@
                 <div class="container wrapper">
                     <div class="card-wrapper">
                         <div class="card card-3">
-                            <p>11</p>
+                            <p>{{$wordCount}}</p>
                             <h5>Total</h5>
                         </div>
                         <div class="card card-3">
-                            <p>11</p>
+                            <p>{{$assignCount}}</p>
                             <h5>Assigned</h5>
                         </div>
                         <div class="card card-3">
-                            <p>11</p>
+                            <p>{{$users}}</p>
                             <h5>Users</h5>
                         </div>
                     </div>
@@ -46,6 +46,7 @@
                                         <td>{{$incidnet -> urgency}}</td>
                                         <td>{{$incidnet -> description}}</td>
                                         <td>{{$incidnet -> from}}</td>
+                                        <td>{{$incidnet -> assigne_to}}</td>
                                     </tr> 
                                     @endforeach
                                 </tbody>

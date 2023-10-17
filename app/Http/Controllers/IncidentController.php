@@ -27,28 +27,32 @@ class IncidentController extends Controller
 
         $data -> save();
         return redirect('/create-incident');
-        // $data = request() -> validate([
-        //     'issue' => ['required'],
-        //     'issue_type' => ['required'],
-        //     'reporter' => ['required'],
-        //     'urgency' => ['required'],
-        //     'from' => ['required'],
-        //     'description' => ['required'],
-
-        // ]);
-
-        // Incident::create($data);
-        // return redirect('/create-incident');
     }
 
 
+    // Display Assign To Page
     public function viewAssign() {
         $incident = Incident::all();
         return view('pages.assign-incident', compact('incident'));
     }
 
-    public function assigneTo() {
-        return view('pages.assign-to');
+    public function assign($id, Request $request) {
+        $incident = Incident::find($id);
+
+        $incident -> issue = $request -> input('issue');
+        $incident -> issue_type = $request -> input('issue_type');
+        $incident -> reporter = $request -> input('reporter');
+        $incident -> urgency = $request -> input('urgency');
+        $incident -> from = $request -> input('from');
+        $incident -> description = $request -> input('description');
+        $incident -> assigne_to = $request -> input('assigne_to');
+        $incident -> update();
+        return redirect('/dashboard');
+    }
+
+    public function assignTo($id) {
+        $incident = Incident::find($id);
+        return view('pages.assign-to',compact('incident'));
     }
 
     public function viewusers() {
@@ -59,4 +63,8 @@ class IncidentController extends Controller
     public function report() {
         return view('pages.report');
     }
+
+    // public function viewMore() {
+    //     return view('pages.view-more');
+    // }
 }

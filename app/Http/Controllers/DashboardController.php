@@ -20,6 +20,5 @@ class DashboardController extends Controller
                 return view('Dashboards.User.User-dashboard', compact('incident'));
             }
         }
-       
     }
 }

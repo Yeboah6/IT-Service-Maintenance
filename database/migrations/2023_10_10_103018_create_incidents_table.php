@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('incidents', function (Blueprint $table) {
             $table->id();
-            $table->string('issue');
-            $table->string('issue_type');
-            $table->string('description');
-            $table->string('reporter');
-            $table->string('urgency');
-            $table->string('from');
+            $table->string('issue') -> nullable();
+            $table->string('issue_type') -> nullable();
+            $table->string('description') -> nullable();
+            $table->string('reporter') -> nullable();
+            $table->string('urgency') -> nullable();
+            $table->string('from') -> nullable();
             $table->string('assigne_to')->nullable();
             $table->timestamps();
         });

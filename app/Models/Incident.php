@@ -17,5 +17,6 @@ class Incident extends Model
         'reporter',
         'urgency',
         'from',
+        'assigne_to'
     ];
 }

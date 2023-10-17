@@ -25,7 +25,7 @@
                                         <td>{{$incidnet -> urgency}}</td>
                                         <td>{{$incidnet -> description}}</td>
                                         <td>{{$incidnet -> from}}</td>
-                                        <td><a href="/assign-to" class="btn btn-primary">Assign To</a></td>
+                                        <td><a href="{{'/assign-to/'.$incidnet -> id}}" class="btn btn-primary">Assign To</a></td>
                                     </tr> 
                                     @endforeach
                                 </tbody>

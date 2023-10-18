@@ -30,11 +30,11 @@
     
             <div class="col-12">
               <label class="form-label">Description</label>
-              <input type="text" class="form-control" placeholder="Problem description" style="height:100px;border-radius:6px" name="description" value="{{$incident -> description}}"  readonly>
+              <input type="text" class="form-control" placeholder="Problem description" style="height:50px;border-radius:6px" name="description" value="{{$incident -> description}}"  readonly>
             </div>
 
             <div class="col-md-2">
-              <label class="form-label">Assign To</label>
+              <label class="form-label">Assign To <span>*</span></label>
               <input type="text" class="form-control" placeholder="Assign To" style="width: 370px;border-radius:6px" name="assigne_to" >
             </div>
     

@@ -48,6 +48,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/report', [IncidentController::class, 'report'])->name('report');
     Route::get('/users', [IncidentController::class, 'viewusers'])->name('users');
+
+    Route::post('/delete', [IncidentController::class, 'delete']) -> name('delete');
 });
 
 require __DIR__.'/auth.php';

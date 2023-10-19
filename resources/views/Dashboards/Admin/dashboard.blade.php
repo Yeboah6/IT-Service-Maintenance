@@ -7,18 +7,18 @@
     
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg" style="padding:5px;margin-top:-30px;">
+            <div class=" dark:bg-gray-800  sm:rounded-lg" style="padding:5px;margin-top:-60px;margin-left:-20px;width:1130px">
                 <div class="container wrapper">
                     <div class="card-wrapper">
-                        <div class="card card-3">
+                        <div class="card card-3" style="font-weight: bold; font-size: 1.2rem;">
                             <p>{{$wordCount}}</p>
                             <h5>Total</h5>
                         </div>
-                        <div class="card card-3">
+                        <div class="card card-3" style="font-weight: bold; font-size: 1.2rem;">
                             <p>{{$assignCount}}</p>
-                            <h5>Not Assigned</h5>
+                            <h5>Assigned</h5>
                         </div>
-                        <div class="card card-3">
+                        <div class="card card-3" style="font-weight: bold; font-size: 1.2rem;">
                             <p>{{$users}}</p>
                             <h5>Users</h5>
                         </div>
@@ -34,7 +34,7 @@
                                     <th>Urgency</th>
                                     <th>Description</th>
                                     <th>Status</th>
-                                    <th>From (Unit/Department)</th> 
+                                    <th>From (Department)</th> 
                                     <th>Assign To</th> 
                                 </thead>
 
@@ -46,7 +46,7 @@
                                         <td>{{$incidnet -> issue}}</td>
                                         <td>{{$incidnet -> urgency}}</td>
                                         <td>{{$incidnet -> description}}</td>
-                                        <td>Submitted</td>
+                                        <td><span style="font-size: 0.8rem;background-color:blue;color:black;padding:3px;border-radius:7px">Submitted</span></td>
                                         <td>{{$incidnet -> from}}</td>
                                         <td>{{$incidnet -> assigne_to}}</td>
                                     </tr> 

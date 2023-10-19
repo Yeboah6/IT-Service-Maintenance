@@ -39,7 +39,7 @@
 </nav>
 
 <style>
-    .side-nav-wrapper {
+.side-nav-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -60,13 +60,9 @@
 
 .card-wrapper {
   margin-top: 50px;
-  display: flex;
-}
-
-.card-wrapper {
-  display: flex;
+  margin-bottom: 50px; 
+    display: flex;
   justify-content: space-around;
-  margin-bottom: 50px;
 }
 
 .card-3 {
@@ -76,8 +72,8 @@
 .card {
   padding: 15px;
   text-align: center;
+  background-color: whitesmoke;
 }
-
 
 span {
   color: red;

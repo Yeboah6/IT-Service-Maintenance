@@ -38,10 +38,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: black;
   height: 689px;
   width: 220px;
-  background-color: #4d2323;
+  background-color: #2C5F2D;
   padding-top: 200px;
   line-height: 50px;
 }

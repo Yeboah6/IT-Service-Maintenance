@@ -16,7 +16,7 @@
                         </div>
                         <div class="card card-3">
                             <p>{{$assignCount}}</p>
-                            <h5>Assigned</h5>
+                            <h5>Not Assigned</h5>
                         </div>
                         <div class="card card-3">
                             <p>{{$users}}</p>

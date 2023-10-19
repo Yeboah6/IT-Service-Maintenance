@@ -1,5 +1,10 @@
 <nav>
     <div class="side-nav-wrapper">
+          <div>
+                <!-- <a href="/"> -->
+                    <img src="image/GAF.png" alt="GAF" style="width: 50%;margin-left:60px;margin-top:-195px">
+                <!-- </a> -->
+            </div>
         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 20px;">
         <span><i class="fa fa-home" aria-hidden="true"></i></span>
             <x-nav-link :href="route('dashboard')" class="font" :active="request()->routeIs('dashboard')" style="font-size:1.1rem;color:aliceblue;margin-left:30px;">
@@ -35,10 +40,10 @@
 
 <style>
     .side-nav-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 689px;
+  height: 657px;
   width: 220px;
   background-color: #2C5F2D;
   padding-top: 200px;

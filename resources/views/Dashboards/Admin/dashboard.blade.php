@@ -7,7 +7,7 @@
     
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg" style="padding:7px;">
+            <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg" style="padding:5px;margin-top:-30px;">
                 <div class="container wrapper">
                     <div class="card-wrapper">
                         <div class="card card-3">
@@ -33,6 +33,7 @@
                                     <th>Issue</th>
                                     <th>Urgency</th>
                                     <th>Description</th>
+                                    <th>Status</th>
                                     <th>From (Unit/Department)</th> 
                                     <th>Assign To</th> 
                                 </thead>
@@ -45,6 +46,7 @@
                                         <td>{{$incidnet -> issue}}</td>
                                         <td>{{$incidnet -> urgency}}</td>
                                         <td>{{$incidnet -> description}}</td>
+                                        <td>Submitted</td>
                                         <td>{{$incidnet -> from}}</td>
                                         <td>{{$incidnet -> assigne_to}}</td>
                                     </tr> 

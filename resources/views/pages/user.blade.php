@@ -10,7 +10,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Role</th>
+                                <!-- <th>Role</th> -->
                                 <th>Created</th>
                                 <th>Updated</th>
                                 <th>Actions</th>
@@ -22,7 +22,7 @@
                                     <td>{{$user -> id}}</td>
                                     <td>{{$user -> name}}</td>
                                     <td>{{$user -> email}}</td>
-                                    <td>{{$user -> role}}</td>
+                                    <!-- <td>{{$user -> role}}</td> -->
                                     <td>{{$user -> created_at}}</td>
                                     <td>{{$user -> updated_at}}</td>
                                     <td><a href="#"><button type="submit" class="btn btn-secondary" style="color:black; background-color: red">Delete</button></a></td>

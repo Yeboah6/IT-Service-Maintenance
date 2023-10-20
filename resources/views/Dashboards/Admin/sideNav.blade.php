@@ -80,4 +80,12 @@ span {
   font-weight: bold;
   font-size: 1.1rem;
 }
+
+td {
+    font-size: 0.85rem;
+}
+
+td a {
+  font-size: 0.85rem;
+}
 </style>

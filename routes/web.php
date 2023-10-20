@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
     // Assign Routes
     Route::get('/assign-incident', [IncidentController::class, 'viewAssign'])->name('assign-incident');
 
-    // Assign Route
+    // Assign Routes
     Route::get('/assign-to/{id}', [IncidentController::class, 'assignTo'])->name('assign-to');
     Route::post('/assign-to/{id}', [IncidentController::class, 'assign'])->name('assign-to');
 
@@ -49,7 +49,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/report', [IncidentController::class, 'report'])->name('report');
     Route::get('/users', [IncidentController::class, 'viewusers'])->name('users');
 
-    Route::post('/delete', [IncidentController::class, 'delete']) -> name('delete');
+    // Delete Routes
+    Route::get('/delete/{id}', [IncidentController::class, 'delete']) -> name('delete');
+    Route::get('/delete-user/{id}', [IncidentController::class, 'deleteUser']) -> name('delete-user');
 });
 
 require __DIR__.'/auth.php';

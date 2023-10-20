@@ -26,7 +26,7 @@ class IncidentController extends Controller
         $data -> description = $request -> input('description');
 
         $data -> save();
-        return redirect('/create-incident');
+        return redirect('/dashboard');
     }
 
 
@@ -64,7 +64,19 @@ class IncidentController extends Controller
         return view('pages.report');
     }
 
-    // public function viewMore() {
-    //     return view('pages.view-more');
-    // }
+    // Delete Incidents
+    public function delete($id) {
+        $incident = Incident::findOrFail($id);
+
+        $incident -> delete();
+        return redirect('/dashboard');
+    }
+
+    // Delete Users
+    public function deleteUser($id) {
+        $user = Incident::findOrFail($id);
+
+        $user -> delete();
+        return redirect('/users');
+    }
 }

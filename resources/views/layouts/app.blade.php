@@ -22,7 +22,7 @@
     <body class="font-sans antialiased main-container">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
                 @php
-                    $user = auth()->user()-> email == "admin@gmail.com"; // detecting the user type
+                    $user = auth()->user()-> email == "hardwareadmin@gmail.com" || "softwareadmin@gmail.com" || "networkadmin@gmail.com"; // detecting the user type
                 @endphp
                 @include('layouts.navigation')
                 @if($user)

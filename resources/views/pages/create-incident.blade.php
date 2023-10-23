@@ -42,7 +42,7 @@
             </div>
 
             <input type="text" class="form-control" name="status" hidden>
-            
+
             <div class="col-12">
               <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:60px;color:red">Submit</button>
             </div>

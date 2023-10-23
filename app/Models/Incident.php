@@ -16,7 +16,12 @@ class Incident extends Model
         'description',
         'reporter',
         'urgency',
+        'status',
         'from',
         'assigne_to'
+    ];
+
+    protected $attributes = [
+        'status' => 'Submitted',
     ];
 }

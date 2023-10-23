@@ -36,6 +36,7 @@ class IncidentController extends Controller
         return view('pages.assign-incident', compact('incident'));
     }
 
+    // Stores Assign To Using Update Procedure
     public function assign($id, Request $request) {
         $incident = Incident::find($id);
 
@@ -45,21 +46,24 @@ class IncidentController extends Controller
         $incident -> urgency = $request -> input('urgency');
         $incident -> from = $request -> input('from');
         $incident -> description = $request -> input('description');
-        $incident -> assigne_to = $request -> input('assigne_to');
+        $incident -> assigne_to = $request -> input('assigne_to'); 
         $incident -> update();
         return redirect('/dashboard');
     }
 
+    // Display Assign To
     public function assignTo($id) {
         $incident = Incident::find($id);
         return view('pages.assign-to',compact('incident'));
     }
 
+    // Display Users
     public function viewusers() {
         $user = User::all();
         return view('pages.user', compact('user'));
     }
 
+    // Dislpay Report
     public function report() {
         return view('pages.report');
     }

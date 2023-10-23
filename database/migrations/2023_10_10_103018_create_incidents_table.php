@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('description') -> nullable();
             $table->string('reporter') -> nullable();
             $table->string('urgency') -> nullable();
+            $table->string('status') -> nullable();
+            // $table->forreignId('status');
             $table->string('from') -> nullable();
             $table->string('assigne_to')->nullable();
             $table->timestamps();

@@ -40,7 +40,9 @@
               <label class="form-label">Description <span>*</span></label>
               <textarea class="form-control" placeholder="Problem description" style="height:100px;border-radius:6px" name="description" required></textarea>
             </div>
-  
+
+            <input type="text" class="form-control" name="status" hidden>
+            
             <div class="col-12">
               <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:60px;color:red">Submit</button>
             </div>

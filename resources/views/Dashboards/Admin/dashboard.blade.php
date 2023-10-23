@@ -39,13 +39,7 @@
                                     <th>Action</th> 
                                 </thead>
                                 
-                                @php
-                                    $checkAssign = $incident -> assigne_to;
-                                @endphp
-
-                                    if(!$checkAssign) {
-                                        
-                                    }
+                                
                                 <tbody>
                                     @foreach($incident as $incidnet)
                                     <tr>
@@ -54,8 +48,8 @@
                                         <td>{{$incidnet -> issue}}</td>
                                         <td>{{$incidnet -> urgency}}</td>
                                         <td>{{$incidnet -> description}}</td>
-                                        <td><span style="font-size: 0.8rem;background-color:blue;color:white;padding:3px;border-radius:7px">Submitted</span></td>
                                         <td>{{$incidnet -> from}}</td>
+                                        <td>{{$incident -> status}}</td>
                                         <td>{{$incidnet -> assigne_to}}</td>
                                         <td><a href="{{url('/delete/'.$incidnet -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
                                     </tr> 

@@ -28,14 +28,13 @@
                 @if($user)
                     @include('Dashboards.Admin.sideNav')
                 @else
+                
                     @include('Dashboards.User.sideNav')
                 @endif
                 
 
             <!-- Page Heading -->
-            @if (isset($header))
 
-            @endif
 
             <!-- Page Content -->
             <main>

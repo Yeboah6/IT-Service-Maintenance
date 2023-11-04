@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-6">
               <label class="form-label">Reported By</label>
-              <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="reporter" value="{{Auth::user()->name}}" readonly required>
+              <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="reporter" value="{{Auth::user()->name}}" readonly>
             </div>
             <div class="col-md-4">
               <label class="form-label">Urgency <span>*</span></label>
@@ -41,7 +41,7 @@
               <textarea class="form-control" placeholder="Problem description" style="height:100px;border-radius:6px" name="description" required></textarea>
             </div>
 
-            <input type="text" class="form-control" name="status" hidden>
+            <input type="text" class="form-control" name="statusCheck" hidden>
 
             <div class="col-12">
               <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:60px;color:red">Submit</button>

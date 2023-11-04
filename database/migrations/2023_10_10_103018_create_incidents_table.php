@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('description') -> nullable();
             $table->string('reporter') -> nullable();
             $table->string('urgency') -> nullable();
-            $table->string('status') -> nullable();
+            $table->string('statusCheck') -> nullable();
             $table->string('from') -> nullable();
             $table->string('assigne_to')->nullable();
             $table->timestamps();

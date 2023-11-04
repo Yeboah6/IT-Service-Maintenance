@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg" style="padding:7px;margin-top:-20px;">
+            <div class="bg-white shadow-sm sm:rounded-lg" style="padding:7px;margin-top:-20px;">
                 <div class="container wrapper">
                 <div class="table-wrapper">
                         <div class="table">

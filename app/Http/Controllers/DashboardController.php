@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function dashboard()
     {
         if (Auth::id()) {
-            $user = Auth()->user()->email === "hardwareadmin@gmail.com" || "softwareadmin@gmail.com" || "networkadmin@gmail.com";
+            $user = Auth()->user()->email === "hardwareadmin@gmail.com";
             if ($user) {
                 $incident = Incident::all();
                 $wordCount = Incident::all()->count();
@@ -25,5 +25,5 @@ class DashboardController extends Controller
             }
         }
     }
-}
+} 
 

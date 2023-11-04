@@ -3,9 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\IncidentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\technicianController;
 use Illuminate\Support\Facades\Route;
-use PhpParser\Node\Expr\Assign;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +21,12 @@ Route::get('/', function () {
     return view('auth.register');
 });
 
-// Dashboard Routes
+// Route::get('/dashboard', function () {
+//     return view('Dashboards.Admin.dashboard');
+// })
+
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/user-dashboard', [DashboardController::class, 'userDashboard'])->middleware(['auth', 'verified'])->name('user-dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -42,6 +43,10 @@ Route::middleware('auth')->group(function () {
     // Assign Routes
     Route::get('/assign-to/{id}', [IncidentController::class, 'assignTo'])->name('assign-to');
     Route::post('/assign-to/{id}', [IncidentController::class, 'assign'])->name('assign-to');
+
+    // Technician Route
+    Route::get('/technicians', [technicianController::class, 'technician']) -> name('technicians');
+    Route::get('/add-technicians', [technicianController::class, 'addTechnician']) -> name('add-technicians');
 
     // View More Route
     // Route::get('/view-more/{id}', [IncidentController::class, 'viewMore']) -> name('view-more');

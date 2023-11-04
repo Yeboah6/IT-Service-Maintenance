@@ -8,6 +8,8 @@ use App\Models\User;
 
 class IncidentController extends Controller
 {
+
+    // 
     // Display Incident Form
     public function create() {
         return view('pages.create-incident');
@@ -24,11 +26,11 @@ class IncidentController extends Controller
         $data -> urgency = $request -> input('urgency');
         $data -> from = $request -> input('from');
         $data -> description = $request -> input('description');
-
+        $data -> statusCheck = "Submitted";
         $data -> save();
         return redirect('/dashboard');
     }
-
+ 
 
     // Display Assign To Page
     public function viewAssign() {
@@ -46,7 +48,8 @@ class IncidentController extends Controller
         $incident -> urgency = $request -> input('urgency');
         $incident -> from = $request -> input('from');
         $incident -> description = $request -> input('description');
-        $incident -> assigne_to = $request -> input('assigne_to'); 
+        $incident -> assigne_to = $request -> input('assigne_to');
+        $incident -> statusCheck = "Pending";
         $incident -> update();
         return redirect('/dashboard');
     }
@@ -75,7 +78,7 @@ class IncidentController extends Controller
         $incident -> delete();
         return redirect('/dashboard');
     }
-
+ 
     // Delete Users
     public function deleteUser($id) {
         $user = Incident::findOrFail($id);

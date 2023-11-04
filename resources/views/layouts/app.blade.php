@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
@@ -10,6 +10,20 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- <link rel="stylesheet" href="@@webRoot/node_modules/prismjs/themes/prism.css">
+        <link rel="stylesheet" href="@@webRoot/node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css">
+        <link rel="stylesheet" href="@@webRoot/node_modules/prismjs/plugins/toolbar/prism-toolbar.css">
+        <link rel="stylesheet" href="@@webRoot/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="@@webRoot/node_modules/dropzone/dist/dropzone.css" >
+        <link href="@@webRoot/node_modules/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" /> -->
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"> -->
+
+<!-- Theme CSS -->
+<!-- build:css @@webRoot/assets/css/theme.min.css -->
+<!-- <link rel="stylesheet" href="@@webRoot/assets/css/theme.css"> -->
+<!-- endbuild -->
 
         <!-- Links -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -21,7 +35,7 @@
     </head>
     <body class="font-sans antialiased main-container">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-                @php
+            @php
                     $user = auth()->user()-> email == "hardwareadmin@gmail.com" || "softwareadmin@gmail.com" || "networkadmin@gmail.com"; // detecting the user type
                 @endphp
                 @include('layouts.navigation')
@@ -31,10 +45,15 @@
                 
                     @include('Dashboards.User.sideNav')
                 @endif
-                
 
             <!-- Page Heading -->
-
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
 
             <!-- Page Content -->
             <main>

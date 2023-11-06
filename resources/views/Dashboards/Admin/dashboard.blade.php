@@ -1,26 +1,43 @@
 <x-app-layout>
-
-    
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="  sm:rounded-lg" style="padding:5px;margin-top:-60px;margin-left:-20px;width:1130px">
+            <div class="  sm:rounded-lg">
                 <div class="container wrapper">
-                    <div class="card-wrapper">
-                        <div class="card card-3" style="font-weight: bold; font-size: 1.2rem;">
-                            <p>{{$wordCount}}</p>
-                            <h5>Total</h5>
-                        </div>
-                        <div class="card card-3" style="font-weight: bold; font-size: 1.2rem;">
-                            <p>{{$assignCount}}</p>
-                            <h5>Assigned</h5>
-                        </div>
-                        <div class="card card-3" style="font-weight: bold; font-size: 1.2rem;">
-                            <p>{{$users}}</p>
-                            <h5>Users</h5>
+                    <div class="card-container">
+                        <div class="card-wrapper">
+                            <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
+                            <ul>
+                                <li>Incidents <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
+                                <li>{{$wordCount}}</li>
+                                <li>28 Completed</li>
+                            </ul>
+                            </div>
+                            <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
+                            <ul>
+                                <li>Incident Assigned <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
+                                <li>{{$assignCount}}</li>
+                                <li>Assigned</li>
+                            </ul>
+                            </div>
+                            <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
+                            <ul>
+                                <li>Users <span><i class="fa fa-user-o" aria-hidden="true"></i></span></li>
+                                <li>{{$users}}</li>
+                                <li>Users</li>
+                            </ul>
+                            </div>
+                            <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
+                            <ul>
+                                <li>Technicians <span><i class="fa fa-user-o" aria-hidden="true"></i></span></li>
+                                <li>{{$users}}</li>
+                                <li>2 Available</li>
+                            </ul>
+                                <p></p>
+                                <h5></h5>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="table-wrapper">
+                    <div class="table-wrapper" style="margin-left: 180px;">
                         <div class="table">
                             <table class="table table-bordered table-striped" >
                                 <thead>
@@ -60,3 +77,37 @@
     </div>
 </x-app-layout>
 
+<style>
+
+.card-container {
+    /* margin-top: -200px; */
+    position: relative;
+    top: -99px;
+    margin-left: 133px;
+    height: 200px;
+    width: 1145px;
+    background-color: red;
+}
+.card-wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px; 
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-3 {
+  width: 220px;
+}
+
+.card {
+  height: 130px;
+  margin-top: 100px;
+  padding: 15px;
+  background-color: whitesmoke;
+}
+
+.card li {
+    margin: 7px;
+}
+
+</style>

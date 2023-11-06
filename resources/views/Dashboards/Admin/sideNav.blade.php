@@ -1,71 +1,68 @@
 
  <!-- Sidebar -->
- <div class="side-nav-wrapper">
 
- <div class="sidenav side-nav-wrapper">
- <!-- <div> -->
- <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;">
- <!-- </div> -->
- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-        <span><i class="fa fa-home" aria-hidden="true"></i></span>
-            <x-nav-link :href="route('dashboard')" class="font" :active="request()->routeIs('dashboard')" style="font-size:1rem;color:aliceblue;margin-left:30px;">
-                {{ __('Dashboard') }}
-            </x-nav-link>
-        </div>
-  <button class="dropdown-btn">Incidents</button>
-  <div class="dropdown-container">
-  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
+<div class="sidenav side-nav-wrapper">
+  <div>
+    <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;">
+  </div>
+  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;margin-top:20px">
+    <span><i class="fa fa-home" aria-hidden="true"></i></span>
+      <x-nav-link :href="route('dashboard')" class="font" :active="request()->routeIs('dashboard')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px">
+        {{ __('Dashboard') }}
+      </x-nav-link>
+  </div>
+  <button class="dropdown-btn" style="margin-left: -25px;"><span><i class="fa fa-plus-square-o" aria-hidden="true" style="margin: 15px;"></i></span>Incidents</button>
+    <div class="dropdown-container">
+      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
         <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span>
-            <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
-                {{ __('Create Incident') }}
-            </x-nav-link>
-        </div>
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
+          <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+            {{ __('Create Incident') }}
+          </x-nav-link>
+      </div>
+      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
         <span><i class="fa fa-list" aria-hidden="true"></i></span>
-            <x-nav-link :href="route('assign-incident')" class="font" :active="request()->routeIs('assign-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
-                {{ __('Assign Incident') }}
-            </x-nav-link>
-        </div>
-    <!-- <a href="#">Link 3</a> -->
+          <x-nav-link :href="route('assign-incident')" class="font" :active="request()->routeIs('assign-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+            {{ __('Assign Incident') }}
+          </x-nav-link>
+      </div>
+    </div>
+  <button class="dropdown-btn" style="margin-left: -25px;"><span><i class="fa fa-user-o" aria-hidden="true" style="margin: 15px;"></i></span>Technicians</button>
+    <div class="dropdown-container">
+      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
+        <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+        <x-nav-link :href="route('add-technicians')" class="font" :active="request()->routeIs('add-technicians')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+          {{ __('Add Technicians') }} 
+        </x-nav-link>
+      </div>
+  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
+    <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+    <x-nav-link :href="route('technicians')" class="font" :active="request()->routeIs('technicians')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+      {{ __('Technicians') }} 
+    </x-nav-link>
   </div>
-  <button class="dropdown-btn">Technicians</button>
-  <div class="dropdown-container">
-    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-        <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
-            <x-nav-link :href="route('add-technicians')" class="font" :active="request()->routeIs('add-technicians')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
-             {{ __('Add Technicians') }} 
-            </x-nav-link>
-    </div>
-    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-        <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
-            <x-nav-link :href="route('technicians')" class="font" :active="request()->routeIs('technicians')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
-             {{ __('Technicians') }} 
-            </x-nav-link>
-    </div>
   </div>
   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-        <span><i class="fa fa-file" aria-hidden="true"></i></span>
-            <x-nav-link :href="route('report')" class="font" :active="request()->routeIs('report')" style="font-size:1rem;color:aliceblue;margin-left:30px;">
-                {{ __('Report') }}
-            </x-nav-link>
-        </div>
-        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-        <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
-            <x-nav-link :href="route('users')" class="font" :active="request()->routeIs('users')" style="font-size:1rem;color:aliceblue;margin-left:30px;">
-             {{ __('Users') }} 
-            </x-nav-link>
-        </div>
-</div>
+    <span><i class="fa fa-file" aria-hidden="true"></i></span>
+    <x-nav-link :href="route('report')" class="font" :active="request()->routeIs('report')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px">
+      {{ __('Report') }}
+    </x-nav-link>
+  </div>
+  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
+    <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+    <x-nav-link :href="route('users')" class="font" :active="request()->routeIs('users')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px">
+     {{ __('Users') }} 
+    </x-nav-link>
+  </div>
 </div>
 
-
+<!-- Style -->
 <style>
 
 .side-nav-wrapper {
   position: fixed;
   top: 0;
   left: 0;
-  height: 657px;
+  /* height: 657px; */
   width: 220px;
   background-color: #2C5F2D;
   /* padding-top: 200px; */
@@ -77,22 +74,6 @@
   padding-top: 20px;
 }
 
-.card-wrapper {
-  margin-top: 50px;
-  margin-bottom: 50px; 
-    display: flex;
-  justify-content: space-around;
-}
-
-.card-3 {
-  width: 120px;
-}
-
-.card {
-  padding: 15px;
-  text-align: center;
-  background-color: whitesmoke;
-}
 
 span {
   color: red;
@@ -103,7 +84,6 @@ span {
 .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 20px;
   color: whitesmoke;
   display: block;
   border: none;
@@ -115,17 +95,17 @@ span {
 }
 
 .sidenav a:hover, .dropdown-btn:hover {
-  color: #f1f1f1;
+  color: red;
 }
 
 .active {
-  background-color: #262626;
+  background-color: #2C5F2D;
   color: white;
 }
 
 .dropdown-container {
   display: none;
-  background-color: #262626;
+  background-color: blue;
   padding-left: 8px;
 }
 
@@ -135,6 +115,8 @@ span {
   padding-right: 8px;
 }
 </style>
+
+<!-- End of style -->
 
 <script>
   var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -204,25 +186,3 @@ for (i = 0; i < dropdown.length; i++) {
 
 </nav>
 -->
-
-<style>
-
-
-/* .main-container {
-  margin-left: 200px;
-}
-
-.font {
-  font-size: 1.5rem;
-}
-
-
-
-td {
-    font-size: 0.85rem;
-}
-
-td a {
-  font-size: 0.85rem;
-} */
-</style>

@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function () {
     // Technician Route
     Route::get('/technicians', [technicianController::class, 'technician']) -> name('technicians');
     Route::get('/add-technicians', [technicianController::class, 'addTechnician']) -> name('add-technicians');
+    Route::post('/add-technicians', [technicianController::class, 'addTechnicians']) -> name('add-technicians');
 
     // View More Route
     // Route::get('/view-more/{id}', [IncidentController::class, 'viewMore']) -> name('view-more');
@@ -57,6 +58,7 @@ Route::middleware('auth')->group(function () {
     // Delete Routes
     Route::get('/delete/{id}', [IncidentController::class, 'delete']) -> name('delete');
     Route::get('/delete-user/{id}', [IncidentController::class, 'deleteUser']) -> name('delete-user');
+    Route::get('/delete-technician/{id}', [technicianController::class, 'deleteTechnician']) -> name('delete-technician');
 });
 
 require __DIR__.'/auth.php';

@@ -15,7 +15,22 @@
                                     <th>Email</th>
                                     <th>Status</th>
                                     <th>Department</th>
+                                    <th>Action</th>
                                 </thead>
+                                <tbody>
+                                    @foreach ($technician as $technician)
+                                    <tr>
+                                        <td>{{ $technician -> name }}</td>
+                                        <td>{{ $technician -> number }}</td>
+                                        <td>{{ $technician -> email }}</td>
+                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{ $technician -> status }}</span></td>
+                                        <td>{{ $technician -> department }}</td>
+                                        <td><a href="{{url('/delete-technician/'.$technician -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
+
+                                    </tr>
+                                        
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>

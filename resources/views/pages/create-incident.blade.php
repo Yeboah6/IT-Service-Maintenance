@@ -35,7 +35,6 @@
               <label class="form-label">From <span>*</span></label>
               <input type="text" class="form-control" placeholder="Unit or Department" style="width: 366px;border-radius:6px" name="from" required>
             </div>
-
             <div class="col-12">
               <label class="form-label">Description <span>*</span></label>
               <textarea class="form-control" placeholder="Problem description" style="height:100px;border-radius:6px" name="description" required></textarea>

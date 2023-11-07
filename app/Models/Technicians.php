@@ -15,6 +15,7 @@ class Technicians extends Model
         'number',
         'email',
         'status',
+        'rank',
         'department'
     ];
 }

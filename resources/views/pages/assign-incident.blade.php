@@ -1,7 +1,8 @@
 <x-app-layout>
-    <div class="py-12">
+<div class="assign-container">
+    <div class="py-12" style="margin-left: 2px;margin-top:100px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 35px;">
                 <div class="container wrapper" style="margin-top: 50px;">
                     <div class="table-wrapper">
                         <div class="table">
@@ -34,6 +35,19 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     </div>
 </x-app-layout>
+
+<style>
+  .assign-container {
+    /* margin-top: 200px; */
+    position: relative;
+    top: -102px;
+    margin-left: 220px;
+    height: 200px;
+    width: 1146px;
+    background-color: red;
+}
+</style>

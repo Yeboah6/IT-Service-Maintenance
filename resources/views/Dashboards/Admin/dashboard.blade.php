@@ -29,7 +29,7 @@
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
                                 <li>Technicians <span><i class="fa fa-user-o" aria-hidden="true"></i></span></li>
-                                <li>{{$users}}</li>
+                                <li>{{$technicians}}</li>
                                 <li>2 Available</li>
                             </ul>
                                 <p></p>
@@ -37,9 +37,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="table-wrapper" style="margin-left: 180px;">
+                    <div class="table-wrapper" style="margin-left: 160px;width:1100px;">
                         <div class="table">
-                            <table class="table table-bordered table-striped" >
+                            <table class="table table-bordered table-striped">
                                 <thead>
                                     <th>Reporter Name</th>
                                     <th>Issue Type</th>
@@ -85,7 +85,7 @@
     top: -99px;
     margin-left: 133px;
     height: 200px;
-    width: 1145px;
+    width: 1146px;
     background-color: red;
 }
 .card-wrapper {

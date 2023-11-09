@@ -21,6 +21,7 @@ class TechnicianController extends Controller
     public function addTechnicians(Request $request) {
         $technician = new Technicians();
 
+        $technician -> rank = $request -> input('rank');
         $technician -> name = $request -> input('name');
         $technician -> number = $request -> input('number');
         $technician -> email = $request -> input('email');

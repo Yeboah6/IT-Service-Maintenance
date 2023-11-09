@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Incident;
+use App\Models\Technicians;
 use App\Models\User;
 
 class IncidentController extends Controller
@@ -48,7 +49,7 @@ class IncidentController extends Controller
         $incident -> urgency = $request -> input('urgency');
         $incident -> from = $request -> input('from');
         $incident -> description = $request -> input('description');
-        $incident -> assigne_to = $request -> input('assigne_to');
+        $incident -> assign_to = $request -> input('assign_to');
         $incident -> statusCheck = "Pending";
         $incident -> update();
         return redirect('/dashboard');
@@ -57,7 +58,8 @@ class IncidentController extends Controller
     // Display Assign To
     public function assignTo($id) {
         $incident = Incident::find($id);
-        return view('pages.assign-to',compact('incident'));
+        $technician = Technicians::all();
+        return view('pages.assign-to',compact('incident', 'technician'));
     }
 
     // Display Users

@@ -1,7 +1,8 @@
 <x-app-layout>
-  <div class="py-12">
+<div class="assign-to-container">
+  <div class="py-12" style="margin-left: 2px;margin-top:100px;">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+      <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 30px;">
         <div class="container wrapper" style="margin-top: 30px;">
 
           <form action="{{url('/assign-to/'.$incident -> id)}}" method="POST" class="row g-3">
@@ -35,7 +36,13 @@
 
             <div class="col-md-2">
               <label class="form-label">Assign To <span>*</span></label>
-              <input type="text" class="form-control" placeholder="Assign To" style="width: 370px;border-radius:6px" name="assigne_to" >
+              <select name="assign_to" class="form-control" style="width:220px;" >
+                <option> ---Select Technician--- </option>
+                @foreach ($technician as $technician)
+                <option value="{{ $technician -> name }}">{{ $technician -> rank }} {{ $technician -> name }}</option>
+                @endforeach
+              </select>
+              <!-- <input type="text" class="form-control" placeholder="Assign To" style="width: 370px;border-radius:6px" name="assigne_to" > -->
             </div>
     
             <div class="col-12">
@@ -45,5 +52,18 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </x-app-layout>
+
+<style>
+  .assign-to-container {
+    /* margin-top: 200px; */
+    position: relative;
+    top: -102px;
+    margin-left: 220px;
+    height: 200px;
+    width: 1146px;
+    background-color: red;
+}
+</style>

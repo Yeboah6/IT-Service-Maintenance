@@ -18,7 +18,7 @@ class DashboardController extends Controller
                 $incident = Incident::all();
                 $wordCount = Incident::all()->count();
                 $technicians = Technicians::all() -> count();
-                $assignCount = Incident::where('assigne_to') -> count();
+                $assignCount = Incident::where('assign_to') -> count();
                 $users = User::all() -> count();
                 return view('Dashboards.Admin.dashboard', compact('incident', 'wordCount', 'assignCount', 'users', 'technicians'));
             } else {

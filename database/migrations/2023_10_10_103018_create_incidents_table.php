@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('urgency') -> nullable();
             $table->string('statusCheck') -> nullable();
             $table->string('from') -> nullable();
-            $table->string('assigne_to')->nullable();
+            $table->string('assign_to')->nullable();
             $table->timestamps();
         });
     }

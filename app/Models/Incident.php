@@ -18,7 +18,7 @@ class Incident extends Model
         'urgency',
         'statusCheck',
         'from',
-        'assigne_to'
+        'assign_to'
     ];
 
     // protected $attributes = [

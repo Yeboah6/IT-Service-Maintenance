@@ -1,15 +1,17 @@
 <x-app-layout>
-    <div class="py-12">
+<div class="technician-container">
+    <div class="py-12" style="margin-left: 2px;margin-top:100px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 25px;">
                 <div class="container wrapper">
-                    <div class="tech-wrapper" style="margin: 20px;margin-left: 950px">
+                    <div class="tech-wrapper" style="margin: 20px;margin-left: 940px">
                     <h1 class="btn btn-primary"><a href="add-technicians" :active="request()->routeIs('technicians')"><span>+</span> Add</a></h1>
                     </div>
                     <div class="table-wrapper">
                         <div class="table">
                             <table class="table table-bordered table-striped" >
                                 <thead>
+                                    <th>Rank</th>
                                     <th>Name</th>
                                     <th>Number</th>
                                     <th>Email</th>
@@ -20,6 +22,7 @@
                                 <tbody>
                                     @foreach ($technician as $technician)
                                     <tr>
+                                        <td>{{ $technician -> rank }}</td>
                                         <td>{{ $technician -> name }}</td>
                                         <td>{{ $technician -> number }}</td>
                                         <td>{{ $technician -> email }}</td>
@@ -35,7 +38,20 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
     </div>
 </x-app-layout>
+
+<style>
+  .technician-container {
+    /* margin-top: 200px; */
+    position: relative;
+    top: -102px;
+    margin-left: 219px;
+    height: 200px;
+    width: 1130px;
+    background-color: red;
+}
+</style>

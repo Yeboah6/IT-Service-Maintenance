@@ -37,9 +37,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="table-wrapper" style="margin-left: 160px;width:1100px;">
+                    <div class="table-wrapper" style="margin-left: 160px;width:1100px;font-size:0.9rem;">
                         <div class="table">
-                            <table class="table table-bordered table-striped">
+                            <table class="table table-bordered table-striped" >
                                 <thead>
                                     <th>Reporter Name</th>
                                     <th>Issue Type</th>

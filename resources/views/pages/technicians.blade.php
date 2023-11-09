@@ -5,7 +5,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 25px;">
                 <div class="container wrapper">
                     <div class="tech-wrapper" style="margin: 20px;margin-left: 940px">
-                    <h1 class="btn btn-primary"><a href="add-technicians" :active="request()->routeIs('technicians')"><span>+</span> Add</a></h1>
+                        <h1 class="btn btn-primary"><a href="add-technicians" :active="request()->routeIs('technicians')"><span>+</span> Add</a></h1>
                     </div>
                     <div class="table-wrapper">
                         <div class="table">

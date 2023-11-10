@@ -44,7 +44,7 @@
     top: -102px;
     margin-left: 219px;
     height: 200px;
-    width: 1130px;
+    width: 1147px;
     background-color: red;
 }
 </style>

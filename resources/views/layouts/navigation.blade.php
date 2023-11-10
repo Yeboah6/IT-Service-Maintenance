@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex"> 
                 <!-- Navigation Links -->
-                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 200px;">
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 250px;">
                     <x-nav-link :href="route('dashboard')"  style="font-size:1.3rem;color:black;font-weight:bold;">
                         {{ __('IT Resolve System') }}
                     </x-nav-link>

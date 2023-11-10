@@ -2,19 +2,19 @@
     <div class="side-nav-wrapper">
     <div>
                 <!-- <a href="/"> -->
-                    <img src="image/GAF.png" alt="GAF" style="width: 50%;margin-left:60px;margin-top:-195px">
+                    <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;margin-top:-195px">
                 <!-- </a> -->
-            </div>
-    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 20px;">
+            </div> 
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
     <span><i class="fa fa-home" aria-hidden="true"></i></span>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" style="font-size: 1.1em;color:aliceblue;">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 20px;">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
                 <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span> 
-                    <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size: 1.1em;color:aliceblue;">
+                    <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size: 1rem;color:aliceblue;margin-left:10px;">
                         {{ __('Create Incident') }}
                     </x-nav-link>
                 </div>
@@ -27,16 +27,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color:  #2C5F2D;
-  height: 657px;
+  background-color: #2C5F2D;
+  height: 100%;
   width: 220px;
   padding-top: 200px;
   line-height: 50px;
 }
 
-.main-container {
+/* .main-container {
   margin-left: 200px;
-}
+} */
 
 .font {
   font-size: 1.5rem;

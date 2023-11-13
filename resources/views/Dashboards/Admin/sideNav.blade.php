@@ -124,7 +124,6 @@
   padding-left: 8px;
 }
 
-
 .fa-caret-down {
   float: right;
   padding-right: 8px;
@@ -145,78 +144,56 @@ span {
   cursor: pointer;
 }
 
+.toggleClass {
+  width: "250px";
+  margin-left: "0";
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
 
-/* .sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  color: whitesmoke;
-  display: block;
-  border: none;
-  width:100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
+/* Admin-Dashboard */
+
+.card-container {
+    /* margin-top: -200px; */
+    position: relative;
+    top: -140px;
+    margin-left: 133px;
+    height: 200px;
+    width: 1137px;
+    background-color: red;
+    transition: 0.5s;
+}
+.card-wrapper {
+    margin-top: 50px;
+    /* margin-bottom: 50px;  */
+    display: flex;
+    justify-content: space-around;
 }
 
-.sidenav a:hover, .dropdown-btn:hover {
-  color: red;
+.card-3 {
+  width: 200px;
 }
 
-.active {
-  background-color: #2C5F2D;
-  color: white;
+.card {
+  height: 130px;
+  margin-top: 100px;
+  padding: 15px;
+  background-color: whitesmoke;
 }
 
-.dropdown-container {
-  display: none;
-  background-color: red;
-  padding-left: 8px;
+.card li {
+    margin: 7px;
 }
+
 
 
 .fa-caret-down {
   float: right;
   padding-right: 8px;
-} */
+} 
 </style>
 
-
 <!-- End of style -->
-
- <script>
-
-function openNav() {
-  // if ((document.getElementById("mySidenav").style.width === "250px") &&(  document.getElementById("main").style.marginLeft = "0")) {
-  //   document.getElementById("mySidenav").style.width = "0";
-  //   document.getElementById("main").style.marginLeft = "250px";
-  // }
-  
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "0";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "250px";
-}
- 
-
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
-</script>

@@ -3,7 +3,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="  sm:rounded-lg">
                 <div class="container wrapper">
-                    <div class="card-container">
+                    <span onclick="dashboard()">Expand Dashboard</span>
+                    
+                    <div class="card-container cardId">
                         <div class="card-wrapper" style="margin-left: 50px;">
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
@@ -11,6 +13,7 @@
                                 <li>{{$wordCount}}</li>
                                 <li>28 Completed</li>
                             </ul>
+                            <!-- <span onclick="closeDashboard()">Dashboard close</span> -->
                             </div>
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
@@ -37,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="table-wrapper" style="margin-left: 160px;width:1100px;font-size:0.9rem;">
+                    <div class="table-wrapper" style="margin-left: 170px;width:1100px;font-size:0.9rem;">
                         <div class="table">
                             <table class="table table-bordered table-striped" >
                                 <thead>
@@ -79,35 +82,19 @@
 
 <style>
 
-.card-container {
-    /* margin-top: -200px; */
-    position: relative;
-    top: -99px;
-    margin-left: 133px;
-    height: 200px;
-    width: 1144px;
-    background-color: red;
-}
-.card-wrapper {
-    margin-top: 50px;
-    /* margin-bottom: 50px;  */
-    display: flex;
-    justify-content: space-around;
-}
-
-.card-3 {
-  width: 200px;
-}
-
-.card {
-  height: 130px;
-  margin-top: 100px;
-  padding: 15px;
-  background-color: whitesmoke;
-}
-
-.card li {
-    margin: 7px;
+.toggleDashboard {
+    width: 1550px;
+    background-color: blue;
 }
 
 </style>
+
+<!-- <script>
+    function dashboard() {
+       document.getElementById("cardId").style.width = "1550px";
+    }
+
+    function closeDashboard() {
+        document.getElementById("cardId").style.width = "1137px";
+    }
+</script> -->

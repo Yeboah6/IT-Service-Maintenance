@@ -1,11 +1,11 @@
 
  <!-- Sidebar -->
  
-<span onclick="openNav()" style="position:absolute;top: 18px;left:250px;"><i class="fa fa-bars bars" aria-hidden="true"></i></span>
+<span onclick="closeDashboard()" style="position:absolute;top: 18px;left:250px;"><i class="fa fa-bars bars" aria-hidden="true"></i></span>
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="margin-left:-150px;">&times;</a>
+  <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="margin-left:-150px;">&times;</a> -->
   <div>
-    <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;" onclick="hideNav()">
+    <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;">
   </div>
   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;margin-top:20px">
     <span><i class="fa fa-home" aria-hidden="true"></i></span>
@@ -76,14 +76,6 @@
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/* .sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-} */
 
 .sidenav a:hover {
   color: #f1f1f1;
@@ -144,11 +136,6 @@ span {
   cursor: pointer;
 }
 
-.toggleClass {
-  width: "250px";
-  margin-left: "0";
-}
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -159,13 +146,14 @@ span {
 .card-container {
     /* margin-top: -200px; */
     position: relative;
-    top: -140px;
+    top: -139px;
     margin-left: 133px;
     height: 200px;
     width: 1137px;
     background-color: red;
     transition: 0.5s;
 }
+
 .card-wrapper {
     margin-top: 50px;
     /* margin-bottom: 50px;  */
@@ -194,6 +182,10 @@ span {
   float: right;
   padding-right: 8px;
 } 
+
+.sidenavToggle {
+  width: 0;
+}
 </style>
 
 <!-- End of style -->

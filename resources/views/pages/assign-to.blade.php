@@ -39,7 +39,7 @@
                 <select name="assign_to" class="form-control" style="width:220px;" >
                   <option> ---Select Technician--- </option>
                   @foreach ($technician as $technician)
-                  <option value="{{ $technician -> name }}">{{ $technician -> rank }} {{ $technician -> name }}</option>
+                  <option value="{{ $technician -> rank}} {{ $technician -> name }}">{{ $technician -> rank }} {{ $technician -> name }}</option>
                   @endforeach
                 </select>
                 <!-- <input type="text" class="form-control" placeholder="Assign To" style="width: 370px;border-radius:6px" name="assigne_to" > -->

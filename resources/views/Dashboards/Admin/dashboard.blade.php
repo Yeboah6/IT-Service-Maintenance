@@ -3,9 +3,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="  sm:rounded-lg">
                 <div class="container wrapper">
-                    <span onclick="dashboard()">Expand Dashboard</span>
+                   
                     
-                    <div class="card-container cardId">
+                    <div class="card-container" id="cardId">
                         <div class="card-wrapper" style="margin-left: 50px;">
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
@@ -13,7 +13,7 @@
                                 <li>{{$wordCount}}</li>
                                 <li>28 Completed</li>
                             </ul>
-                            <!-- <span onclick="closeDashboard()">Dashboard close</span> -->
+                            
                             </div>
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
@@ -40,6 +40,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- <span >Expand Dashboard</span> -->
                     <div class="table-wrapper" style="margin-left: 170px;width:1100px;font-size:0.9rem;">
                         <div class="table">
                             <table class="table table-bordered table-striped" >
@@ -83,18 +84,24 @@
 <style>
 
 .toggleDashboard {
-    width: 1550px;
+    width: 1370px;
+    margin-left: -100px;
     background-color: blue;
 }
 
 </style>
 
-<!-- <script>
-    function dashboard() {
-       document.getElementById("cardId").style.width = "1550px";
-    }
+ <script>
+    // function dashboard() {
+    //    document.getElementById("cardId").style.width = "1550px";
+    // }
 
-    function closeDashboard() {
-        document.getElementById("cardId").style.width = "1137px";
-    }
-</script> -->
+
+
+
+// function dashboardToggle() {
+//     var dashboardExtend = document.getElementsById("cardId");
+//  dashboardExtend.toggle("toggleDashboard");
+// }
+
+</script> 

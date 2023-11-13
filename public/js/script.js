@@ -1,34 +1,15 @@
 
 
-
-var dashboardToggle = document.getElementsByClassName("cardId");
-var t;
-
-for(t=0; t < dashboardToggle.length; t++) {
-    dashboardToggle[t].addEventListener("click", function() {
-        this.classList.toggle("toggleDashboard");
-        var toggleContent = this.nextElementSibling;
-        if (toggleContent.style.width === "1137px") {
-            toggleContent.style.width = "1150px";
-        } else {
-            toggleContent.style.width = "1137px";
-        }
-    });
+   
+//   Dashboard ToggleEvent
+  function closeDashboard() {
+    document.getElementById("cardId").classList.toggle("toggleDashboard");
 }
 
 // sideNav Toggle
-
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "0";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-   
-
+function sideNavToggle() {
+    document.getElementById("mySidenav").classList.toggle("sidenavToggle");
+}
 
 //   sideNav Dropdown
 

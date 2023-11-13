@@ -1,59 +1,6 @@
 
  <!-- Sidebar -->
-
-<!-- <div class="sidenav side-nav-wrapper" id="hide">
-  <div>
-    <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;" onclick="hideNav()">
-  </div>
-  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;margin-top:20px">
-    <span><i class="fa fa-home" aria-hidden="true"></i></span>
-      <x-nav-link :href="route('dashboard')" class="font" :active="request()->routeIs('dashboard')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px">
-        {{ __('Dashboard') }}
-      </x-nav-link>
-  </div>
-  <button class="dropdown-btn" style="margin-left: -25px;"><span><i class="fa fa-plus-square-o" aria-hidden="true" style="margin: 15px;"></i></span>Incidents</button>
-    <div class="dropdown-container">
-      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-        <span><i class="fa fa-plus-square-o" aria-hidden="true" style="color: whitesmoke;"></i></span>
-          <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px;">
-            {{ __('Create Incident') }}
-          </x-nav-link>
-      </div>
-      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-        <span><i class="fa fa-list" aria-hidden="true" style="color: whitesmoke;"></i></span>
-          <x-nav-link :href="route('assign-incident')" class="font" :active="request()->routeIs('assign-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px;">
-            {{ __('Assign Incident') }}
-          </x-nav-link>
-      </div>
-    </div>
-  <button class="dropdown-btn" style="margin-left: -25px;"><span><i class="fa fa-user-o" aria-hidden="true" style="margin: 15px;"></i></span>Technicians</button>
-    <div class="dropdown-container">
-      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-        <span><i class="fa fa-user-o" aria-hidden="true" style="color: whitesmoke;"></i></span>
-        <x-nav-link :href="route('add-technicians')" class="font" :active="request()->routeIs('add-technicians')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px;">
-          {{ __('Add Technicians') }} 
-        </x-nav-link>
-      </div>
-  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-    <span><i class="fa fa-user-o" aria-hidden="true" style="color: whitesmoke;"></i></span>
-    <x-nav-link :href="route('technicians')" class="font" :active="request()->routeIs('technicians')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px;">
-      {{ __('Technicians') }} 
-    </x-nav-link>
-  </div>
-  </div>
-  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-    <span><i class="fa fa-file" aria-hidden="true"></i></span>
-    <x-nav-link :href="route('report')" class="font" :active="request()->routeIs('report')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px">
-      {{ __('Report') }}
-    </x-nav-link>
-  </div>
-  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-    <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
-    <x-nav-link :href="route('users')" class="font" :active="request()->routeIs('users')" style="font-size:1rem;color:aliceblue;margin-left:10px;margin-top:10px">
-     {{ __('Users') }} 
-    </x-nav-link>
-  </div>
-</div> -->
+ 
 <span onclick="openNav()" style="position:absolute;top: 18px;left:250px;"><i class="fa fa-bars bars" aria-hidden="true"></i></span>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="margin-left:-150px;">&times;</a>

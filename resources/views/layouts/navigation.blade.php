@@ -10,7 +10,7 @@
                     </x-nav-link>
                 </div> 
             </div>
-<section onclick="sideNavToggle()">
+<section onclick="inputToggle()">
     expand
 </section>
             <!-- Settings Dropdown -->

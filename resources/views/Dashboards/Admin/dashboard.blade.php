@@ -84,24 +84,11 @@
 <style>
 
 .toggleDashboard {
-    width: 1370px;
-    margin-left: -100px;
+    width: 1357px;
+    /* width: 100%; */
+    /* margin-left: -100px; */
+    margin-left: -87px;
     background-color: blue;
 }
 
 </style>
-
- <script>
-    // function dashboard() {
-    //    document.getElementById("cardId").style.width = "1550px";
-    // }
-
-
-
-
-// function dashboardToggle() {
-//     var dashboardExtend = document.getElementsById("cardId");
-//  dashboardExtend.toggle("toggleDashboard");
-// }
-
-</script> 

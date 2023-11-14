@@ -4,15 +4,14 @@
 //   Dashboard ToggleEvent
   function closeDashboard() {
     document.getElementById("cardId").classList.toggle("toggleDashboard");
-}
-
-// sideNav Toggle
-function sideNavToggle() {
     document.getElementById("mySidenav").classList.toggle("sidenavToggle");
 }
 
-//   sideNav Dropdown
+function inputToggle() {
+  document.getElementById("inputId").classList.toggle("toggleInputWidth");
+}
 
+//   sideNav Dropdown
   var dropdown = document.getElementsByClassName("dropdown-btn");
   var i;
   

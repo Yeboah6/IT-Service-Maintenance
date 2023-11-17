@@ -176,7 +176,7 @@ span {
 }
 
 .card li {
-    margin: 7px;
+  margin: 7px;
 }
 
 
@@ -190,5 +190,6 @@ span {
   width: 0;
 }
 </style>
+
 
 <!-- End of style -->

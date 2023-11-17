@@ -44,7 +44,7 @@
               <input type="text" class="form-control" name="statusCheck" hidden>
 
               <div class="col-12">
-                <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:60px;color:red">Submit</button>
+                <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:60px;">Submit</button>
               </div>
             </form>
           </div>
@@ -56,6 +56,11 @@
 
 
 <style>
+
+.col-12 button {
+  background-color: blue;
+}
+
 .create-container {
     /* margin-top: 200px; */
     position: relative;

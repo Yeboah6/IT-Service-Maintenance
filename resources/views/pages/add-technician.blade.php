@@ -8,8 +8,8 @@
           <form action="{{ url('add-technicians') }}" :active="request()->routeIs('techicians')" method="POST" class="row g-3">
             @csrf
             <div class="col-md-6">
-              <label class="form-label">Rank <span>*</span></label>
-              <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="rank" required>
+              <label class="form-label">Service Number <span>*</span></label>
+              <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="service_number" required>
             </div>
             <div class="col-md-6">
               <label class="form-label">Name <span>*</span></label>

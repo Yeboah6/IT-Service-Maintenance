@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('number');
             $table->string('email');
-            $table->string('rank');
+            $table->string('service_number');
             $table->string('status') -> nullable();
             $table->string('department');
             $table->timestamps();

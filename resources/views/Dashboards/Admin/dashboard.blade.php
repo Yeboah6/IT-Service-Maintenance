@@ -6,7 +6,7 @@
                    
                     
                     <div class="card-container" id="cardId">
-                        <div class="card-wrapper" style="margin-left: 50px;">
+                        <div class="card-wrapper" style="margin-left: 95px;">
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
                                 <li>Incidents <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <!-- <span >Expand Dashboard</span> -->
-                    <div class="table-wrapper" style="margin-left: 170px;width:1100px;font-size:0.9rem;">
+                    <div class="table-wrapper" style="margin-left: 190px;width:1050px;font-size:0.9rem;">
                         <div class="table">
                             <table class="table table-bordered table-striped" >
                                 <thead>

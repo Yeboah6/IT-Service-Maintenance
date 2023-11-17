@@ -5,7 +5,7 @@
 <div id="mySidenav" class="sidenav">
   <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="margin-left:-150px;">&times;</a> -->
   <div>
-    <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;">
+    <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:85px;">
   </div>
   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:50px">
     <span><i class="fa fa-home" aria-hidden="true"></i></span>
@@ -38,7 +38,7 @@
       </div>
   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
     <span><i class="fa fa-user-o" aria-hidden="true" style="color: whitesmoke;"></i></span>
-    <x-nav-link :href="route('technicians')" class="font" :active="request()->routeIs('technicians')" style="font: size 1.1rem;color:aliceblue;margin-left:10px;">
+    <x-nav-link :href="route('technicians')" class="font" :active="request()->routeIs('technicians')" style="font-size:1.1rem;color:aliceblue;margin-left:10px;">
       {{ __('Technicians') }} 
     </x-nav-link>
   </div>
@@ -149,7 +149,7 @@ span {
     position: relative;
     top: -139px;
     /* margin-left: 133px; */
-    margin-left: 87px;
+    margin-left: 78px;
     height: 200px;
     /* width: 1137px; */
     width: 100%;

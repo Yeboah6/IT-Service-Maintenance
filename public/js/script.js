@@ -8,7 +8,7 @@
 }
 
 function inputToggle() {
-  document.getElementById("inputId").classList.toggle("toggleInputWidth");
+  document.getElementById("inputId").classList.toggle("formToggle");
 }
 
 //   sideNav Dropdown

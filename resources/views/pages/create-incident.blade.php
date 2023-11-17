@@ -1,10 +1,10 @@
 <x-app-layout>
   <div class="create-container" id="cardId">
-    <div class="py-12" style="margin-left: 2px;margin-top:100px;">
+    <div class="py-12" style="margin-left: 17px;margin-top:100px;">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 30px;">
-          <div class="container wrapper" style="margin-top: 30px;">
-            <form action="{{ url('create-incident') }}" method="POST" class="row g-3" id="inputId">
+        <div class=" overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 30px;background-color:white;" id="inputId">
+          <div class="container wrapper" style="margin-top: 30px;" >
+            <form action="{{ url('create-incident') }}" method="POST" class="row g-3" >
               @csrf
               <div class="col-md-6">
                 <label class="form-label">Type of Issue <span>*</span></label>
@@ -17,7 +17,7 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label">Issue <span>*</span></label>
-                <input type="text" class="form-control " style="width: 510px;border-radius:6px" name="issue" required>
+                <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="issue" required>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Reported By</label>
@@ -75,7 +75,7 @@
     background-color: blue;
   }
 
-  .toggleInputWidth {
-    width: 1200px;
+  .formToggle {
+    margin-left: 84px;
   }
 </style>

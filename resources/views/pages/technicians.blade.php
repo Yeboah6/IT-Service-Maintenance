@@ -11,7 +11,7 @@
                         <div class="table">
                             <table class="table table-bordered table-striped" >
                                 <thead>
-                                    <th>Rank</th>
+                                    <th>Service Number</th>
                                     <th>Name</th>
                                     <th>Number</th>
                                     <th>Email</th>
@@ -22,7 +22,7 @@
                                 <tbody>
                                     @foreach ($technician as $technician)
                                     <tr>
-                                        <td>{{ $technician -> rank }}</td>
+                                        <td>{{ $technician -> service_number }}</td>
                                         <td>{{ $technician -> name }}</td>
                                         <td>{{ $technician -> number }}</td>
                                         <td>{{ $technician -> email }}</td>

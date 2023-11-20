@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('statusCheck') -> nullable();
             $table->string('from') -> nullable();
             $table->string('assign_to')->nullable();
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

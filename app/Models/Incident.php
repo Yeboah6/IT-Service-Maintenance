@@ -21,7 +21,7 @@ class Incident extends Model
         'assign_to'
     ];
 
-    // protected $attributes = [
-    //     'status' => 'Submitted',
-    // ];
+    public function incident() {
+        return $this -> belongsTo(Technicians::class, 'service_number', 'service_number');
+    }
 }

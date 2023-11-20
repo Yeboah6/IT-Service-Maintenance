@@ -43,7 +43,7 @@
                     <!-- <span >Expand Dashboard</span> -->
                     <div class="table-wrapper" style="margin-left: 190px;width:1050px;font-size:0.9rem;">
                         <div class="table">
-                            <table class="table table-bordered table-striped" >
+                            <table class="table table-bordered table-striped">
                                 <thead>
                                     <th>Reporter Name</th>
                                     <th>Issue Type</th>

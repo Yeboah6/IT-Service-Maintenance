@@ -18,4 +18,8 @@ class Technicians extends Model
         'service_number',
         'department'
     ];
+
+    public function technician() {
+        return $this -> belongsTo(Incident::class, 'service_number', 'service_number');
+    }
 }

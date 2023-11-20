@@ -1,8 +1,8 @@
 <x-app-layout>
-<!-- <div class="report-container"> -->
-    <div class="py-12" style="margin-left: 20px;margin-top:-100px;">
+<div class="report-container" id="cardId">
+    <div class="py-12" style="margin-left: 20px;margin-top:50px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="sm:rounded-lg" style="margin-top:45px;margin-left:200px;">
+            <div class="sm:rounded-lg" style="margin-top:-5px;margin-left:200px;">
                 <div class="container wrapper">
                     <ul>
                     <li>
@@ -93,7 +93,7 @@
             </div>
         </div>
         </div>
-    <!-- </div> -->
+    </div>
 </x-app-layout>
 
 
@@ -102,9 +102,9 @@
   .report-container {
     /* margin-top: 200px; */
     position: relative;
-    top: -102px;
+    top: -100px;
     margin-left: 50px;
-    height: 200px;
+    height: 100px;
     width: 100%;
     background-color: red;
 }

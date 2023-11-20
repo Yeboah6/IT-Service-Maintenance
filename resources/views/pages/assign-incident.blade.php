@@ -1,10 +1,10 @@
 <x-app-layout>
 <div class="assign-container" id="cardId">
-    <div class="py-12" style="margin-left: 30px;margin-top:100px;">
+    <div class="py-12" style="margin-left: 150px;margin-top:90px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 35px;">
-                <div class="container wrapper" style="margin-top: 50px;">
-                    <div class="table-wrapper">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 50px;margin-left:100px">
+                <div class="container wrapper" >
+                    <div class="table-wrapper" style="margin-left:20px;width:970px;font-size:0.9rem;margin-top:25px;">
                         <div class="table">
                             <table class="table table-bordered table-striped">
                                 <thead>
@@ -45,7 +45,7 @@
     /* margin-top: 200px; */
     position: relative;
     top: -141px;
-    margin-left: 110px;
+    /* margin-left: -5px; */
     height: 200px;
     width: 100%;
     background-color: red;

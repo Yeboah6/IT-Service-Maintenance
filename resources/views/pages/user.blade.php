@@ -1,8 +1,8 @@
 <x-app-layout>
-    <div class="user-container">
+    <div class="user-container" id="cardId" style="margin-top: -40px;">
         <div class="py-12" style="margin-left: 2px;margin-top:100px;">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="padding: 20px;margin-top: 25px;">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="padding: 20px;margin-top: 25px;margin-left:30px;">
                     <div class="table-wrapper">
                         <div class="table">
                             <table class="table table-bordered table-striped">
@@ -46,5 +46,6 @@
     height: 200px;
     width: 1147px;
     background-color: red;
+    transition: 0.5s;
 }
 </style>

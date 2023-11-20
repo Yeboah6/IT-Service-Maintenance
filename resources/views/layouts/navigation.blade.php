@@ -10,9 +10,9 @@
                     </x-nav-link>
                 </div> 
             </div>
-<section onclick="inputToggle()">
+<!-- <section onclick="inputToggle()">
     expand
-</section>
+</section> -->
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">

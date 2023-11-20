@@ -2,14 +2,15 @@
 
    
 //   Dashboard ToggleEvent
-  function closeDashboard() {
-    document.getElementById("cardId").classList.toggle("toggleDashboard");
-    document.getElementById("mySidenav").classList.toggle("sidenavToggle");
-}
-
-function inputToggle() {
+function closeDashboard() {
+  document.getElementById("cardId").classList.toggle("toggleDashboard");
+  document.getElementById("mySidenav").classList.toggle("sidenavToggle");
   document.getElementById("inputId").classList.toggle("formToggle");
 }
+
+// function inputToggle() {
+//   document.getElementById("inputId").classList.toggle("formToggle");
+// }
 
 //   sideNav Dropdown
   var dropdown = document.getElementsByClassName("dropdown-btn");

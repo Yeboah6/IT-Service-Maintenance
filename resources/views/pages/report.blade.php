@@ -1,8 +1,8 @@
 <x-app-layout>
-<div class="report-container" id="cardId">
+<div class="report-container" id="cardId" style="margin-left: 0;">
     <div class="py-12" style="margin-left: 20px;margin-top:50px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="sm:rounded-lg" style="margin-top:-5px;margin-left:200px;">
+            <div class="sm:rounded-lg" style="margin-top:-5px;margin-left:240px;">
                 <div class="container wrapper">
                     <ul>
                     <li>
@@ -103,7 +103,7 @@
     /* margin-top: 200px; */
     position: relative;
     top: -100px;
-    margin-left: 50px;
+    margin-left: 75px;
     height: 100px;
     width: 100%;
     background-color: red;

@@ -63,6 +63,7 @@
 
 <!-- Style -->
 <style>
+  
 .sidenav {
   height: 100%; /* 100% Full-height */
   width: 250px; /* 0 width - change this with JavaScript */
@@ -141,45 +142,6 @@ span {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
-/* Admin-Dashboard */
-
-.card-container {
-    /* margin-top: -200px; */
-    position: relative;
-    top: -139px;
-    /* margin-left: 133px; */
-    margin-left: 78px;
-    height: 200px;
-    /* width: 1137px; */
-    width: 100%;
-    background-color: red;
-    transition: 0.5s;
-}
-
-.card-wrapper {
-    margin-top: 50px;
-    /* margin-bottom: 50px;  */
-    display: flex;
-    justify-content: space-around;
-}
-
-.card-3 {
-  width: 200px;
-}
-
-.card {
-  height: 130px;
-  margin-top: 100px;
-  padding: 15px;
-  background-color: whitesmoke;
-}
-
-.card li {
-  margin: 7px;
-}
-
-
 
 .fa-caret-down {
   float: right;

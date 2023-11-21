@@ -21,7 +21,7 @@ class Incident extends Model
         'assign_to'
     ];
 
-    public function incident() {
-        return $this -> belongsTo(Technicians::class, 'service_number', 'service_number');
+    public function technician() {
+        return $this -> belongsTo(Technicians::class);
     }
 }

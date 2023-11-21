@@ -1,12 +1,10 @@
 <x-app-layout>
-    <div class="py-12"> 
+    <div class="card-container" id="cardId">
+    <div class="py-12" style="margin-top: 90px;"> 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="  sm:rounded-lg">
                 <div class="container wrapper">
-                   
-                    
-                    <div class="card-container" id="cardId">
-                        <div class="card-wrapper" style="margin-left: 95px;">
+                        <div class="card-wrapper" style="margin-left: 250px;margin-top: -150px;">
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
                                 <li>Incidents <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
@@ -42,6 +40,9 @@
                     </div>
                     <!-- <span >Expand Dashboard</span> -->
                     <div class="table-wrapper" style="margin-left: 190px;width:1050px;font-size:0.9rem;">
+                    <div class="tech-wrapper" style="margin: 20px;margin-left: 950px">
+                        <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span>+</span> Add</a></h1>
+                    </div>
                         <div class="table">
                             <table class="table table-bordered table-striped">
                                 <thead>
@@ -53,6 +54,7 @@
                                     <th>Status</th>
                                     <th>From (Department)</th> 
                                     <th>Assign To</th> 
+                                    <!-- <th>Technician Status</th>  -->
                                     <th>Action</th> 
                                 </thead>
                                 
@@ -83,10 +85,41 @@
 
 <style>
 
+/* Admin-Dashboard */
+
+.card-container {
+    position: absolute;
+    top: 63px;
+    height: 150px;
+    width: 100%;
+    background-color: red;
+    transition: 0.5s;
+}
+
+.card-wrapper {
+    /* margin-top: -50px; */
+    display: flex;
+    justify-content: space-around;
+    /* margin: -55px; */
+}
+
+.card-3 {
+  width: 200px;
+}
+
+.card {
+  height: 130px;
+  margin-top: 100px;
+  padding: 15px;
+  background-color: whitesmoke;
+}
+
+.card li {
+  margin: 7px;
+}
+
 .toggleDashboard {
     width: 1357px;
-    /* width: 100%; */
-    /* margin-left: -100px; */
     margin-left: -87px;
     background-color: blue;
 }

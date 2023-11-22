@@ -88,4 +88,23 @@ class IncidentController extends Controller
         $user -> delete();
         return redirect('/users');
     }
+
+    // Pending Incidents
+    public function pending() {
+        $pending = Incident::where('statusCheck', 'pending') -> get();
+        return view('pages.pending-incident', compact('pending'));
+    }
+
+    // Resolved Incidents
+    public function resolved() {
+        return view('pages.resolved-incident');
+    }
+
+    // pending To Done Function
+    public function pendingToDone($id) {
+        $pending = Incident::findOrFail($id);
+
+        $pending -> statusCheck = "Resolved";
+        return redirect('/pending-incident');
+    }
 }

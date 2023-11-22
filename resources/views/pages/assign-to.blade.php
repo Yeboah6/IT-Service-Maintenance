@@ -24,6 +24,18 @@
             {{ __('Assign Incident') }}
           </x-nav-link>
       </div>
+      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
+        <span><i class="fa fa-hourglass-half" style="color: whitesmoke;"></i></span>
+          <x-nav-link :href="route('pending-incident')" class="font" :active="request()->routeIs('pending-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+            {{ __('Pending Incident') }}
+          </x-nav-link>
+      </div>
+      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
+        <span><i class="	fa fa-thumbs-o-up" aria-hidden="true" style="color: whitesmoke;"></i></span>
+          <x-nav-link :href="route('resolved-incident')" class="font" :active="request()->routeIs('resolved-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+            {{ __('Resolved Incident') }}
+          </x-nav-link>
+      </div>
     </div>
     <button class="dropdown-btn" style="margin-left: -5px;margin-top: 15px;"><span><i class="fa fa-user-o" aria-hidden="true" style="margin: 15px;"></i></span>Technicians</button>
     <div class="dropdown-container">
@@ -104,7 +116,6 @@
                   @endforeach
                 </select>
               </div>
-              <img src="/public/image/GAF.png" alt="GAF" style="width: 30%;margin-left:85px;">
               <div class="col-12">
                 <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:30px;color:red">Submit</button>
               </div>

@@ -4,7 +4,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="  sm:rounded-lg">
                 <div class="container wrapper">
-                        <div class="card-wrapper" style="margin-left: 250px;margin-top: -150px;">
+                        <div class="card-wrapper" style="margin-left: 180px;margin-top: -170px;">
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
                                 <li>Incidents <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <!-- <span >Expand Dashboard</span> -->
-                    <div class="table-wrapper" style="margin-left: 190px;width:1050px;font-size:0.9rem;">
+                    <div class="table-wrapper" style="margin-left: 190px;width:1050px;font-size:0.9rem;margin-top:100px;">
                     <div class="tech-wrapper" style="margin: 20px;margin-left: 950px">
                         <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span>+</span> Add</a></h1>
                     </div>
@@ -100,7 +100,7 @@
     /* margin-top: -50px; */
     display: flex;
     justify-content: space-around;
-    /* margin: -55px; */
+    margin: -75px;
 }
 
 .card-3 {

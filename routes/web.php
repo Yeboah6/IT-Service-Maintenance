@@ -36,6 +36,11 @@ Route::middleware('auth')->group(function () {
     // Incident Routes
     Route::get('/create-incident', [IncidentController::class, 'create'])->name('create-incident');
     Route::post('/create-incident', [IncidentController::class, 'store'])->name('create-incident');
+    Route::get('/pending-incident', [IncidentController::class, 'pending'])->name('pending-incident');
+    Route::get('/resolved-incident', [IncidentController::class, 'resolved'])->name('resolved-incident');
+
+    // StatusCheck Route (Pending to Resolved)
+    Route::post('/resolve-incident/{id}', [IncidentController::class, 'pendingToDone'])->name('resolve-incident');
 
     // Assign Routes
     Route::get('/assign-incident', [IncidentController::class, 'viewAssign'])->name('assign-incident');

@@ -46,7 +46,7 @@
     top: -141px;
     height: 200px;
     width: 100%;
-    background-color: red;
+    background-color: #1995AD;
     transition: 0.5s;
 }
 

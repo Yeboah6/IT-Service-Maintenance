@@ -31,7 +31,7 @@
                                                 <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $pending -> statusCheck }}</span></td>
                                                 <td>{{ $pending -> from }}</td>
                                                 <td>{{ $pending -> assign_to }}</td>
-                                                <td><a href="{{url('/resolve-incident/'.$pending -> id)}}" class="btn btn-primary" style="background-color: blue;">Done</a></td>
+                                                <td><a href="{{url('/resolve-incident/'.$pending -> id)}}" type="submit" class="btn btn-primary" style="background-color: blue;">Done</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -52,7 +52,7 @@
     top: -140.8px;
     height: 150px;
     width: 100%;
-    background-color: red;
+    background-color: #1995AD;
     transition: 0.5s;
 }
 </style>

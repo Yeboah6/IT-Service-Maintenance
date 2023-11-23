@@ -5,7 +5,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 55px;margin-left:230px">
                 <div class="container wrapper">
                     <div class="tech-wrapper" style="margin: 10px;margin-left: 870px">
-                        <h1 class="btn btn-primary"><a href="add-technicians" :active="request()->routeIs('technicians')"><span>+</span> Add</a></h1>
+                        <h1 class="btn btn-primary"><a href="add-technicians" :active="request()->routeIs('technicians')"><span style="color: white;">+</span> Add</a></h1>
                     </div>
                     <div class="table-wrapper">
                         <div class="table">
@@ -48,7 +48,7 @@
     top: -140.8px;
     height: 200px;
     width: 100%;
-    background-color: red;
+    background-color: #1995AD;
     transition: 0.5s;
 }
 </style>

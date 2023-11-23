@@ -7,7 +7,7 @@
             <form action="{{ url('create-incident') }}" method="POST" class="row g-3" >
               @csrf
               <div class="col-md-6">
-                <label class="form-label">Type of Issue <span>*</span></label>
+                <label class="form-label">Type of Issue <span style="color: red;">*</span></label>
                 <select name="issue_type" class="form-select" style="width: 500px;border-radius:6px" required>
                 <option selected>-----</option>
                   <option>Hardware</option>
@@ -16,7 +16,7 @@
                 </select>
               </div>
               <div class="col-md-6">
-                <label class="form-label">Issue <span>*</span></label>
+                <label class="form-label">Issue <span style="color: red;">*</span></label>
                 <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="issue" required>
               </div>
               <div class="col-md-6">
@@ -24,7 +24,7 @@
                 <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="reporter" value="{{Auth::user()->name}}" readonly>
               </div>
               <div class="col-md-4">
-                <label class="form-label">Urgency <span>*</span></label>
+                <label class="form-label">Urgency <span style="color: red;">*</span></label>
                 <select class="form-select " style="width: 120px;border-radius:6px" name="urgency" required>
                   <option selected>-----</option>
                   <option>High</option>
@@ -33,11 +33,11 @@
                 </select>
               </div>
               <div class="col-md-2" style="margin-left: -200px">
-                <label class="form-label">From <span>*</span></label>
+                <label class="form-label">From <span style="color: red;">*</span></label>
                 <input type="text" class="form-control" placeholder="Unit or Department" style="width: 360px;border-radius:6px" name="from" required>
               </div>
               <div class="col-12">
-                <label class="form-label">Description <span>*</span></label>
+                <label class="form-label">Description <span style="color: red;">*</span></label>
                 <textarea class="form-control" placeholder="Problem description" style="height:100px;border-radius:6px" name="description" required></textarea>
               </div>
 
@@ -68,7 +68,7 @@
     margin-left: 237px;
     height: 200px;
     width: 1129px;
-    background-color: red;
+    background-color: #1995AD;
     transition: 0.5s;
   }
 

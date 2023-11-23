@@ -15,8 +15,25 @@
                                        <th>Description</th>
                                        <th>Status</th>
                                        <th>From (Department)</th>
-                                       <th>Department</th>
+                                       <th>Assigned To</th>
                                     </thead>
+
+                                    <tbody>
+                                        <tbody>
+                                            @foreach ($resolved as $resolved)
+                                            <tr>
+                                                <td>{{ $resolved -> reporter }}</td>
+                                                <td>{{ $resolved -> issue_type }}</td>
+                                                <td>{{ $resolved -> issue }}</td>
+                                                <td>{{ $resolved -> urgency }}</td>
+                                                <td>{{ $resolved -> description }}</td>
+                                                <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $resolved -> statusCheck }}</span></td>
+                                                <td>{{ $resolved -> from }}</td>
+                                                <td>{{ $resolved -> assign_to }}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </tbody>
                                 </table>
                             </div>        
                         </div>        
@@ -33,7 +50,7 @@
     top: -140.8px;
     height: 150px;
     width: 100%;
-    background-color: red;
+    background-color: #1995AD;
     transition: 0.5s;
 }
 </style>

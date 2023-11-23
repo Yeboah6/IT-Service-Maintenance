@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <!-- <span >Expand Dashboard</span> -->
-                    <div class="table-wrapper" style="margin-left: 190px;width:1050px;font-size:0.9rem;margin-top:100px;">
+                    <div class="table-wrapper" style="margin-left: 190px;width:1070px;font-size:0.9rem;margin-top:100px;">
                     <div class="tech-wrapper" style="margin: 20px;margin-left: 950px">
                         <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span>+</span> Add</a></h1>
                     </div>
@@ -92,7 +92,7 @@
     top: 63px;
     height: 150px;
     width: 100%;
-    background-color: red;
+    background-color: #1995AD;
     transition: 0.5s;
 }
 

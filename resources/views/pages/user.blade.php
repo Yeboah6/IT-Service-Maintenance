@@ -45,7 +45,7 @@
     margin-left: 219px;
     height: 200px;
     width: 1147px;
-    background-color: red;
+    background-color: #1995AD;
     transition: 0.5s;
 }
 </style>

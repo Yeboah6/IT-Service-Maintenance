@@ -8,23 +8,23 @@
           <form action="{{ url('add-technicians') }}" :active="request()->routeIs('techicians')" method="POST" class="row g-3">
             @csrf
             <div class="col-md-6">
-              <label class="form-label">Service Number <span>*</span></label>
+              <label class="form-label">Service Number <span style="color: red;">*</span></label>
               <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="service_number" required>
             </div>
             <div class="col-md-6">
-              <label class="form-label">Name <span>*</span></label>
+              <label class="form-label">Name <span style="color: red;">*</span></label>
               <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="name" required>
             </div>
             <div class="col-md-6">
-              <label class="form-label">Number <span>*</span></label>
+              <label class="form-label">Number <span style="color: red;">*</span></label>
               <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="number" required>
             </div>
             <div class="col-md-6">
-              <label class="form-label">Email <span>*</span></label>
+              <label class="form-label">Email <span style="color: red;">*</span></label>
               <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="email" required>
             </div>
             <div class="col-md-4">
-              <label class="form-label">Department <span>*</span></label>
+              <label class="form-label">Department <span style="color: red;">*</span></label>
               <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="department" required>
             </div>
 
@@ -49,7 +49,7 @@
     margin-left: 220px;
     height: 200px;
     width: 1146px;
-    background-color: red;
+    background-color: #1995AD;
     transition: 0.5s;
 }
 </style>

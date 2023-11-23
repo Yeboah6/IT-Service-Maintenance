@@ -134,7 +134,7 @@
     margin-left: 220px;
     height: 200px;
     width: 1146px;
-    background-color: red;
+    background-color: #1995AD;
     transition: 0.5s;
 }
 

@@ -1,11 +1,11 @@
-<nav x-data="{ open: false }" class=" dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700" style="background-color: #3A6B35;">
+<nav x-data="{ open: false }" class=" dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700" style="background-color: #4D648D;">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex"> 
                 <!-- Navigation Links -->
                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 250px;">
-                    <x-nav-link :href="route('dashboard')"  style="font-size:1.3rem;color:black;font-weight:bold;">
+                    <x-nav-link :href="route('dashboard')"  style="font-size:1.3rem;color:white;font-weight:bold;">
                         {{ __('IT Resolve System') }}
                     </x-nav-link>
                 </div> 

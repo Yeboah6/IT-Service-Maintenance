@@ -97,7 +97,8 @@ class IncidentController extends Controller
 
     // Resolved Incidents
     public function resolved() {
-        return view('pages.resolved-incident');
+        $resolved = Incident::where('statusCheck', 'resolved') -> get();
+        return view('pages.resolved-incident', compact('resolved'));
     }
 
     // pending To Done Function

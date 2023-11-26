@@ -3,7 +3,7 @@
     <div class="py-12" style="margin-left: 20px;margin-top:50px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="sm:rounded-lg" style="margin-top:-5px;margin-left:240px;">
-                <div class="container wrapper">
+                <!-- <div class="container wrapper">
                     <ul>
                     <li>
                         <label>Issue Type</label>
@@ -12,7 +12,7 @@
                         <option value="">Hardware</option>
                         <option value="">Software</option>
                         <option value="">Network</option>
-                        <!-- <option value="">Hello There</option> -->
+                        <option value="">Hello There</option>
                     </select>
                     </li>
                     <li>
@@ -70,7 +70,7 @@
                         <button class="btn btn-primary" type="submit">View</button>
                     </li>
                     </ul>
-                </div>
+                </div> -->
 
                 <button class="accordion">January</button>
                 <div class="panel">

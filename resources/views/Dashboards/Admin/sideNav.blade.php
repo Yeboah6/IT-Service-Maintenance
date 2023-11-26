@@ -89,7 +89,6 @@
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-
 .sidenav a:hover {
   color: red;
 }

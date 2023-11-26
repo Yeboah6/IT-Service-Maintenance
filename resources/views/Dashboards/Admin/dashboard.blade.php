@@ -39,9 +39,9 @@
                         </div>
                     </div>
                     <!-- <span >Expand Dashboard</span> -->
-                    <div class="table-wrapper" style="margin-left: 190px;width:1070px;font-size:0.9rem;margin-top:100px;">
-                    <div class="tech-wrapper" style="margin: 20px;margin-left: 950px">
-                        <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span>+</span> Add</a></h1>
+                    <div class="table-wrapper" style="margin-left: 200px;width:1070px;font-size:0.9rem;margin-top:100px;">
+                    <div class="tech-wrapper" style="margin: 20px;margin-left: 970px">
+                        <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span style="color: white;">+</span> Add</a></h1>
                     </div>
                         <div class="table">
                             <table class="table table-bordered table-striped">

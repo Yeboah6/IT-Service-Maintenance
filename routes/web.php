@@ -39,17 +39,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/pending-incident', [IncidentController::class, 'pending'])->name('pending-incident');
     Route::get('/resolved-incident', [IncidentController::class, 'resolved'])->name('resolved-incident');
 
+    // User Incident Routes
+    Route::get('/user-pending', [IncidentController::class, 'userPending'])->name('user-pending');
+    Route::get('/user-resolved', [IncidentController::class, 'userResolved'])->name('user-resolved');
+
+
     // StatusCheck Route (Pending to Resolved)
     Route::post('/resolve-incident/{id}', [IncidentController::class, 'pendingToDone'])->name('resolve-incident');
 
     // Assign Routes
-    Route::get('/assign-incident', [IncidentController::class, 'viewAssign'])->name('assign-incident');
-
-    // Assign Routes
     Route::get('/assign-to/{id}', [IncidentController::class, 'assignTo'])->name('assign-to');
     Route::post('/assign-to/{id}', [IncidentController::class, 'assign'])->name('assign-to');
+    Route::get('/assign-incident', [IncidentController::class, 'viewAssign'])->name('assign-incident');
 
-    // Technician Route
+    // Technician Routes
     Route::get('/technicians', [technicianController::class, 'technician']) -> name('technicians');
     Route::get('/add-technicians', [technicianController::class, 'addTechnician']) -> name('add-technicians');
     Route::post('/add-technicians', [technicianController::class, 'addTechnicians']) -> name('add-technicians');

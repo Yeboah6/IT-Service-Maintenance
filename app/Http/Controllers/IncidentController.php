@@ -108,4 +108,12 @@ class IncidentController extends Controller
         $pending -> statusCheck = "Resolved";
         return redirect('/pending-incident');
     }
+
+    public function userPending() {
+        return view('pages.user-pending');
+    }
+
+    public function userResolved() {
+        return view('pages.user-resolved');
+    }
 }

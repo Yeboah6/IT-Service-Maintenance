@@ -1,24 +1,33 @@
 <nav>
-    <div class="side-nav-wrapper">
+  <div class="side-nav-wrapper">
     <div>
-                <!-- <a href="/"> -->
-                    <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;margin-top:-195px">
-                <!-- </a> -->
-            </div> 
-    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-    <span><i class="fa fa-home" aria-hidden="true"></i></span>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 6px;">
-                <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span> 
-                    <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size: 1rem;color:aliceblue;margin-left:10px;">
-                        {{ __('Create Incident') }}
-                    </x-nav-link>
-                </div>
+      <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;margin-top:-130px">
+    </div> 
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
+      <span><i class="fa fa-home" aria-hidden="true" style="color: whitesmoke;" ></i></span>
+      <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+          {{ __('Dashboard') }}
+      </x-nav-link>
     </div>
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
+      <span><i class="fa fa-plus-square-o" aria-hidden="true" style="color: whitesmoke;"></i></span> 
+      <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size: 1rem;color:aliceblue;margin-left:10px;">
+          {{ __('Create Incident') }}
+      </x-nav-link>
+    </div>
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
+      <span><i class="fa fa-hourglass-half" style="color: whitesmoke;"></i></i></span> 
+      <x-nav-link :href="route('user-pending')" :active="request()->routeIs('pending-incident')" style="font-size: 1rem;color:aliceblue;margin-left:10px;">
+          {{ __('Pending Incident') }}
+      </x-nav-link>
+    </div>
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
+      <span><i class="fa fa-plus-square-o" aria-hidden="true" style="color: whitesmoke;"></i></span> 
+      <x-nav-link :href="route('user-resolved')" :active="request()->routeIs('resolved-incident')" style="font-size: 1rem;color:aliceblue;margin-left:10px;">
+          {{ __('Resolved Incident') }}
+      </x-nav-link>
+    </div>
+  </div>
 
 </nav>
 
@@ -27,7 +36,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #2C5F2D;
+  background-color: #283655;
   height: 100%;
   width: 220px;
   padding-top: 200px;

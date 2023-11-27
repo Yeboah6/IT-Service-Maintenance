@@ -91,7 +91,7 @@
     
               <div class="col-md-6">
                 <label class="form-label">Reported By</label>
-                <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="reporter" value="{{Auth::user()->name}}" readonly>
+                <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="reporter" value="{{$incident -> reporter}}" readonly>
               </div>
               <div class="col-md-4">
                 <label class="form-label">Urgency</label>
@@ -112,7 +112,7 @@
                 <select name="assign_to" class="form-control" style="width:220px;" >
                   <option> ---Select Technician--- </option>
                   @foreach ($technician as $technician)
-                  <option value="{{ $technician -> rank}} {{ $technician -> name }}">{{ $technician -> rank }} {{ $technician -> name }}</option>
+                  <option value="{{ $technician -> service_number}} {{ $technician -> name }}">{{ $technician -> service_number }} {{ $technician -> name }}</option>
                   @endforeach
                 </select>
               </div>

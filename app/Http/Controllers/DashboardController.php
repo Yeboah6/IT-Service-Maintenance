@@ -23,10 +23,9 @@ class DashboardController extends Controller
                 // $display = Incident::find(1) -> technician;
                 return view('Dashboards.Admin.dashboard', compact('incident', 'wordCount', 'assignCount', 'users', 'technicians'));
             } else {
-                $incident = Incident::all();
+                $incident = Incident::where('reporter', auth()->user()-> name) -> get();
                 return view('Dashboards.User.User-dashboard', compact('incident'));
             }
         }
     }
 } 
-

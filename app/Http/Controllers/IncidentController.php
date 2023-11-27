@@ -109,10 +109,13 @@ class IncidentController extends Controller
         return redirect('/pending-incident');
     }
 
+    // User Pending Function
     public function userPending() {
+        $userPending = Incident::where('statusCheck','pending') -> get();
         return view('pages.user-pending');
     }
 
+    // User Resolved Function
     public function userResolved() {
         return view('pages.user-resolved');
     }

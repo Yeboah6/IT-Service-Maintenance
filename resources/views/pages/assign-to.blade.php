@@ -5,12 +5,12 @@
     <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:85px;">
   </div>
   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:50px">
-    <span><i class="fa fa-home" aria-hidden="true"></i></span>
+    <span><i class="fa fa-home" aria-hidden="true" style="color: whitesmoke;"></i></span>
     <x-nav-link :href="route('dashboard')" class="font" :active="request()->routeIs('dashboard')" style="font-size:1.1rem;color:aliceblue;margin-left:10px;">
       {{ __('Dashboard') }}
     </x-nav-link>
   </div>
-  <button class="dropdown-btn" style="margin-left: -5px;"><span><i class="fa fa-plus-square-o" aria-hidden="true" style="margin: 15px;font: size 1.1rem;"></i></span>Incidents</button>
+  <button class="dropdown-btn" style="margin-left: -5px;"><span><i class="fa fa-plus-square-o" aria-hidden="true" style="margin: 15px;font: size 1.1rem;color:whitesmoke"></i></span>Incidents</button>
     <div class="dropdown-container">
       <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
         <span><i class="fa fa-plus-square-o" aria-hidden="true" style="color: whitesmoke;"></i></span>
@@ -37,7 +37,7 @@
           </x-nav-link>
       </div>
     </div>
-    <button class="dropdown-btn" style="margin-left: -5px;margin-top: 15px;"><span><i class="fa fa-user-o" aria-hidden="true" style="margin: 15px;"></i></span>Technicians</button>
+    <button class="dropdown-btn" style="margin-left: -5px;margin-top: 15px;"><span><i class="fa fa-user-o" aria-hidden="true" style="margin: 15px;color:whitesmoke"></i></span>Technicians</button>
     <div class="dropdown-container">
       <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
         <span><i class="fa fa-user-o" aria-hidden="true" style="color: whitesmoke;"></i></span>
@@ -53,13 +53,13 @@
   </div>
   </div>
   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
-    <span><i class="fa fa-file" aria-hidden="true"></i></span>
+    <span><i class="fa fa-file" aria-hidden="true" style="color: whitesmoke;"></i></span>
     <x-nav-link :href="route('report')" class="font" :active="request()->routeIs('report')" style="font-size:1.1rem;color:aliceblue;margin-left:10px;">
       {{ __('Report') }}
     </x-nav-link>
   </div>
   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:40px">
-    <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+    <span><i class="fa fa-user-o" aria-hidden="true" style="color: whitesmoke;"></i></span>
     <x-nav-link :href="route('users')" class="font" :active="request()->routeIs('users')" style="font-size:1.1rem;color:aliceblue;margin-left:10px;">
      {{ __('Users') }} 
     </x-nav-link>
@@ -112,7 +112,7 @@
                 <select name="assign_to" class="form-control" style="width:220px;" >
                   <option> ---Select Technician--- </option>
                   @foreach ($technician as $technician)
-                  <option value="{{ $technician -> service_number}} {{ $technician -> name }}">{{ $technician -> service_number }} {{ $technician -> name }}</option>
+                  <option value="{{ $technician -> name }}">{{ $technician -> name }}</option>
                   @endforeach
                 </select>
               </div>
@@ -146,15 +146,10 @@
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #2C5F2D; /* Green*/
+  background-color: #283655; /* Green*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-
-.sidenav a:hover {
-  color: #f1f1f1;
 }
 
 .sidenav .closebtn {
@@ -165,7 +160,7 @@
   margin-left: 150px;
 }
 
-.sidenav a, .dropdown-btn {
+/* .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   color: whitesmoke;
@@ -175,23 +170,7 @@
   text-align: left;
   cursor: pointer;
   outline: none;
-}
-
-.sidenav a:hover, .dropdown-btn:hover {
-  color: red;
-}
-
-.active {
-  background-color: #2C5F2D;
-  color: white;
-}
-
-.dropdown-container {
-  display: none;
-  background-color: red;
-  padding: 6px;
-  padding-left: 8px;
-}
+} */
 
 .fa-caret-down {
   float: right;

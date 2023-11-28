@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use Illuminate\Http\Request;
 use App\Models\Incident;
 use App\Models\Technicians;
@@ -9,11 +10,10 @@ use App\Models\User;
 
 class IncidentController extends Controller
 {
-
-    // 
     // Display Incident Form
     public function create() {
-        return view('pages.create-incident');
+        $department = Department::all();
+        return view('pages.create-incident', compact('department'));
     }
 
     // Store Incident
@@ -31,7 +31,6 @@ class IncidentController extends Controller
         $data -> save();
         return redirect('/dashboard');
     }
- 
 
     // Display Assign To Page
     public function viewAssign() {
@@ -106,6 +105,7 @@ class IncidentController extends Controller
         $pending = Incident::findOrFail($id);
 
         $pending -> statusCheck = "Resolved";
+        $pending -> update();
         return redirect('/pending-incident');
     }
 
@@ -118,5 +118,27 @@ class IncidentController extends Controller
     // User Resolved Function
     public function userResolved() {
         return view('pages.user-resolved');
+    }
+
+    // View Department Function
+    public function department() {
+        $department = Department::all();
+        return view('pages.department', compact('department'));
+    }
+
+    // View Add Department Function
+    public function addDepartment() {
+        return view('pages.add-department');
+    }
+
+    // Store Department Function
+    public function addDepartments(Request $request) {
+        $department = new Department();
+
+        $department -> department = $request -> input("department");
+        $department -> cell = $request -> input("cell");
+
+        $department -> save();
+        return redirect('/department');
     }
 }

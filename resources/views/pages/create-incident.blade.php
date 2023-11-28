@@ -9,7 +9,7 @@
               <div class="col-md-6">
                 <label class="form-label">Type of Issue <span style="color: red;">*</span></label>
                 <select name="issue_type" class="form-select" style="width: 500px;border-radius:6px" required>
-                <option selected>-----</option>
+                <option selected>---Select Issue Type---</option>
                   <option>Hardware</option>
                   <option>Network</option>
                   <option>Software</option>
@@ -25,16 +25,22 @@
               </div>
               <div class="col-md-4">
                 <label class="form-label">Urgency <span style="color: red;">*</span></label>
-                <select class="form-select " style="width: 120px;border-radius:6px" name="urgency" required>
-                  <option selected>-----</option>
+                <select class="form-select " style="width: 160px;border-radius:6px" name="urgency" required>
+                  <option selected>---Urgency---</option>
                   <option>High</option>
                   <option>Medium</option>
                   <option>Low</option>
                 </select>
               </div>
-              <div class="col-md-2" style="margin-left: -200px">
+              <div class="col-md-2" style="margin-left: -170px">
                 <label class="form-label">From <span style="color: red;">*</span></label>
-                <input type="text" class="form-control" placeholder="Unit or Department" style="width: 360px;border-radius:6px" name="from" required>
+                <select name="from" class="form-control"  style="width: 320px;border-radius:6px">
+                <option>---Select Department---</option>
+                  @foreach ($department as $department)
+                    <option value="{{ $department -> cell }}"> {{ $department -> cell }} </option>
+                  @endforeach
+                </select>
+                <!-- <input type="text" class="form-control" placeholder="Unit or Department" style="width: 320px;border-radius:6px" name="from" required> -->
               </div>
               <div class="col-12">
                 <label class="form-label">Description <span style="color: red;">*</span></label>

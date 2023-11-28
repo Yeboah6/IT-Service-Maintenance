@@ -48,12 +48,27 @@
           {{ __('Add Technicians') }} 
         </x-nav-link>
       </div>
-  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
     <span><i class="fa fa-user-o" aria-hidden="true" style="color: whitesmoke;"></i></span>
     <x-nav-link :href="route('technicians')" class="font" :active="request()->routeIs('technicians')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
       {{ __('Technicians') }} 
     </x-nav-link>
   </div>
+  </div>
+  <button class="dropdown-btn" style="margin-left: -5px;margin-top: 15px;"><span><i class="fa fa-building-o" aria-hidden="true" style="margin: 15px;"></i></span>Departments</button>
+  <div class="dropdown-container">
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
+      <span><i class="fa fa-plus" aria-hidden="true" style="color: whitesmoke;"></i></span>
+      <x-nav-link :href="route('add-department')" class="font" :active="request()->routeIs('add-department')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+        {{ __('Add Department') }} 
+      </x-nav-link>
+    </div>
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
+      <span><i class="fa fa-building-o" aria-hidden="true" style="color: whitesmoke;"></i></span>
+      <x-nav-link :href="route('department')" class="font" :active="request()->routeIs('department')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+        {{ __('Department') }} 
+      </x-nav-link>
+    </div>
   </div>
   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
     <span><i class="fa fa-file" aria-hidden="true"></i></span>

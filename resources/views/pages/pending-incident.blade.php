@@ -2,7 +2,7 @@
     <div class="pending-container" id="cardId">
         <div class="py-12" style="margin-left: 2px;margin-top:100px;">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 55px;margin-left:230px">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 55px;margin-left:196px;width:1070px">
                     <div class="container wrapper">
                         <div class="table-wrapper" style="font-size: 0.9rem;margin-top:25px;">
                             <div class="table">
@@ -31,7 +31,10 @@
                                                 <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $pending -> statusCheck }}</span></td>
                                                 <td>{{ $pending -> from }}</td>
                                                 <td>{{ $pending -> assign_to }}</td>
-                                                <td><a href="{{url('/resolve-incident/'.$pending -> id)}}" type="submit" class="btn btn-primary" style="background-color: blue;">Done</a></td>
+                                                <form action="{{url('/resolve-incident/'.$pending -> id)}}" method="post">
+                                                    @csrf
+                                                <td><button type="submit" class="btn btn-primary" style="background-color: blue;">Done</button></td>
+                                                </form>
                                             </tr>
                                             @endforeach
                                         </tbody>

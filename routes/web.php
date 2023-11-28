@@ -63,6 +63,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/report', [IncidentController::class, 'report'])->name('report');
     Route::get('/users', [IncidentController::class, 'viewusers'])->name('users');
 
+    // Department Routes
+    Route::get('/department', [IncidentController::class, 'department']) -> name('department');
+    Route::get('/add-department', [IncidentController::class, 'addDepartment']) -> name('add-department');
+    Route::post('/add-department', [IncidentController::class, 'addDepartments']) -> name('add-department');
+
     // Delete Routes
     Route::get('/delete/{id}', [IncidentController::class, 'delete']) -> name('delete');
     Route::get('/delete-user/{id}', [IncidentController::class, 'deleteUser']) -> name('delete-user');

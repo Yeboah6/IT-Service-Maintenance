@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('incidents', function (Blueprint $table) {
             $table->id();
-            // $table->string('technician_id');
+            $table->string('ticket_no');
             $table->string('issue') -> nullable();
             $table->string('issue_type') -> nullable();
             $table->string('description') -> nullable();

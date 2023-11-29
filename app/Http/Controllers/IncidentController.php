@@ -10,6 +10,7 @@ use App\Models\User;
 
 class IncidentController extends Controller
 {
+
     // Display Incident Form
     public function create() {
         $department = Department::all();
@@ -18,6 +19,15 @@ class IncidentController extends Controller
 
     // Store Incident
     public function store(Request $request) {
+
+        $characters = 'TK';
+        // generate a pin based on 2 * 7 digits + a random character
+        $pin = mt_rand(10000, 99999)
+        . mt_rand(10000, 99999)
+        . $characters[rand(0, strlen($characters) - 1)];
+
+        // shuffle the result
+        $string = str_shuffle($pin);
 
         $data = new Incident();
 
@@ -28,6 +38,7 @@ class IncidentController extends Controller
         $data -> from = $request -> input('from');
         $data -> description = $request -> input('description');
         $data -> statusCheck = "Submitted";
+        $data -> ticket_no = $string;
         $data -> save();
         return redirect('/dashboard');
     }

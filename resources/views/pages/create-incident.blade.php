@@ -48,6 +48,7 @@
               </div>
 
               <input type="text" class="form-control" name="statusCheck" hidden>
+              <input type="text" class="form-control" name="ticket_no" hidden>
 
               <div class="col-12">
                 <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:60px;">Submit</button>

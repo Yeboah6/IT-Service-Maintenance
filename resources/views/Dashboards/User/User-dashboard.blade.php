@@ -9,6 +9,7 @@
                         <div class="table">
                             <table class="table table-bordered table-striped">
                                 <thead>
+                                    <th>Ticket No.</th>
                                     <th>Reporter Name</th>
                                     <th>Issue Type</th>
                                     <th>Issue</th>
@@ -21,6 +22,7 @@
                                 <tbody>
                                     @foreach($incident as $incidnet)
                                     <tr>
+                                        <td></td>
                                         <td>{{$incidnet -> reporter}}</td>
                                         <td>{{$incidnet -> issue_type}}</td>
                                         <td>{{$incidnet -> issue}}</td>

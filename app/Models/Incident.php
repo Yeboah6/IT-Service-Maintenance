@@ -18,7 +18,8 @@ class Incident extends Model
         'urgency',
         'statusCheck',
         'from',
-        'assign_to'
+        'assign_to',
+        'ticket_no'
     ];
 
     public function technician() {

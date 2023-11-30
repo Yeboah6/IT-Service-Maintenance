@@ -32,13 +32,13 @@
 </nav>
 
 <style>
-    .side-nav-wrapper {
+.side-nav-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   background-color: #283655;
   height: 100%;
-  width: 220px;
+  width: 246px;
   padding-top: 200px;
   line-height: 50px;
 }

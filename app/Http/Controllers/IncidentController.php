@@ -22,12 +22,11 @@ class IncidentController extends Controller
 
         $characters = 'TK';
         // generate a pin based on 2 * 7 digits + a random character
-        $pin = mt_rand(10000, 99999)
-        . mt_rand(10000, 99999)
-        . $characters[rand(0, strlen($characters) - 1)];
+        $pin = mt_rand(10, 99) . mt_rand(10, 99);
+        $ticket = $characters. '' .$pin;
 
         // shuffle the result
-        $string = str_shuffle($pin);
+        // $string = str_shuffle($pin);
 
         $data = new Incident();
 
@@ -38,7 +37,7 @@ class IncidentController extends Controller
         $data -> from = $request -> input('from');
         $data -> description = $request -> input('description');
         $data -> statusCheck = "Submitted";
-        $data -> ticket_no = $string;
+        $data -> ticket_no = $ticket; 
         $data -> save();
         return redirect('/dashboard');
     }

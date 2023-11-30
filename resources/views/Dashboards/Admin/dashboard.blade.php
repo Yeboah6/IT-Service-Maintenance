@@ -72,7 +72,7 @@
                                         <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incidnet -> statusCheck}}</span></td>
                                         <td>{{$incidnet -> from}}</td>
                                         <td>{{$incidnet -> assign_to}}</td>
-                                        <!-- <td>{{$incident -> ticket_no}}</td> -->
+                                        
                                         <td><a href="{{url('/delete/'.$incidnet -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
                                     </tr> 
                                     @endforeach

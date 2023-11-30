@@ -1,9 +1,9 @@
 <x-app-layout>
   <div class="create-container" id="cardId">
-    <div class="py-12" style="margin-left: 17px;margin-top:100px;">
+    <div class="py-12" >
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class=" overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 30px;background-color:white;" id="inputId">
-          <div class="container wrapper" style="margin-top: 30px;" >
+        <div class=" overflow-hidden shadow-sm sm:rounded-lg"  id="inputId">
+          <div class="container wrapper"  >
             <form action="{{ url('create-incident') }}" method="POST" class="row g-3" >
               @csrf
               <div class="col-md-6">
@@ -64,12 +64,11 @@
 
 <style>
 
-.col-12 button {
+/* .col-12 button {
   background-color: blue;
 }
 
 .create-container {
-    /* margin-top: 200px; */
     position: relative;
     top: -141px;
     margin-left: 237px;
@@ -81,13 +80,11 @@
 
 .toggleDashboard {
     width: 1453px;
-    /* width: 100%; */
-    /* margin-left: -100px; */
     margin-left: -87px;
     background-color: blue;
   }
 
   .formToggle {
     margin-left: 84px;
-  }
+  } */
 </style>

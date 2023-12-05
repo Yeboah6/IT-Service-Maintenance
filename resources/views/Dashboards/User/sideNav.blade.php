@@ -1,80 +1,130 @@
-<nav>
-  <div class="side-nav-wrapper">
-    <div>
-      <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:60px;margin-top:-130px">
-    </div> 
-    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
-      <span><i class="fa fa-home" aria-hidden="true" style="color: whitesmoke;" ></i></span>
-      <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
-          {{ __('Dashboard') }}
+
+<span onclick="closeDashboard()" style="position:absolute;top: 18px;left:250px;"><i class="fa fa-bars bars" aria-hidden="true"></i></span>
+<div id="mySidenav" class="sidenav">
+  <div>
+    <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:85px;">
+  </div>
+  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:30px">
+    <span><i class="fa fa-home" aria-hidden="true"></i></span>
+      <x-nav-link :href="route('dashboard')" class="font" :active="request()->routeIs('dashboard')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+        {{ __('Dashboard') }}
       </x-nav-link>
-    </div>
-    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
-      <span><i class="fa fa-plus-square-o" aria-hidden="true" style="color: whitesmoke;"></i></span> 
-      <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size: 1rem;color:aliceblue;margin-left:10px;">
-          {{ __('Create Incident') }}
-      </x-nav-link>
-    </div>
-    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
-      <span><i class="fa fa-hourglass-half" style="color: whitesmoke;"></i></i></span> 
-      <x-nav-link :href="route('user-pending')" :active="request()->routeIs('pending-incident')" style="font-size: 1rem;color:aliceblue;margin-left:10px;">
-          {{ __('Pending Incident') }}
-      </x-nav-link>
-    </div>
-    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;">
-      <span><i class="fa fa-plus-square-o" aria-hidden="true" style="color: whitesmoke;"></i></span> 
-      <x-nav-link :href="route('user-resolved')" :active="request()->routeIs('resolved-incident')" style="font-size: 1rem;color:aliceblue;margin-left:10px;">
-          {{ __('Resolved Incident') }}
-      </x-nav-link>
-    </div>
   </div>
 
-</nav>
+  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:30px">
+        <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span>
+          <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+            {{ __('Create Incident') }}
+          </x-nav-link>
+      </div>
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:30px">
+        <span><i class="fa fa-hourglass-half"></i></span>
+          <x-nav-link :href="route('pending-incident')" class="font" :active="request()->routeIs('pending-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+            {{ __('Pending Incident') }}
+          </x-nav-link>
+      </div>
+      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:30px">
+        <span><i class="	fa fa-thumbs-o-up" aria-hidden="true"></i></span>
+          <x-nav-link :href="route('resolved-incident')" class="font" :active="request()->routeIs('resolved-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+            {{ __('Resolved Incident') }}
+          </x-nav-link>
+      </div>
+</div>
+
+<div id="main">
+
+</div>
 
 <style>
-.side-nav-wrapper {
-  position: fixed;
+  
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 246px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
+  background-color: #283655; /* Green*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.sidenav a:hover {
+  color: red;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: -200px;
+  font-size: 36px;
+  margin-left: 150px;
+}
+
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: whitesmoke;
+  display: block;
+  border: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #1995AD;
+}
+
+.active {
   background-color: #283655;
-  height: 100%;
-  width: 246px;
-  padding-top: 200px;
-  line-height: 50px;
+  color: white;
 }
 
-/* .main-container {
-  margin-left: 200px;
-} */
-
-.font {
-  font-size: 1.5rem;
+.dropdown-container {
+  display: none;
+  background-color: #1995AD;
+  padding: 6px;
+  padding-left: 8px;
 }
 
-.card-wrapper {
-  margin-top: 50px;
-  display: flex;
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
 }
 
-.card-wrapper {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 50px;
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
 }
-
-.card-3 {
-  width: 120px;
-}
-
-.card {
-  padding: 15px;
-  text-align: center;
-}
-
 
 span {
-  color: red;
+  color: #1995AD;
   font-weight: bold;
   font-size: 1.1rem;
 }
+
+.bars {
+  cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+} 
+
+.sidenavToggle {
+  width: 0;
+}
 </style>
+
+
+<!-- End of style -->
+

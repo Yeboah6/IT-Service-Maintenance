@@ -67,12 +67,9 @@
 </div>
 
 <div id="main">
-
 </div>
 
-
-
-  <div class="assign-to-container" id="cardId">
+<div class="assign-to-container" id="cardId">
     <div class="py-12" style="margin-left: 2px;margin-top:100px;">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 30px;margin-left:30px;">
@@ -117,7 +114,7 @@
                 </select>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:30px;color:red">Submit</button>
+                <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:30px;">Submit</button>
               </div>
             </form>
         </div>
@@ -128,6 +125,9 @@
 </x-app-layout>
 
 <style>
+   .col-12 button {
+  background-color: blue;
+}
   .assign-to-container {
     position: relative;
     top: -181px;
@@ -137,7 +137,6 @@
     background-color: #1995AD;
     transition: 0.5s;
 }
-
 
 .sidenav {
   height: 100%; /* 100% Full-height */
@@ -159,18 +158,6 @@
   font-size: 36px;
   margin-left: 150px;
 }
-
-/* .sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  color: whitesmoke;
-  display: block;
-  border: none;
-  width:100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-} */
 
 .fa-caret-down {
   float: right;

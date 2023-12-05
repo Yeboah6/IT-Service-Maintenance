@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class TechnicianController extends Controller
 {
-    //
 
     public function technician() {
         $technician = Technicians::all();

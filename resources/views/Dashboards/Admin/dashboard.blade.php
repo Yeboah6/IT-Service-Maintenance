@@ -1,8 +1,8 @@
 <x-app-layout>
     <div class="card-container" id="cardId">
-    <div class="py-12" style="margin-top: 90px;"> 
+    <div class="py-12" style="margin-top: 90px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="  sm:rounded-lg">
+            <div class="sm:rounded-lg">
                 <div class="container wrapper">
                         <div class="card-wrapper" style="margin-left: 180px;margin-top: -170px;">
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
@@ -33,16 +33,14 @@
                                 <li>{{$technicians}}</li>
                                 <li>2 Available</li>
                             </ul>
-                                <p></p>
-                                <h5></h5>
                             </div>
                         </div>
                     </div>
-                    <!-- <span >Expand Dashboard</span> -->
-                    <div class="table-wrapper" style="margin-left: 180px;width:1090px;font-size:0.9rem;margin-top:100px;">
-                    <div class="tech-wrapper" style="margin: 20px;margin-left: 970px">
-                        <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span style="color: white;">+</span> Add</a></h1>
-                    </div>
+                    
+                    <div class="table-wrapper" style="margin-left: 185px;width:1090px;font-size:0.9rem;margin-top:100px;">
+                        <div class="tech-wrapper" style="margin: 20px;margin-left: 980px">
+                            <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span style="color: white;">+</span> Add</a></h1>
+                        </div>
                         <div class="table">
                             <table class="table table-bordered table-striped">
                                 <thead>
@@ -58,12 +56,11 @@
                                     <!-- <th>Technician Status</th>  -->
                                     <th>Action</th> 
                                 </thead>
-                                
-                                
+
                                 <tbody>
                                     @foreach($incident as $incidnet)
                                     <tr>
-                                        <td></td>
+                                        <td>{{$incidnet -> ticket_no}}</td>
                                         <td>{{$incidnet -> reporter}}</td>
                                         <td>{{$incidnet -> issue_type}}</td>
                                         <td>{{$incidnet -> issue}}</td>
@@ -72,7 +69,6 @@
                                         <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incidnet -> statusCheck}}</span></td>
                                         <td>{{$incidnet -> from}}</td>
                                         <td>{{$incidnet -> assign_to}}</td>
-                                        
                                         <td><a href="{{url('/delete/'.$incidnet -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
                                     </tr> 
                                     @endforeach
@@ -100,7 +96,6 @@
 }
 
 .card-wrapper {
-    /* margin-top: -50px; */
     display: flex;
     justify-content: space-around;
     margin: -75px;

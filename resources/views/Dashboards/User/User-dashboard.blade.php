@@ -1,7 +1,6 @@
 <x-app-layout>
 <div class="userDashboard-container" id="cardId">
     <div class="py-12" style="margin-top: 90px;">
-
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-left: 15px;margin-top: -40px;">
                 <div class="container wrapper">
@@ -22,7 +21,7 @@
                                 <tbody>
                                     @foreach($incident as $incidnet)
                                     <tr>
-                                        <td></td>
+                                        <td>{{$incidnet -> ticket_no}}</td>
                                         <td>{{$incidnet -> reporter}}</td>
                                         <td>{{$incidnet -> issue_type}}</td>
                                         <td>{{$incidnet -> issue}}</td>
@@ -50,9 +49,9 @@
     position: absolute;
     top: 64px;
     height: 150px;
-    width: 83.9%;
+    width: 81.97%;
     background-color: #1995AD;
-    left: 220px;
+    left: 246px;
 }
 </style>
 

@@ -29,14 +29,18 @@
 </x-app-layout>
 
 <style>
-    .create-container {
-    /* margin-top: 200px; */
-    position: relative;
-    top: -141px;
-    margin-left: 237px;
-    height: 200px;
-    width: 1129px;
-    background-color: #1995AD;
-    transition: 0.5s;
+   .col-12 button {
+  background-color: blue;
+}
+
+  .create-container {
+  /* margin-top: 200px; */
+  position: relative;
+  top: -141px;
+  margin-left: 237px;
+  height: 200px;
+  width: 1129px;
+  background-color: #1995AD;
+  transition: 0.5s;
   }
 </style>

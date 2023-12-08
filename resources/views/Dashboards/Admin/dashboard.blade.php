@@ -16,7 +16,7 @@
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
                                 <li>Incident Assigned <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
-                                <li>{{$assignCount}}</li>
+                                <li>{{$assignResolved}}</li>
                                 <li>{{$unassigned}} Unassigned</li>
                             </ul>
                             </div>

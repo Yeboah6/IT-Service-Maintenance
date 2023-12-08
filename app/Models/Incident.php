@@ -23,6 +23,6 @@ class Incident extends Model
     ];
 
     public function technician() {
-        return $this -> belongsTo(Technicians::class);
+        return $this -> belongsTo(Technicians::class, 'assign_to');
     }
 }

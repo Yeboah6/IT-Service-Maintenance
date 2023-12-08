@@ -21,14 +21,8 @@ class IncidentController extends Controller
     public function store(Request $request) {
 
         $characters = 'TK';
-        // generate a pin based on 2 * 7 digits + a random character
         $pin = mt_rand(10, 99) . mt_rand(10, 99);
         $ticket = $characters. '' .$pin;
-
-        // shuffle the result
-        // $string = str_shuffle($pin);
-
-        $data = new Incident();
 
         $data -> issue = $request -> input('issue');
         $data -> issue_type = $request -> input('issue_type');
@@ -79,7 +73,8 @@ class IncidentController extends Controller
 
     // Dislpay Report
     public function report() {
-        return view('pages.report');
+        $issueType = Incident::where('issue_type', '=', 'Hardware') -> orWhere('issue_type', '=', 'Software') -> orWhere('issue_type', '=', 'Network') -> get();
+        return view('pages.report', compact('issueType'));
     }
 
     // Delete Incidents
@@ -121,13 +116,14 @@ class IncidentController extends Controller
 
     // User Pending Function
     public function userPending() {
-        $userPending = Incident::where('statusCheck','pending') -> get();
-        return view('pages.user-pending');
+        $incident = Incident::where('reporter', auth()->user()-> name) -> where('statusCheck','pending') -> get();
+        return view('pages.user-pending', compact('incident'));
     }
 
     // User Resolved Function
     public function userResolved() {
-        return view('pages.user-resolved');
+        $incident = Incident::where('reporter', auth()->user()-> name) -> where('statusCheck','resolved') -> get();
+        return view('pages.user-resolved', compact('incident'));
     }
 
     // View Department Function

@@ -20,6 +20,6 @@ class Technicians extends Model
     ];
 
     public function incident() {
-        return $this -> hasOne(Incident::class);
+        return $this -> hasOne(Incident::class, 'name');
     }
 }

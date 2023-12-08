@@ -9,6 +9,7 @@
                     <div class="table">
                         <table class="table table-bordered table-striped">
                             <thead>
+                                <th>Ticket No.</th>
                                 <th>Reporter Name</th>
                                 <th>Issue Type</th>
                                 <th>Issue</th>
@@ -17,6 +18,21 @@
                                 <th>Summary</th>
                                 <th>From (Department)</th> 
                             </thead>
+
+                            <tbody>
+                                @foreach ($incident as $incident)
+                                    <tr>
+                                        <td>{{$incident -> ticket_no}}</td>
+                                        <td>{{$incident -> reporter}}</td>
+                                        <td>{{$incident -> issue_type}}</td>
+                                        <td>{{$incident -> issue}}</td>
+                                        <td>{{$incident -> urgency}}</td>
+                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
+                                        <td>{{$incident -> description}}</td>
+                                        <td>{{$incident -> from}}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>

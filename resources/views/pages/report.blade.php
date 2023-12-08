@@ -3,17 +3,22 @@
     <div class="py-12" style="margin-left: 20px;margin-top:50px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="sm:rounded-lg" style="margin-top:-5px;margin-left:240px;">
-                <!-- <div class="container wrapper">
+                <div class="container wrapper">
+                    <form action="" method="get">
+                        @csrf
                     <ul>
                     <li>
                         <label>Issue Type</label>
                         <br>
                         <select name="" id="">
-                        <option value="">Hardware</option>
-                        <option value="">Software</option>
-                        <option value="">Network</option>
-                        <option value="">Hello There</option>
-                    </select>
+                       @foreach ($issueType as $issueType)
+                       <option value="">{{$issueType -> issue_type}}</option>
+                       @endforeach
+                            
+                           
+                            
+                            <!-- <option value="">Software</option> -->
+                        </select>
                     </li>
                     <li>
                         <label for="">Technician</label>
@@ -70,9 +75,10 @@
                         <button class="btn btn-primary" type="submit">View</button>
                     </li>
                     </ul>
-                </div> -->
+                    </form>
+                </div>
 
-                <button class="accordion">January</button>
+                <!-- <button class="accordion" style="width: 200px;">January</button>
                 <div class="panel">
                     <div class="table-wrapper" style="margin-top: 25px;">
                         <div class="table">
@@ -90,8 +96,8 @@
                             </table>
                         </div>
                     </div> 
-                </div>
-
+                </div> -->
+<!-- 
                 <button class="accordion">February</button>
                 <div class="panel">
                     <div class="table-wrapper" style="margin-top: 25px;">
@@ -304,7 +310,11 @@
                             </table>
                         </div>
                     </div> 
-                </div>
+                </div> -->
+
+
+
+            
 
                 <!-- <div class="table-wrapper" style="margin-top: 50px;">
                     <div class="table">
@@ -323,8 +333,8 @@
                     </table>
                     </div>
 
-                </div>
-            </div> -->
+                </div>-->
+            </div> 
         </div>
         </div>
     </div>
@@ -332,6 +342,14 @@
 
 
 <style>
+
+    .wrapper select {
+        border-radius: 5px;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        /* background-color: red; */
+    }
 
 .accordion:after {
   content: '\02795';
@@ -388,6 +406,7 @@
 }
 </style>
 
+
 <script>
 
 var acc = document.getElementsByClassName("accordion");
@@ -408,20 +427,5 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-
-// var acc = document.getElementsByClassName("accordion");
-// var i;
-
-// for (i = 0; i < acc.length; i++) {
-//   acc[i].addEventListener("click", function() {
-//     this.classList.toggle("active");
-//     var panel = this.nextElementSibling;
-//     if (panel.style.maxHeight) {
-//       panel.style.maxHeight = null;
-//     } else {
-//       panel.style.maxHeight = panel.scrollHeight + "px";
-//     }
-//   });
-// }
 
 </script>

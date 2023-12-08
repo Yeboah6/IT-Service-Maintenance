@@ -22,9 +22,10 @@ class DashboardController extends Controller
 
                 $resolved = Incident::where('statusCheck', 'resolved') -> count();
                 $assignCount = Incident::where('statusCheck','pending') -> count();
+                $assignResolved = $assignCount + $resolved;
                 $unassigned = Incident::where('statusCheck', 'submitted') -> count();
 
-                return view('Dashboards.Admin.dashboard', compact('incident', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
+                return view('Dashboards.Admin.dashboard', compact('incident', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
             } else {
                 $incident = Incident::where('reporter', auth()->user()-> name) -> get();
                 return view('Dashboards.User.User-dashboard', compact('incident'));

@@ -19,16 +19,16 @@
                                 </thead>
 
                                 <tbody>
-                                    @foreach($incident as $incidnet)
+                                    @foreach($incident as $incident)
                                     <tr>
-                                        <td>{{$incidnet -> ticket_no}}</td>
-                                        <td>{{$incidnet -> reporter}}</td>
-                                        <td>{{$incidnet -> issue_type}}</td>
-                                        <td>{{$incidnet -> issue}}</td>
-                                        <td>{{$incidnet -> urgency}}</td>
-                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incidnet -> statusCheck}}</span></td>
-                                        <td>{{$incidnet -> description}}</td>
-                                        <td>{{$incidnet -> from}}</td>
+                                        <td>{{$incident -> ticket_no}}</td>
+                                        <td>{{$incident -> reporter}}</td>
+                                        <td>{{$incident -> issue_type}}</td>
+                                        <td>{{$incident -> issue}}</td>
+                                        <td>{{$incident -> urgency}}</td>
+                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
+                                        <td>{{$incident -> description}}</td>
+                                        <td>{{$incident -> from}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

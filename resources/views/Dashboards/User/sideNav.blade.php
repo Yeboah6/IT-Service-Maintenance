@@ -19,13 +19,13 @@
       </div>
     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:30px">
         <span><i class="fa fa-hourglass-half"></i></span>
-          <x-nav-link :href="route('pending-incident')" class="font" :active="request()->routeIs('pending-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+          <x-nav-link :href="route('user-pending')" class="font" :active="request()->routeIs('user-pending')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
             {{ __('Pending Incident') }}
           </x-nav-link>
       </div>
       <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:30px">
         <span><i class="	fa fa-thumbs-o-up" aria-hidden="true"></i></span>
-          <x-nav-link :href="route('resolved-incident')" class="font" :active="request()->routeIs('resolved-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
+          <x-nav-link :href="route('user-resolved')" class="font" :active="request()->routeIs('user-resolved')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
             {{ __('Resolved Incident') }}
           </x-nav-link>
       </div>

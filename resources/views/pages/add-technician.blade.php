@@ -24,7 +24,7 @@
               <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="email" required>
             </div>
             <div class="col-md-4">
-              <label class="form-label">Department <span style="color: red;">*</span></label>
+              <label class="form-label">Cell <span style="color: red;">*</span></label>
               <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="department" required>
             </div>
 

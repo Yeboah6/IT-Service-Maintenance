@@ -24,6 +24,7 @@ class IncidentController extends Controller
         $pin = mt_rand(10, 99) . mt_rand(10, 99);
         $ticket = $characters. '' .$pin;
 
+        $data = new Incident();
         $data -> issue = $request -> input('issue');
         $data -> issue_type = $request -> input('issue_type');
         $data -> reporter = $request -> input('reporter');
@@ -38,7 +39,7 @@ class IncidentController extends Controller
 
     // Display Assign To Page
     public function viewAssign() {
-        $incident = Incident::all();
+        $incident = Incident::where('statusCheck', 'Submitted') -> get();
         return view('pages.assign-incident', compact('incident'));
     }
 

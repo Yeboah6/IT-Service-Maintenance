@@ -2,12 +2,13 @@
     <div class="pending-container" id="cardId">
         <div class="py-12" style="margin-left: 2px;margin-top:100px;">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 55px;margin-left:196px;width:1070px">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 55px;margin-left:175px;width: 1110px;">
                     <div class="container wrapper">
-                        <div class="table-wrapper" style="font-size: 0.9rem;margin-top:25px;">
+                        <div class="table-wrapper" style="font-size: 0.9rem;margin-top:25px;width:1085px;">
                             <div class="table">
-                                <table class="table table-bordered table-striped" >
+                                <table class="table table-bordered table-striped">
                                     <thead>
+                                        <th>Ticket No.</th>
                                        <th>Reporter Name</th>
                                        <th>Issue Type</th>
                                        <th>Issue</th>
@@ -23,6 +24,7 @@
                                         <tbody>
                                             @foreach ($pending as $pending)
                                             <tr>
+                                                <td>{{$pending -> ticket_no}}</td>
                                                 <td>{{ $pending -> reporter }}</td>
                                                 <td>{{ $pending -> issue_type }}</td>
                                                 <td>{{ $pending -> issue }}</td>

@@ -16,7 +16,7 @@
                                     <th>Number</th>
                                     <th>Email</th>
                                     <th>Status</th>
-                                    <th>Department</th>
+                                    <th>Cell</th>
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
@@ -26,7 +26,7 @@
                                         <td>{{ $technician -> name }}</td>
                                         <td>{{ $technician -> number }}</td>
                                         <td>{{ $technician -> email }}</td>
-                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{ $technician -> status }}</span></td>
+                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{ $check -> status }}</span></td>
                                         <td>{{ $technician -> department }}</td>
                                         <td><a href="{{url('/delete-technician/'.$technician -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
                                     </tr>

@@ -77,7 +77,7 @@
     </x-nav-link>
   </div>
   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:40px">
-    <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+    <span><i class="fa fa-users"></i></span>
     <x-nav-link :href="route('users')" class="font" :active="request()->routeIs('users')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
      {{ __('Users') }} 
     </x-nav-link>

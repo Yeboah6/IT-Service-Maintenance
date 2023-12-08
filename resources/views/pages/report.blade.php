@@ -19,7 +19,7 @@
                             
                             <!-- <option value="">Software</option> -->
                         </select>
-                    </li>
+                    <!-- </li>
                     <li>
                         <label for="">Technician</label>
                         <br>
@@ -69,7 +69,7 @@
                         <option value="">Hello There</option>
                         <option value="">Hello There</option>
                     </select>
-                    </li>
+                    </li> -->
                     <li>
                         <br>
                         <button class="btn btn-primary" type="submit">View</button>

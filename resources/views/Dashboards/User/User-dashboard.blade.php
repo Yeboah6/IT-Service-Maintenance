@@ -9,7 +9,7 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <th>Ticket No.</th>
-                                    <th>Reporter Name</th>
+                                    <th>Reported By</th>
                                     <th>Issue Type</th>
                                     <th>Issue</th>
                                     <th>Urgency</th>

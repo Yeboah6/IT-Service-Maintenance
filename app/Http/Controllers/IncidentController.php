@@ -31,6 +31,9 @@ class IncidentController extends Controller
         $data -> urgency = $request -> input('urgency');
         $data -> from = $request -> input('from');
         $data -> description = $request -> input('description');
+        $data -> number = $request -> input('number');
+        $data -> service_number = $request -> input('service_number');
+        $data -> reporter_name = $request -> input('reporter_name');
         $data -> statusCheck = "Submitted";
         $data -> ticket_no = $ticket; 
         $data -> save();
@@ -147,5 +150,15 @@ class IncidentController extends Controller
 
         $department -> save();
         return redirect('/department');
+    }
+
+    // public function viewMore($id) {
+    //     $incident = Incident::findOrFail($id);
+    //     return redirect('pages.view-more', compact('incident'));
+    // }
+
+    public function viewMore() {
+        // $incident = Incident::findOrFail($id);
+        return view('pages.view-more');
     }
 }

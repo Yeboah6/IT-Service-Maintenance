@@ -19,7 +19,10 @@ class Incident extends Model
         'statusCheck',
         'from',
         'assign_to',
-        'ticket_no'
+        'ticket_no',
+        'service_number',
+        'number',
+        'reporter_name'
     ];
 
     public function technician() {

@@ -3,7 +3,7 @@
  
 <span onclick="closeDashboard()" style="position:absolute;top: 18px;left:250px;"><i class="fa fa-bars bars" aria-hidden="true"></i></span>
 <div id="mySidenav" class="sidenav">
-  <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="margin-left:-150px;">&times;</a> -->
+
   <div>
     <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:85px;">
   </div>
@@ -93,7 +93,7 @@
   
 .sidenav {
   height: 100%; /* 100% Full-height */
-  width: 246px; /* 0 width - change this with JavaScript */
+  width: 226px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;

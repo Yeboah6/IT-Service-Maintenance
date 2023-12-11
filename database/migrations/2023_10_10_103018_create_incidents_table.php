@@ -24,7 +24,10 @@ return new class extends Migration
             $table->string('statusCheck') -> nullable();
             $table->string('from') -> nullable();
             $table->string('assign_to')->nullable();
-            $table->timestamps(); 
+            $table->string('service_number');
+            $table->string('reporter_name');
+            $table->string('number');
+            $table->timestamps();
         });
     }
 

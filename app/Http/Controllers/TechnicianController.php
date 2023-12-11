@@ -9,12 +9,15 @@ use Illuminate\Support\Facades\DB;
 class TechnicianController extends Controller
 {
 
-    // Display Technicians 
+    // Display Technicians
     public function technician() {
         $technician = Technicians::all();
-        $check = DB::table('incident') -> join('technician', 'incident.statusCheck', 'technician.status') -> select('technician.status') -> get();
-
-        return view('pages.technicians', compact('technician', 'check'));
+        // $check = DB::table('incident') -> join('technician', 'incident.assign_to', 'technician.name') -> where('incident.assign_to', '=', 'technician.name') -> update(['technician.status' => 'Unavailable']) -> get();
+        // if ($check == "technician.name") {
+        //     $technician -> status = "Unavailable";
+        // }
+        // $technician -> $check = "Unavailable";
+        return view('pages.technicians', compact('technician'));
     }
 
     // Add Technician Page

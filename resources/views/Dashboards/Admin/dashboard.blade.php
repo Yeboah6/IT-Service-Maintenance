@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     
-                    <div class="table-wrapper" style="margin-left: 185px;width:1090px;font-size:0.9rem;margin-top:100px;">
+                    <div class="table-wrapper" style="margin-left: 185px;width:1100px;font-size:0.9rem;margin-top:100px;">
                         <div class="tech-wrapper" style="margin: 20px;margin-left: 980px">
                             <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span style="color: white;">+</span> Add</a></h1>
                         </div>
@@ -45,7 +45,7 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <th>Ticket No.</th>
-                                    <th>Reporter Name</th>
+                                    <th>Reported By</th>
                                     <th>Issue Type</th>
                                     <th>Issue</th>
                                     <th>Urgency</th>
@@ -53,24 +53,25 @@
                                     <th>Status</th>
                                     <th>From (Department)</th> 
                                     <th>Assign To</th> 
-                                    <!-- <th>Technician Status</th>  -->
+                                    
                                     <th>Action</th> 
                                 </thead>
 
                                 <tbody>
-                                    @foreach($incident as $incidnet)
+                                    @foreach($incident as $incident)
                                     <tr>
-                                        <td>{{$incidnet -> ticket_no}}</td>
-                                        <td>{{$incidnet -> reporter}}</td>
-                                        <td>{{$incidnet -> issue_type}}</td>
-                                        <td>{{$incidnet -> issue}}</td>
-                                        <td>{{$incidnet -> urgency}}</td>
-                                        <td>{{$incidnet -> description}}</td>
-                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incidnet -> statusCheck}}</span></td>
-                                        <td>{{$incidnet -> from}}</td>
-                                        <td>{{$incidnet -> assign_to}}</td>
-                                        <td><a href="{{url('/delete/'.$incidnet -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
-                                    </tr> 
+                                        <td>{{$incident -> ticket_no}}</td>
+                                        <td>{{$incident -> reporter}}</td>
+                                        <td>{{$incident -> issue_type}}</td>
+                                        <td>{{$incident -> issue}}</td>
+                                        <td>{{$incident -> urgency}}</td>
+                                        <td>{{$incident -> description}}</td>
+                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
+                                        <td>{{$incident -> from}}</td>
+                                        <td>{{$incident -> assign_to}}</td>
+                                        <td><a href="{{url('/view-more/'.$incident -> id)}}" class="btn btn-primary">Details</a></td>
+                                        <td><a href="{{url('/delete/'.$incident -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
+                                    </tr>
                                     @endforeach
                                 </tbody>
                             </table>

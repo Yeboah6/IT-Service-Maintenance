@@ -85,14 +85,14 @@
 .create-container {
     position: relative;
     top: -141px;
-    margin-left: 246px;
+    margin-left: 223px;
     height: 150px;
-    width: 82%;
+    width: 83.5%;
     background-color: #1995AD;
     transition: 0.5s;
   }
 
-.toggleDashboard {
+/* .toggleDashboard {
     width: 1453px;
     margin-left: -87px;
     background-color: blue;
@@ -100,5 +100,5 @@
 
   .formToggle {
     margin-left: 84px;
-  }
+  } */
 </style>

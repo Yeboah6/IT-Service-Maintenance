@@ -20,17 +20,17 @@
                                 </thead>
                                 
                                 <tbody>
-                                    @foreach($incident as $incidnet)
+                                    @foreach($incident as $incident)
                                     <tr>
-                                        <td></td>
-                                        <td>{{$incidnet -> reporter}}</td>
-                                        <td>{{$incidnet -> issue_type}}</td>
-                                        <td>{{$incidnet -> issue}}</td>
-                                        <td>{{$incidnet -> urgency}}</td>
-                                        <td>{{$incidnet -> description}}</td>
-                                        <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px"></span></td>
-                                        <td>{{$incidnet -> from}}</td>
-                                        <td><a href="{{'/assign-to/'.$incidnet -> id}}" class="btn btn-primary" style="font-size: 0.85rem;">Assign</a></td>
+                                        <td>{{$incident -> ticket_no}}</td>
+                                        <td>{{$incident -> reporter}}</td>
+                                        <td>{{$incident -> issue_type}}</td>
+                                        <td>{{$incident -> issue}}</td>
+                                        <td>{{$incident -> urgency}}</td>
+                                        <td>{{$incident -> description}}</td>
+                                        <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
+                                        <td>{{$incident -> from}}</td>
+                                        <td><a href="{{'/assign-to/'.$incident -> id}}" class="btn btn-primary" style="font-size: 0.85rem;">Assign</a></td>
                                     </tr> 
                                     @endforeach
                                 </tbody>

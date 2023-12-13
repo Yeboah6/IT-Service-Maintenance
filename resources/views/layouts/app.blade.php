@@ -21,11 +21,17 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen dark:bg-gray-900">
-            @php
-                    $user = auth()->user()-> email == "hardwareadmin@gmail.com"; // detecting the user type
+                @php
+                    $hardwareUser = auth()->user()-> email == "hardwareadmin@gmail.com"; // detecting the user type
+                    $softwareUser = auth()->user()-> email == "softwareadmin@gmail.com";
+                    $networkUser = auth()->user()-> email == "networkadmin@gmail.com";
                 @endphp
                 @include('layouts.navigation')
-                @if($user)
+                @if($hardwareUser)
+                    @include('Dashboards.Admin.sideNav')
+                @elseif ($softwareUser)
+                    @include('Dashboards.Admin.sideNav')
+                @elseif ($networkUser)
                     @include('Dashboards.Admin.sideNav')
                 @else
                 

@@ -6,6 +6,7 @@ use App\Models\Department;
 use Illuminate\Http\Request;
 use App\Models\Incident;
 use App\Models\Technicians;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class IncidentController extends Controller
@@ -42,8 +43,20 @@ class IncidentController extends Controller
 
     // Display Assign To Page
     public function viewAssign() {
-        $incident = Incident::where('statusCheck', 'Submitted') -> get();
-        return view('pages.assign-incident', compact('incident'));
+        if (Auth::id()) {
+            $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
+            $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
+
+            if ($hardwareUser) {
+                $incident = Incident::where('issue_type', 'Hardware') -> where('statusCheck', 'Submitted') -> get();
+                return view('pages.assign-incident', compact('incident'));
+            }
+            else if ($networkUser) {
+                $incident = Incident::where('issue_type', 'Network') -> where('statusCheck', 'Submitted') -> get();
+                return view('pages.assign-incident', compact('incident'));
+            }
+        }
     }
 
     // Stores Assign To Using Update Procedure
@@ -99,14 +112,38 @@ class IncidentController extends Controller
 
     // Pending Incidents
     public function pending() {
-        $pending = Incident::where('statusCheck', 'pending') -> get();
-        return view('pages.pending-incident', compact('pending'));
+        if (Auth::id()) {
+            $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
+            $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
+            if ($networkUser) {
+                $pending = Incident::where('issue_type', 'Network') -> where('statusCheck', 'pending') -> get();
+                return view('pages.pending-incident', compact('pending'));
+            }
+            else if ($hardwareUser) {
+                $pending = Incident::where('issue_type', 'Hardware') -> where('statusCheck', 'pending') -> get();
+                return view('pages.pending-incident', compact('pending'));
+            }
+        }
     }
 
     // Resolved Incidents
     public function resolved() {
-        $resolved = Incident::where('statusCheck', 'resolved') -> get();
-        return view('pages.resolved-incident', compact('resolved'));
+        if (Auth::id()) {
+            $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
+            $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
+
+            if ($hardwareUser) {
+                $resolved = Incident::where('issue_type', 'Hardware') -> where('statusCheck', 'resolved') -> get();
+                return view('pages.resolved-incident', compact('resolved'));
+            }
+
+            else if ($networkUser) {
+                $resolved = Incident::where('issue_type', 'Network') -> where('statusCheck', 'resolved') -> get();
+                return view('pages.resolved-incident', compact('resolved'));
+            }
+        }
     }
 
     // pending To Done Function

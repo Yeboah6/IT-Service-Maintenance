@@ -5,19 +5,35 @@ namespace App\Http\Controllers;
 use App\Models\Technicians;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class TechnicianController extends Controller
 {
 
     // Display Technicians
     public function technician() {
-        $technician = Technicians::all();
+        if (Auth::id()) {
+            $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
+            $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
+
+            if ($hardwareUser) {
+                $technician = Technicians:: where('department', 'Hardware') -> get();
+                return view('pages.technicians', compact('technician'));
+            }
+
+            else if ($networkUser) {
+                $technician = Technicians:: where('department', 'Network Cell') -> get();
+                return view('pages.technicians', compact('technician'));
+            }
+        
         // $check = DB::table('incident') -> join('technician', 'incident.assign_to', 'technician.name') -> where('incident.assign_to', '=', 'technician.name') -> update(['technician.status' => 'Unavailable']) -> get();
         // if ($check == "technician.name") {
         //     $technician -> status = "Unavailable";
         // }
         // $technician -> $check = "Unavailable";
-        return view('pages.technicians', compact('technician'));
+
+        }
     }
 
     // Add Technician Page

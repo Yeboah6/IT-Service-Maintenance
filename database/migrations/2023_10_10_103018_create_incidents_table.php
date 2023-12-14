@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('service_number');
             $table->string('reporter_name');
             $table->string('number');
+            $table->string('technician_id') -> references('id') -> on('technicians');
             $table->timestamps();
         });
     }

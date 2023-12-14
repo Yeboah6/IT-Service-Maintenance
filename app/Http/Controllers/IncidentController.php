@@ -35,6 +35,7 @@ class IncidentController extends Controller
         $data -> number = $request -> input('number');
         $data -> service_number = $request -> input('service_number');
         $data -> reporter_name = $request -> input('reporter_name');
+        $data -> technician_id = $request -> 
         $data -> statusCheck = "Submitted";
         $data -> ticket_no = $ticket; 
         $data -> save();

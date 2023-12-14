@@ -23,10 +23,10 @@ class TechnicianController extends Controller
             }
 
             else if ($networkUser) {
-                $technician = Technicians:: where('department', 'Network Cell') -> get();
+                $technician = Technicians:: where('department', 'Network Cell ') -> get();
                 return view('pages.technicians', compact('technician'));
             }
-        
+
         // $check = DB::table('incident') -> join('technician', 'incident.assign_to', 'technician.name') -> where('incident.assign_to', '=', 'technician.name') -> update(['technician.status' => 'Unavailable']) -> get();
         // if ($check == "technician.name") {
         //     $technician -> status = "Unavailable";

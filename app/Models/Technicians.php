@@ -19,7 +19,7 @@ class Technicians extends Model
         'department'
     ];
 
-    public function incident() {
-        return $this -> hasOne(Incident::class, 'name');
-    }
+    // public function incident() {
+    //     return $this -> hasOne(Incident::class, 'name');
+    // }
 }

@@ -22,10 +22,11 @@ class Incident extends Model
         'ticket_no',
         'service_number',
         'number',
-        'reporter_name'
+        'reporter_name',
+        'technician_id'
     ];
 
-    public function technician() {
-        return $this -> belongsTo(Technicians::class, 'assign_to');
-    }
+    // public function technician() {
+    //     return $this -> belongsTo(Technicians::class, 'assign_to');
+    // }
 }

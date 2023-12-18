@@ -2,7 +2,7 @@
 <div class="create-container" id="cardId">
 <div class="py-12" style="margin-left: 17px;margin-top:100px;">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class=" overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 30px;background-color:white;" id="inputId">
+        <div class=" overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: -70px;background-color:white;" id="inputId">
           <div class="container wrapper" style="margin-top: 30px;" >
           <form action="{{ url('/add-department') }}" method="POST">
             @csrf
@@ -35,11 +35,12 @@
 
   .create-container {
   /* margin-top: 200px; */
-  position: relative;
-  top: -141px;
-  margin-left: 237px;
-  height: 200px;
-  width: 1129px;
+  position: absolute;
+  top: 63px;
+  /* margin-left: 237px; */
+  left: 205px;
+  height: 150px;
+  width: 85%;
   background-color: #1995AD;
   transition: 0.5s;
   }

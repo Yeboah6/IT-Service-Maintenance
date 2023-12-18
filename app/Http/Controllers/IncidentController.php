@@ -35,7 +35,6 @@ class IncidentController extends Controller
         $data -> number = $request -> input('number');
         $data -> service_number = $request -> input('service_number');
         $data -> reporter_name = $request -> input('reporter_name');
-        $data -> technician_id = $request -> 
         $data -> statusCheck = "Submitted";
         $data -> ticket_no = $ticket; 
         $data -> save();
@@ -46,7 +45,7 @@ class IncidentController extends Controller
     public function viewAssign() {
         if (Auth::id()) {
             $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
-            $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            // $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
             if ($hardwareUser) {
@@ -71,6 +70,7 @@ class IncidentController extends Controller
         $incident -> from = $request -> input('from');
         $incident -> description = $request -> input('description');
         $incident -> assign_to = $request -> input('assign_to');
+        $incident -> technician_id = Technicians -> name;
         $incident -> statusCheck = "Pending";
         $incident -> update();
         return redirect('/dashboard');
@@ -115,7 +115,7 @@ class IncidentController extends Controller
     public function pending() {
         if (Auth::id()) {
             $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
-            $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            // $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
             if ($networkUser) {
                 $pending = Incident::where('issue_type', 'Network') -> where('statusCheck', 'pending') -> get();
@@ -132,7 +132,7 @@ class IncidentController extends Controller
     public function resolved() {
         if (Auth::id()) {
             $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
-            $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            // $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
             if ($hardwareUser) {

@@ -39,7 +39,7 @@
   
 .sidenav {
   height: 100%; /* 100% Full-height */
-  width: 246px; /* 0 width - change this with JavaScript */
+  width: 220px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;

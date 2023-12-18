@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('service_number');
             $table->string('status') -> nullable();
             $table->string('department');
+            $table->string('incident_id') -> references('id') -> on('incidents');
             $table->timestamps();
         });
     }

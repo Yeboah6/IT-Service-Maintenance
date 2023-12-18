@@ -16,7 +16,8 @@ class Technicians extends Model
         'email',
         'status',
         'service_number',
-        'department'
+        'department',
+        'incident_id'
     ];
 
     // public function incident() {

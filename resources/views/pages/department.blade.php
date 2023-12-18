@@ -1,5 +1,5 @@
 <x-app-layout>
-<div class="card-container" id="cardId">
+<div class="department-container" id="cardId">
     <div class="py-12" style="margin-top: 90px;"> 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: -25px;margin-left:230px">
@@ -34,7 +34,7 @@
 </x-app-layout>
 
 <style>
-    .card-container {
+    .department-container {
     position: absolute;
     top: 63px;
     height: 150px;

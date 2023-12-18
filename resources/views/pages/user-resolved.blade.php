@@ -3,7 +3,7 @@
 <div class="py-12" style="margin-top: 90px;">
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-left: 50px;margin-top: -40px;">
+        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-left: 5px;margin-top: -40px;">
             <div class="container wrapper">
                 <div class="table-wrapper" style="margin-top: 30px;font-size:0.9rem;">
                     <div class="table">
@@ -17,6 +17,7 @@
                                 <th>Status</th>
                                 <th>Summary</th>
                                 <th>From (Department)</th> 
+                                <th>Assigned To</th>
                             </thead>
 
                             <tbody>
@@ -30,6 +31,7 @@
                                         <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
                                         <td>{{$incident -> description}}</td>
                                         <td>{{$incident -> from}}</td>
+                                        <td>{{$incident -> assignTo}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

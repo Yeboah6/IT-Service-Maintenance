@@ -14,7 +14,7 @@ class TechnicianController extends Controller
     public function technician() {
         if (Auth::id()) {
             $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
-            $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            // $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
             if ($hardwareUser) {
@@ -26,13 +26,6 @@ class TechnicianController extends Controller
                 $technician = Technicians:: where('department', 'Network Cell ') -> get();
                 return view('pages.technicians', compact('technician'));
             }
-
-        // $check = DB::table('incident') -> join('technician', 'incident.assign_to', 'technician.name') -> where('incident.assign_to', '=', 'technician.name') -> update(['technician.status' => 'Unavailable']) -> get();
-        // if ($check == "technician.name") {
-        //     $technician -> status = "Unavailable";
-        // }
-        // $technician -> $check = "Unavailable";
-
         }
     }
 

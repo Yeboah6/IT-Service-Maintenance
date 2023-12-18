@@ -4,7 +4,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="sm:rounded-lg">
                 <div class="container wrapper">
-                        <div class="card-wrapper" style="margin-left: 180px;margin-top: -170px;">
+                        <div class="card-wrapper" style="margin-left: 150px;margin-top: -170px;">
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
                                 <li>Incidents <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     
-                    <div class="table-wrapper" style="margin-left: 185px;width:1100px;font-size:0.9rem;margin-top:100px;">
+                    <div class="table-wrapper" style="margin-left: 165px;width:1100px;font-size:0.9rem;margin-top:100px;">
                         <div class="tech-wrapper" style="margin: 20px;margin-left: 980px">
                             <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span style="color: white;">+</span> Add</a></h1>
                         </div>

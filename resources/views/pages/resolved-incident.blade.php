@@ -2,7 +2,7 @@
     <div class="resolved-container" id="cardId">
         <div class="py-12" style="margin-left: 2px;margin-top:100px;">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 45px;margin-left:175px;width: 1110px;">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 45px;margin-left:163px;width: 1110px;">
                     <div class="container wrapper">
                         <div class="table-wrapper" style="font-size: 0.9rem;margin-top: 25px;width:1085px;">
                             <div class="table">

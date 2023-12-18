@@ -85,9 +85,9 @@
 .create-container {
     position: relative;
     top: -141px;
-    margin-left: 223px;
+    margin-left: 220px;
     height: 150px;
-    width: 83.5%;
+    width: 83.7%;
     background-color: #1995AD;
     transition: 0.5s;
   }

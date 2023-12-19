@@ -70,7 +70,7 @@ class IncidentController extends Controller
         $incident -> from = $request -> input('from');
         $incident -> description = $request -> input('description');
         $incident -> assign_to = $request -> input('assign_to');
-        $incident -> technician_id = Technicians -> name;
+        // $incident -> technician_id = Technicians -> name;
         $incident -> statusCheck = "Pending";
         $incident -> update();
         return redirect('/dashboard');
@@ -190,13 +190,14 @@ class IncidentController extends Controller
         return redirect('/department');
     }
 
-    // public function viewMore($id) {
-    //     $incident = Incident::findOrFail($id);
-    //     return redirect('pages.view-more', compact('incident'));
-    // }
-
-    public function viewMore() {
-        // $incident = Incident::findOrFail($id);
-        return view('pages.view-more');
+    public function viewMore($id) {
+        $incident = Incident::findOrFail($id);
+        $data = Incident::all();
+        return view('pages.view-more', compact('incident', 'data'));
     }
+
+    // public function viewMore() {
+    //     $incident = Incident::findOrFail($id);
+    //     return view('pages.view-more');
+    // }
 }

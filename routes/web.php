@@ -58,8 +58,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/add-technicians', [technicianController::class, 'addTechnicians']) -> name('add-technicians');
 
     // View More Route
-    // Route::get('/view-more/{id}', [IncidentController::class, 'viewMore']) -> name('view-more');
-    Route::get('/view-more', [IncidentController::class, 'viewMore']) -> name('view-more');
+    Route::get('/view-more/{id}', [IncidentController::class, 'viewMore']) -> name('view-more');
+    // Route::get('/view-more', [IncidentController::class, 'viewMore']) -> name('view-more');
 
     Route::get('/report', [IncidentController::class, 'report'])->name('report');
     Route::get('/users', [IncidentController::class, 'viewusers'])->name('users');

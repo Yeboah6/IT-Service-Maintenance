@@ -49,7 +49,7 @@
               <div class="col-md-2" style="margin-left: -170px">
                 <label class="form-label">From <span style="color: red;">*</span></label>
                 <select name="from" class="form-control"  style="width: 320px;border-radius:6px">
-                <option>---Select Department---</option>
+                <option>---Select Cell---</option>
                   @foreach ($department as $department)
                     <option value="{{ $department -> cell }}"> {{ $department -> cell }} </option>
                   @endforeach
@@ -63,6 +63,7 @@
 
               <input type="text" class="form-control" name="statusCheck" hidden>
               <input type="text" class="form-control" name="ticket_no" hidden>
+              <input type="text" class="form-control" name="technician_id" hidden>
 
               <div class="col-12">
                 <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:60px;">Submit</button>

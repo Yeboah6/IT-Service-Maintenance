@@ -23,6 +23,7 @@ class Incident extends Model
         'service_number',
         'number',
         'reporter_name',
+        'technician_id'
     ];
 
     // public function technician() {

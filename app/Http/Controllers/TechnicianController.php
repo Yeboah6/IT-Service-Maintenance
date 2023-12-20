@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\Technicians;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,12 +19,12 @@ class TechnicianController extends Controller
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
             if ($hardwareUser) {
-                $technician = Technicians:: where('department', 'Hardware') -> get();
+                $technician = Technicians:: where('cell', 'Tech Cell') -> get();
                 return view('pages.technicians', compact('technician'));
             }
 
             else if ($networkUser) {
-                $technician = Technicians:: where('department', 'Network Cell ') -> get();
+                $technician = Technicians:: where('cell', 'Network Cell ') -> orWhere('cell', 'Networking ') -> get();
                 return view('pages.technicians', compact('technician'));
             }
         }
@@ -31,7 +32,8 @@ class TechnicianController extends Controller
 
     // Add Technician Page
     public function addTechnician() {
-        return view('pages.add-technician');
+        $cell = Department::all();
+        return view('pages.add-technician', compact('cell'));
     }
 
     // Store Technician 
@@ -42,7 +44,7 @@ class TechnicianController extends Controller
         $technician -> name = $request -> input('name');
         $technician -> number = $request -> input('number');
         $technician -> email = $request -> input('email');
-        $technician -> department = $request -> input('department');
+        $technician -> cell = $request -> input('cell');
         $technician -> status = "Available";
 
         $technician -> save();

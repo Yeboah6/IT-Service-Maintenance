@@ -25,7 +25,13 @@
             </div>
             <div class="col-md-4">
               <label class="form-label">Cell <span style="color: red;">*</span></label>
-              <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="department" required>
+              <select name="cell" class="form-select" style="width: 450px;border-radius:6px">
+              <option>----Select Cell----</option>
+              @foreach ($cell as $cell)
+              <option value="{{$cell -> cell}}">{{$cell -> cell}}</option>
+              @endforeach
+              </select>
+              <!-- <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="department" required> -->
             </div>
 
             <input type="text" class="form-control" name="status" hidden>

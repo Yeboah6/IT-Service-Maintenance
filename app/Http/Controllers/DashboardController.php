@@ -22,7 +22,7 @@ class DashboardController extends Controller
             if ($hardwareUser) {
                 $incident = Incident::where('issue_type', 'Hardware') -> get();
                 $wordCount = Incident::where('issue_type', 'Hardware')->count();
-                $technicians = Technicians::where('department', 'Hardware') -> count();
+                $technicians = Technicians::where('cell', 'Hardware') -> count();
                 $users = User::all() -> count();
 
                 $resolved = Incident::where('issue_type', 'Hardware') -> where('statusCheck', 'resolved') -> count();
@@ -37,7 +37,7 @@ class DashboardController extends Controller
             else if ($softwareUser) {
                 $incident = Incident::where('issue_type', 'Software') -> get();
                 $wordCount = Incident::where('issue_type', 'Software')->count();
-                $technicians = Technicians::where('department', 'Programming') -> count();
+                $technicians = Technicians::where('cell', 'Programming') -> count();
                 $users = User::all() -> count();
 
                 $resolved = Incident::where('issue_type', 'Software') -> where('statusCheck', 'resolved') -> count();
@@ -51,7 +51,7 @@ class DashboardController extends Controller
              else if ($networkUser) {
                 $incident = Incident::where('issue_type', 'Network') -> get();
                 $wordCount = Incident::where('issue_type', 'Network')->count();
-                $technicians = Technicians::where('department', 'Network') -> count();
+                $technicians = Technicians::where('cell', 'Network Cell') -> orWhere('cell', 'Networking ') -> count();
                 $users = User::all() -> count();
 
                 $resolved = Incident::where('issue_type', 'Network') -> where('statusCheck', 'resolved') -> count();

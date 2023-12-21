@@ -4,6 +4,7 @@
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 20px;" id="inputId">
           <div class="container wrapper" style="margin-top: 40px;">
+
             <form action="{{ url('create-incident') }}" method="POST" class="row g-3" >
               @csrf
               <label class="form-label" style="font-weight: bold;font-size:1.5rem">Reporter Details</label>
@@ -63,7 +64,6 @@
 
               <input type="text" class="form-control" name="statusCheck" hidden>
               <input type="text" class="form-control" name="ticket_no" hidden>
-              <input type="text" class="form-control" name="technician_id" hidden>
 
               <div class="col-12">
                 <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:60px;">Submit</button>

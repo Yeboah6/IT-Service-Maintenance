@@ -18,7 +18,6 @@ class Incident extends Model
         'urgency',
         'statusCheck',
         'from',
-        'assign_to',
         'ticket_no',
         'service_number',
         'number',

@@ -62,7 +62,7 @@ class IncidentController extends Controller
     // Stores Assign To Using Update Procedure
     public function assign($id, Request $request) {
         $incident = Incident::find($id);
-        $technicianId = $request -> input('technician_id');
+        
 
         $incident -> issue = $request -> input('issue');
         $incident -> issue_type = $request -> input('issue_type');
@@ -70,9 +70,9 @@ class IncidentController extends Controller
         $incident -> urgency = $request -> input('urgency');
         $incident -> from = $request -> input('from');
         $incident -> description = $request -> input('description');
-        $incident -> assign_to = $request -> input('assign_to');
-        $incident -> technician_id = $technicianId;
-        $incident -> statusCheck = "Pending";
+        $incident -> technician_id = $request -> input('assign_to');
+        
+        $incident -> statusCheck = 'Pending';
         $incident -> update();
         return redirect('/dashboard');
     }

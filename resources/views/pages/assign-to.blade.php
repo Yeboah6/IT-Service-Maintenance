@@ -77,6 +77,21 @@
 
             <form action="{{url('/assign-to/'.$incident -> id)}}" method="POST" class="row g-3">
               @csrf
+              <label class="form-label" style="font-weight: bold;font-size:1.5rem">Reporter Details</label>
+              <div class="col-md-6">
+                <label class="form-label">Reporter Name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="reporter_name" value="{{$incident -> reporter_name}}" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Service Number <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="service_number" value="{{$incident -> service_number}}" required>
+              </div>
+              <div class="">
+                <label class="form-label">Number <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="number" value="{{$incident -> number}}" required>
+              </div>
+
+              <label class="form-label" style="font-weight: bold;font-size:1.5rem">Issue Details</label>
               <div class="col-md-6">
                 <label class="form-label">Type of Issue</label>
                 <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="issue_type" value="{{$incident -> issue_type}}" readonly>
@@ -109,10 +124,11 @@
                 <select name="assign_to" class="form-control" style="width:220px;" >
                   <option> ---Select Technician--- </option>
                   @foreach ($technician as $technician)
-                  <option value="{{ $technician -> name }}">{{ $technician -> name }}</option>
+                  <option value="{{ $technician -> id }}">{{ $technician -> name }}</option>
                   @endforeach
                 </select>
               </div>
+              <input type="text" class="form-control" name="technician_id" hidden>
               <div class="col-12">
                 <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:30px;">Submit</button>
               </div>

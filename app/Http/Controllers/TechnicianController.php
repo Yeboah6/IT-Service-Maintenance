@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Incident;
 use App\Models\Technicians;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,6 +21,7 @@ class TechnicianController extends Controller
 
             if ($hardwareUser) {
                 $technician = Technicians:: where('cell', 'Tech Cell') -> get();
+                $incident = Incident::where('technician_id', '');
                 return view('pages.technicians', compact('technician'));
             }
 

@@ -19,7 +19,7 @@
                                     <th>Cell</th>
                                     <th>Action</th>
                                 </thead>
-                                <tbody>
+                                <tbody> 
                                     @foreach ($technician as $technician)
                                     <tr>
                                         <td>{{ $technician -> service_number }}</td>

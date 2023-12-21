@@ -13,6 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::create('technicians', function (Blueprint $table) {
+            $table->id() -> unique();
+            $table->string('name');
+            $table->string('number');
+            $table->string('email');
+            $table->string('service_number');
+            $table->string('status') -> nullable();
+            $table->string('cell');
+            $table->timestamps();
+        });
+
         Schema::create('incidents', function (Blueprint $table) {
             $table->id();
             $table->string('ticket_no');
@@ -23,13 +34,12 @@ return new class extends Migration
             $table->string('urgency')->nullable();
             $table->string('statusCheck')->nullable();
             $table->string('from')->nullable();
-            $table->string('assign_to')->nullable();
+
             $table->string('service_number');
             $table->string('reporter_name');
             $table->string('number');
-            $table->bigInteger('technician_id')->unsigned()->index()->nullable();
+            $table->unsignedBigInteger('technician_id')->nullable();
             $table->foreign('technician_id')->references('id')->on('technicians')->onDelete('cascade');
-            // $table->foreign('technician_id') -> references('id') -> on('technicians');
             $table->timestamps();
         });
     }
@@ -41,6 +51,7 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('techincians');
         Schema::dropIfExists('incidents');
     }
 };

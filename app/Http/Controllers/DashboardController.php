@@ -15,14 +15,16 @@ class DashboardController extends Controller
     {
         if (Auth::id()) {
             $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
-            $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            // $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
             // Hardware Dashboard
             if ($hardwareUser) {
                 $incident = Incident::where('issue_type', 'Hardware') -> get();
+
                 $wordCount = Incident::where('issue_type', 'Hardware')->count();
-                $technicians = Technicians::where('cell', 'Hardware') -> count();
+                $technicians = Technicians::where('cell', 'Tech Cell') -> count();
+                $technician = Technicians::where('cell', 'Tech Cell') -> get();
                 $users = User::all() -> count();
 
                 $resolved = Incident::where('issue_type', 'Hardware') -> where('statusCheck', 'resolved') -> count();
@@ -30,28 +32,28 @@ class DashboardController extends Controller
                 $assignResolved = $assignCount + $resolved;
                 $unassigned = Incident::where('statusCheck', 'submitted') -> count();
 
-                return view('Dashboards.Admin.dashboard', compact('incident', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
+                return view('Dashboards.Admin.dashboard', compact('incident', 'technician', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
             }
 
             // Software Dashboard
-            else if ($softwareUser) {
-                $incident = Incident::where('issue_type', 'Software') -> get();
-                $wordCount = Incident::where('issue_type', 'Software')->count();
-                $technicians = Technicians::where('cell', 'Programming') -> count();
-                $users = User::all() -> count();
+            // else if ($softwareUser) {
+            //     $incident = Incident::where('issue_type', 'Software') -> get();
+            //     $wordCount = Incident::where('issue_type', 'Software')->count();
+            //     $technicians = Technicians::where('cell', 'Programming') -> count();
+            //     $users = User::all() -> count();
 
-                $resolved = Incident::where('issue_type', 'Software') -> where('statusCheck', 'resolved') -> count();
-                $assignCount = Incident::where('issue_type', 'Software') -> where('statusCheck','pending') -> count();
-                $assignResolved = $assignCount + $resolved;
-                $unassigned = Incident::where('issue_type', 'Software') -> where('statusCheck', 'submitted') -> count();
+            //     $resolved = Incident::where('issue_type', 'Software') -> where('statusCheck', 'resolved') -> count();
+            //     $assignCount = Incident::where('issue_type', 'Software') -> where('statusCheck','pending') -> count();
+            //     $assignResolved = $assignCount + $resolved;
+            //     $unassigned = Incident::where('issue_type', 'Software') -> where('statusCheck', 'submitted') -> count();
 
-                return view('Dashboards.Admin.dashboard', compact('incident', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
-             } 
+            //     return view('Dashboards.Admin.dashboard', compact('incident', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
+            //  } 
 
              else if ($networkUser) {
                 $incident = Incident::where('issue_type', 'Network') -> get();
                 $wordCount = Incident::where('issue_type', 'Network')->count();
-                $technicians = Technicians::where('cell', 'Network Cell') -> orWhere('cell', 'Networking ') -> count();
+                $technicians = Technicians::where('cell', 'Network Cell') -> count();
                 $users = User::all() -> count();
 
                 $resolved = Incident::where('issue_type', 'Network') -> where('statusCheck', 'resolved') -> count();

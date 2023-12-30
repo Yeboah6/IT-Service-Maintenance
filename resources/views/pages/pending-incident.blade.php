@@ -33,6 +33,7 @@
                                                 <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $pending -> statusCheck }}</span></td>
                                                 <td>{{ $pending -> from }}</td>
                                                 <td>{{ $pending -> assign_to }}</td>
+                                                <td><a href="{{url('/view-more/'.$pending -> id)}}" class="btn btn-primary">Details</a></td>
                                                 <form action="{{url('/resolve-incident/'.$pending -> id)}}" method="post">
                                                     @csrf
                                                 <td><button type="submit" class="btn btn-primary" style="background-color: blue;">Done</button></td>

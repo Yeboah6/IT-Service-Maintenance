@@ -15,7 +15,7 @@
                             </div>
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
-                                <li>Assigned <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
+                                <li> Assigned <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
                                 <li>{{$assignResolved}}</li>
                                 <li>{{$unassigned}} Unassigned</li>
                             </ul>
@@ -41,7 +41,7 @@
                         <div class="tech-wrapper" style="margin: 20px;margin-left: 980px">
                             <h1 class="btn btn-primary"><a href="create-incident" :active="request()->routeIs('technicians')"><span style="color: white;">+</span> Add</a></h1>
                         </div>
-                        <div class="table">
+                        <div class="table" style="overflow-x:auto;">
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <th>Ticket No.</th>
@@ -53,7 +53,6 @@
                                     <th>Status</th>
                                     <th>From (Department)</th> 
                                     <th>Assign To</th> 
-                                    
                                     <th>Action</th> 
                                 </thead>
 
@@ -68,9 +67,12 @@
                                         <td>{{$incident -> description}}</td>
                                         <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
                                         <td>{{$incident -> from}}</td>
-                                        <td>{{$incident -> assign_to}}</td>
+                                       
+                                        <td> {{ $incident -> reporter_name }} </td>
+                                        <td>
                                         <td><a href="{{url('/view-more/'.$incident -> id)}}" class="btn btn-primary">Details</a></td>
                                         <td><a href="{{url('/delete/'.$incident -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -4,33 +4,50 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="sm:rounded-lg" style="margin-top:-5px;margin-left:240px;">
                 <div class="container wrapper">
-                    <form action="" method="get">
+                    <form action="{{url('report')}}" method="get" role="search">
                         @csrf
                     <ul>
                     <li>
                         <label>Issue Type</label>
                         <br>
-                        <select name="" id="">
-                       @foreach ($issueType as $issueType)
-                       <option value="">{{$issueType -> issue_type}}</option>
-                       @endforeach
-                            
-                           
-                            
-                            <!-- <option value="">Software</option> -->
+                        <select name="issue_type">
+                       <option value="Hardware">Hardware</option>
+                       <option value="Network">Network</option>
+                       <option value="">Software</option>
                         </select>
-                    <!-- </li>
+                        <!-- <br> -->
+                    </li>
+
                     <li>
-                        <label for="">Technician</label>
-                        <br>
-                    <select name="" id="">
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
+                    <label for="">Technician</label>
+                    <br>
+                        <select name="technician">
+                        <option value="">---Select Technician---</option>
+                            @foreach ($technician as $tech)
+                                <option value="{{$tech -> name}}">{{$tech -> name}}</option>
+                            @endforeach
+                        
                     </select>
                     </li>
-                    <li>
+                    <!-- <li>
+                    <label for="">Month</label>
+                    <br>
+                        <select name="month">
+                        <option value="">January</option>
+                        <option value="">February</option>
+                        <option value="">March</option>
+                        <option value="">April</option>
+                        <option value="">May</option>
+                        <option value="">June</option>
+                        <option value="">July</option>
+                        <option value="">August</option>
+                        <option value="">September</option>
+                        <option value="">October</option>
+                        <option value="">November</option>
+                        <option value="">December</option>
+                    </select>
+                    </li> -->
+                    <!-- <li>
                     <label for="">Month</label>
                         <br>
                     <select name="" id="">
@@ -72,14 +89,13 @@
                     </li> -->
                     <li>
                         <br>
-                        <button class="btn btn-primary" type="submit">View</button>
+                        <button class="btn btn-primary" type="submit">Search</button>
                     </li>
                     </ul>
                     </form>
                 </div>
 
-                <!-- <button class="accordion" style="width: 200px;">January</button>
-                <div class="panel">
+               
                     <div class="table-wrapper" style="margin-top: 25px;">
                         <div class="table">
                             <table class="table table-bordered table-striped">
@@ -94,246 +110,28 @@
                                     <th>Assigned To</th>
                                 </thead>
                             </table>
+
+                            <!-- <tbody>
+                                            @foreach ($search as $search)
+                                            <tr>
+                                                <td>{{$search -> ticket_no}}</td>
+                                                <td>{{ $search -> reporter }}</td>
+                                                <td>{{ $search -> issue_type }}</td>
+                                                <td>{{ $search -> issue }}</td>
+                                                <td>{{ $search -> urgency }}</td>
+                                                <td>{{ $search -> description }}</td>
+                                                <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $search -> statusCheck }}</span></td>
+                                                <td>{{ $search -> from }}</td>
+                                                <td>{{ $search -> assign_to }}</td>
+                                                <td><a href="{{url('/view-more/'.$search -> id)}}" class="btn btn-primary">Details</a></td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody> -->
                         </div>
                     </div> 
+                     <!-- <button class="accordion" style="width: 200px;">January</button>
+                <div class="panel">
                 </div> -->
-<!-- 
-                <button class="accordion">February</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">March</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">April</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">May</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">June</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">July</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">August</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">September</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">October</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">November</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div>
-                <button class="accordion">December</button>
-                <div class="panel">
-                    <div class="table-wrapper" style="margin-top: 25px;">
-                        <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
-                                    <th>Issue Type</th>
-                                    <th>Issue</th>
-                                    <th>Urgency</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
-                                </thead>
-                            </table>
-                        </div>
-                    </div> 
-                </div> -->
-
-
-
-            
-
-                <!-- <div class="table-wrapper" style="margin-top: 50px;">
-                    <div class="table">
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <th>Reporter</th>
-                            <th>Reporter</th>
-                            <th>Reporter</th>
-                            <th>Reporter</th>
-                            <th>Reporter</th>
-                            <th>Reporter</th>
-                            <th>Reporter</th>
-                            <th>Reporter</th>
-                            <th>Reporter</th>
-                        </thead>
-                    </table>
-                    </div>
-
-                </div>-->
             </div> 
         </div>
         </div>
@@ -351,22 +149,10 @@
         /* background-color: red; */
     }
 
-.accordion:after {
-  content: '\02795';
-  font-size: 8px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-}
-
-.activebtn:after {
-  content: "\2796"; 
-}
-
-  .report-container {
-    /* margin-top: 200px; */
+    .report-container {
+    margin-top: 200px;
     position: relative;
-    top: -100px;
+    top: -243px;
     margin-left: 75px;
     height: 100px;
     width: 100%;
@@ -382,6 +168,20 @@
     margin: 10px;
 }
 
+/* .accordion:after {
+  content: '\02795';
+  font-size: 8px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.activebtn:after {
+  content: "\2796"; 
+} */
+
+
+ /*
 .accordion {
   background-color: #eee;
   color: #444;
@@ -403,22 +203,20 @@
   background-color: white;
   display: none;
   overflow: hidden;
-}
+} */
 </style>
 
 
-<script>
+<!-- <script>
 
 var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
     this.classList.toggle("activebtn");
 
-    /* Toggle between hiding and showing the active panel */
+
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
@@ -428,4 +226,4 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-</script>
+</script> -->

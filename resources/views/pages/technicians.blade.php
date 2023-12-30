@@ -15,7 +15,7 @@
                                     <th>Name</th>
                                     <th>Number</th>
                                     <th>Email</th>
-                                    <th>Status</th>
+                                    <th>Status</th> 
                                     <th>Cell</th>
                                     <th>Action</th>
                                 </thead>

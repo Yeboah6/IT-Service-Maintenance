@@ -62,6 +62,7 @@ Route::middleware('auth')->group(function () {
     // Route::get('/view-more', [IncidentController::class, 'viewMore']) -> name('view-more');
 
     Route::get('/report', [IncidentController::class, 'report'])->name('report');
+    // Route::get('/report', [IncidentController::class, 'report'])->name('report');
     Route::get('/users', [IncidentController::class, 'viewusers'])->name('users');
 
     // Department Routes

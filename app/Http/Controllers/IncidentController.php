@@ -63,7 +63,6 @@ class IncidentController extends Controller
     public function assign($id, Request $request) {
         $incident = Incident::find($id);
         
-
         $incident -> issue = $request -> input('issue');
         $incident -> issue_type = $request -> input('issue_type');
         $incident -> reporter = $request -> input('reporter');
@@ -92,8 +91,20 @@ class IncidentController extends Controller
 
     // Dislpay Report
     public function report() {
-        $issueType = Incident::where('issue_type', '=', 'Hardware') -> orWhere('issue_type', '=', 'Software') -> orWhere('issue_type', '=', 'Network') -> get();
-        return view('pages.report', compact('issueType'));
+        $technician = Technicians::all();
+        $search = Incident::query();
+        if(request('issue_type')) {
+            $search -> where('issue_type', 'LIKE', '%' .request('issue_type').'%');
+        }
+
+        elseif(request('technician')) {
+            $search -> where('technician', 'LIKE', '%' .request('technician').'%');
+        }
+
+        return $search -> orderBy('id', 'DESC') -> paginate(5);
+
+        // $issueType = Incident::where('issue_type', '=', 'Hardware') -> orWhere('issue_type', '=', 'Software') -> orWhere('issue_type', '=', 'Network') -> get();
+        // return view('pages.report', compact('search', 'technician'));
     }
 
     // Delete Incidents
@@ -119,6 +130,7 @@ class IncidentController extends Controller
             // $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
             if ($networkUser) {
+                // $incident = Incident::find($id);
                 $pending = Incident::where('issue_type', 'Network') -> where('statusCheck', 'pending') -> get();
                 return view('pages.pending-incident', compact('pending'));
             }
@@ -192,13 +204,7 @@ class IncidentController extends Controller
     }
 
     public function viewMore($id) {
-        $incident = Incident::findOrFail($id);
-        $data = Incident::all();
-        return view('pages.view-more', compact('incident', 'data'));
+        $incident = Incident::find($id);
+        return view('pages.view-more', compact('incident'));
     }
-
-    // public function viewMore() {
-    //     $incident = Incident::findOrFail($id);
-    //     return view('pages.view-more');
-    // }
 }

@@ -98,16 +98,16 @@
         <div class="list-container">
             <ul class="list-service">
                 <li>Service Number:</li>
-                <li>Cv12133658</li>
+                <li>{{$incident -> service_number}}</li>
             </ul>
 
             <ul class="list-name">
                 <li>Name:</li>
-                <li>Solomon</li>
+                <li>{{$incident -> reporter_name}}</li>
             </ul>
             <ul class="list-number">
                 <li>Number:</li>
-                <li>14314342234</li>
+                <li>{{$incident -> number}}</li>
             </ul> 
         </div>
 
@@ -115,23 +115,27 @@
         <div class="inner-display">
                 <ul class="ticket">
                     <li>Ticket No.:</li>
-                    <li>TK5050</li>
+                    <li>{{$incident -> ticket_no}}</li>
                 </ul>
                 <ul class="issueType">
                     <li>Issue Type:</li>
-                    <li>Hardware</li>
+                    <li>{{$incident -> issue_type}}</li>
                 </ul>
                 <ul class="issue">
                     <li>Issue:</li>
-                    <li>Can't connect to Wi-Fi</li>
+                    <li>{{$incident -> issue}}</li>
                 </ul>
                 <ul class="urgency">
                     <li>Urgency:</li>
-                    <li>High</li>
+                    <li>{{$incident -> urgency}}</li>
+                </ul>
+                <ul class="urgency">
+                    <li>Status:</li>
+                    <li>{{$incident -> statusCheck}}</li>
                 </ul>
                 <ul class="from">
                     <li>From:</li>
-                    <li>Programming Cell</li>
+                    <li>{{$incident -> from}}</li>
                 </ul>
                 <ul class="assignTo">
                     <li>Assigned To:</li>
@@ -139,12 +143,12 @@
                 </ul>
             <ul class="description">
                 <li>Description:</li>
-                <li>ihgrhrmb r bjior iojr ib iiiioil j ijoijfpowe wwj jwihwofof</li>
+                <li>{{$incident -> description}}</li>
             </ul>
             </div>
         <div class="assigned-details">
             <h3>Reported By:</h3>
-            <li>Hardware Admin</li>
+            <li>{{$incident -> reporter}}</li>
         </div>
         </div>
     </div>

@@ -17,9 +17,9 @@
                                        <th>Status</th>
                                        <th>From (Department)</th>
                                        <th>Assigned To</th>
+                                       <th>Action</th>
                                     </thead>
 
-                                    <tbody>
                                         <tbody>
                                             @foreach ($resolved as $resolved)
                                             <tr>
@@ -29,13 +29,13 @@
                                                 <td>{{ $resolved -> issue }}</td>
                                                 <td>{{ $resolved -> urgency }}</td>
                                                 <td>{{ $resolved -> description }}</td>
-                                                <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $resolved -> statusCheck }}</span></td>
+                                                <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $resolved -> statusCheck }}</span></td>
                                                 <td>{{ $resolved -> from }}</td>
                                                 <td>{{ $resolved -> assign_to }}</td>
+                                                <td><a href="{{url('/view-more/'.$resolved -> id)}}" class="btn btn-primary">Details</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
-                                    </tbody>
                                 </table>
                             </div>        
                         </div>        

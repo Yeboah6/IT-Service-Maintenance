@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use Illuminate\Http\Request;
 use App\Models\Incident;
 use App\Models\Technicians;
@@ -18,9 +19,10 @@ class DashboardController extends Controller
             // $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
-            // Hardware Dashboard
+            // Hardware Dashboard 
             if ($hardwareUser) {
                 $incident = Incident::where('issue_type', 'Hardware') -> get();
+                $department = Department::all();
 
                 $wordCount = Incident::where('issue_type', 'Hardware')->count();
                 $technicians = Technicians::where('cell', 'Tech Cell') -> count();
@@ -32,7 +34,7 @@ class DashboardController extends Controller
                 $assignResolved = $assignCount + $resolved;
                 $unassigned = Incident::where('statusCheck', 'submitted') -> count();
 
-                return view('Dashboards.Admin.dashboard', compact('incident', 'technician', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
+                return view('Dashboards.Admin.dashboard', compact('incident', 'department', 'technician', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
             }
 
             // Software Dashboard

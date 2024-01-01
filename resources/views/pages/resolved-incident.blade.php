@@ -6,8 +6,8 @@
                     <div class="container wrapper">
                         <div class="table-wrapper" style="font-size: 0.9rem;margin-top: 25px;width:1085px;">
                             <div class="table">
-                                <table class="table table-bordered table-striped" >
-                                    <thead>
+                                <table class="table table-bordered table-hover">
+                                    <thead class="table-light">
                                         <th>Ticket No</th>
                                        <th>Reporter Name</th>
                                        <th>Issue Type</th>
@@ -15,7 +15,7 @@
                                        <th>Urgency</th>
                                        <th>Description</th>
                                        <th>Status</th>
-                                       <th>From (Department)</th>
+                                       <th>From (Cell)</th>
                                        <th>Assigned To</th>
                                        <th>Action</th>
                                     </thead>
@@ -29,7 +29,7 @@
                                                 <td>{{ $resolved -> issue }}</td>
                                                 <td>{{ $resolved -> urgency }}</td>
                                                 <td>{{ $resolved -> description }}</td>
-                                                <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $resolved -> statusCheck }}</span></td>
+                                                <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{ $resolved -> statusCheck }}</span></td>
                                                 <td>{{ $resolved -> from }}</td>
                                                 <td>{{ $resolved -> assign_to }}</td>
                                                 <td><a href="{{url('/view-more/'.$resolved -> id)}}" class="btn btn-primary">Details</a></td>

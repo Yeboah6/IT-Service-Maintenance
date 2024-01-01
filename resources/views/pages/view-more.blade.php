@@ -131,7 +131,14 @@
                 </ul>
                 <ul class="urgency">
                     <li>Status:</li>
-                    <li>{{$incident -> statusCheck}}</li>
+                    @if ($incident -> statusCheck == "Resolved")
+                    <li style="background-color:green;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</li>
+                    @elseif ($incident -> statusCheck == "Submitted")
+                    <li style="background-color:blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</li>
+                    @elseif ($incident -> statusCheck == "Pending")
+                    <li style="background-color:yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px;">{{$incident -> statusCheck}}</li>
+                      @endif
+                    
                 </ul>
                 <ul class="from">
                     <li>From:</li>

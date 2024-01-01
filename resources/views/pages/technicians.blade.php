@@ -8,9 +8,10 @@
                         <h1 class="btn btn-primary"><a href="add-technicians" :active="request()->routeIs('technicians')"><span style="color: white;">+</span> Add</a></h1>
                     </div>
                     <div class="table-wrapper">
-                        <div class="table">
-                            <table class="table table-bordered table-striped" >
-                                <thead>
+                        <div class="table">     
+    
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-light">
                                     <th>Service Number</th>
                                     <th>Name</th>
                                     <th>Number</th>
@@ -19,17 +20,22 @@
                                     <th>Cell</th>
                                     <th>Action</th>
                                 </thead>
+
                                 <tbody> 
                                     @foreach ($technician as $technician)
-                                    <tr>
-                                        <td>{{ $technician -> service_number }}</td>
-                                        <td>{{ $technician -> name }}</td>
-                                        <td>{{ $technician -> number }}</td>
-                                        <td>{{ $technician -> email }}</td>
-                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{ $technician -> status }}</span></td>
-                                        <td>{{ $technician -> cell }}</td>
-                                        <td><a href="{{url('/delete-technician/'.$technician -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
-                                    </tr>
+                                        <tr>
+                                            <td>{{ $technician->service_number }}</td>
+                                            <td>{{ $technician->name }}</td>
+                                            <td>{{ $technician->number }}</td>
+                                            <td>{{ $technician->email }}</td>
+                                            @if ($technician -> status == 'Available')
+                                                <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$technician -> status }}</span> </td>
+                                            @else
+                                            <td><span style="background-color: red;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$technician -> status }}</span> </td>
+                                            @endif
+                                            <td>{{ $technician->cell }}</td>
+                                            <td><a href="{{ url('/delete-technician/' . $technician->id) }}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>

@@ -21,8 +21,8 @@ class TechnicianController extends Controller
 
             if ($hardwareUser) {
                 $technician = Technicians:: where('cell', 'Tech Cell') -> get();
-                // $incident = Incident::where('technician_id', '');
-                return view('pages.technicians', compact('technician'));
+                $incident = Incident::all();
+                return view('pages.technicians', compact('technician', 'incident'));
             }
 
             else if ($networkUser) {

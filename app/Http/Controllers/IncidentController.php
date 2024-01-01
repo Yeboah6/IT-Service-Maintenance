@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Incident;
 use App\Models\Technicians;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
 class IncidentController extends Controller
@@ -71,6 +72,10 @@ class IncidentController extends Controller
         $incident -> description = $request -> input('description');
         $incident -> technician_id = $request -> input('assign_to');
         
+        DB::table('technicians')
+        ->where('id', $incident -> technician_id = $request -> input('assign_to'))
+        ->update(['status' => 'Unavailable']);
+
         $incident -> statusCheck = 'Pending';
         $incident -> update();
         return redirect('/dashboard');
@@ -78,9 +83,21 @@ class IncidentController extends Controller
 
     // Display Assign To
     public function assignTo($id) {
-        $incident = Incident::find($id);
-        $technician = Technicians::all();
-        return view('pages.assign-to',compact('incident', 'technician'));
+        if (Auth::id()) {
+
+            $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
+            $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
+
+            if ($hardwareUser) {
+                $incident = Incident::find($id);
+                $technician = Technicians::where('cell', 'Tech Cell') -> where('status', 'Available') -> get();
+                return view('pages.assign-to',compact('incident', 'technician'));
+            } elseif ($networkUser) {
+                $incident = Incident::find($id);
+                $technician = Technicians::where('cell', 'Network Cell') -> get();
+                return view('pages.assign-to',compact('incident', 'technician'));
+            }
+        }
     }
 
     // Display Users
@@ -165,6 +182,11 @@ class IncidentController extends Controller
         $pending = Incident::findOrFail($id);
 
         $pending -> statusCheck = "Resolved";
+
+        DB::table('technicians')
+        ->where('id', $pending -> technician_id)
+        ->update(['status' => 'Available']);
+
         $pending -> update();
         return redirect('/pending-incident');
     }

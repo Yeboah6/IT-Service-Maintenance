@@ -6,8 +6,8 @@
                     <div class="container wrapper">
                         <div class="table-wrapper" style="font-size: 0.9rem;margin-top:25px;width:1085px;">
                             <div class="table">
-                                <table class="table table-bordered table-striped">
-                                    <thead>
+                                <table class="table table-bordered table-hover">
+                                    <thead class="table-light">
                                         <th>Ticket No.</th>
                                        <th>Reported By</th>
                                        <th>Issue Type</th>
@@ -15,9 +15,9 @@
                                        <th>Urgency</th>
                                        <th>Description</th>
                                        <th>Status</th>
-                                       <th>From (Department)</th>
+                                       <th>From (Cell)</th>
                                        <th>Assigned To</th>
-                                       <th>Action</th>
+                                       <th colspan="2" style="text-align: center;">Action</th>
                                     </thead>
 
                                     <tbody>
@@ -33,6 +33,7 @@
                                                 <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $pending -> statusCheck }}</span></td>
                                                 <td>{{ $pending -> from }}</td>
                                                 <td>{{ $pending -> assign_to }}</td>
+                                                
                                                 <td><a href="{{url('/view-more/'.$pending -> id)}}" class="btn btn-primary">Details</a></td>
                                                 <form action="{{url('/resolve-incident/'.$pending -> id)}}" method="post">
                                                     @csrf

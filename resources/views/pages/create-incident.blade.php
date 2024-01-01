@@ -9,14 +9,14 @@
               @csrf
               <label class="form-label" style="font-weight: bold;font-size:1.5rem">Reporter Details</label>
               <div class="col-md-6">
+                <label class="form-label">Service Number <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="service_number" required>
+              </div>
+              <div class="col-md-6">
                 <label class="form-label">Reporter Name <span style="color: red;">*</span></label>
                 <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="reporter_name" required>
               </div>
               <div class="col-md-6">
-                <label class="form-label">Service Number <span style="color: red;">*</span></label>
-                <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="service_number" required>
-              </div>
-              <div class="">
                 <label class="form-label">Number <span style="color: red;">*</span></label>
                 <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="number" required>
               </div>

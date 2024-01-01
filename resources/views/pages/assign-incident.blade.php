@@ -6,8 +6,8 @@
                 <div class="container wrapper" >
                     <div class="table-wrapper" style="width:1085px;font-size:0.9rem;margin-top:25px;">
                         <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-light">
                                     <th>Ticket No.</th>
                                     <th>Reported By</th>
                                     <th>Issue Type</th>
@@ -15,7 +15,8 @@
                                     <th>Urgency</th>
                                     <th>Description</th>
                                     <th>Status</th>
-                                    <th>From (Unit/Department)</th> 
+                                    <th>From (Cell)</th> 
+                                    <th>Assigned To</th>
                                     <th>Action</th> 
                                 </thead>
                                 
@@ -28,8 +29,9 @@
                                         <td>{{$incident -> issue}}</td>
                                         <td>{{$incident -> urgency}}</td>
                                         <td>{{$incident -> description}}</td>
-                                        <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
+                                        <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
                                         <td>{{$incident -> from}}</td>
+                                        <td></td>
                                         <td><a href="{{'/assign-to/'.$incident -> id}}" class="btn btn-primary" style="font-size: 0.85rem;">Assign</a></td>
                                     </tr> 
                                     @endforeach
@@ -53,10 +55,4 @@
     background-color: #1995AD;
     transition: 0.5s;
 }
-
-.toggleDashboard {
-    width: 1453px;
-    margin-left: -87px;
-    background-color: blue;
-  }
 </style>

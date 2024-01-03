@@ -9,9 +9,9 @@
                     </div>
                     <div class="table-wrapper" style="margin-top: 20px;">
                         <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Departmet</th>
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-light">
+                                    <th>Department</th>
                                     <th>Cell</th>
                                 </thead>
 

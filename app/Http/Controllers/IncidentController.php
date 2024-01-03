@@ -131,14 +131,14 @@ class IncidentController extends Controller
 
             $search = $request -> input('issueType');
             $tech = $request -> input('technician');
-            $month = $request -> input('month');
+            // $month = $request -> input('month');
             $date = date('m');
     
             $issueType = Incident::query()
                     -> where('issue_type', 'LIKE', "%{$search}%")
                     -> where('issue_type', 'Network')
                     -> where('technician_id', 'LIKE', "%{$tech}%")
-                    -> whereRaw('MONTH(created_at) = ?', [$date], 'LIKE', "%{$month}%")
+                    // -> whereRaw('MONTH(created_at) = ?', [$date], 'LIKE', "%{$month}%")
                     -> get();
             return view('pages.report', compact('issueType', 'technician'));
         }

@@ -31,7 +31,13 @@
                                                 <td>{{ $resolved -> description }}</td>
                                                 <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{ $resolved -> statusCheck }}</span></td>
                                                 <td>{{ $resolved -> from }}</td>
-                                                <td>{{ $resolved -> assign_to }}</td>
+                                                <td>
+                                                    @foreach ($techName as $name)
+                                                        @if ($name -> id == $resolved -> technician_id)
+                                                            {{$name -> name}}
+                                                        @endif
+                                                    @endforeach
+                                                </td>
                                                 <td><a href="{{url('/view-more/'.$resolved -> id)}}" class="btn btn-primary">Details</a></td>
                                             </tr>
                                             @endforeach

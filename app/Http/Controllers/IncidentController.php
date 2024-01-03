@@ -72,8 +72,7 @@ class IncidentController extends Controller
         $incident -> description = $request -> input('description');
         $incident -> technician_id = $request -> input('assign_to');
         
-        DB::table('technicians')
-        ->where('id', $incident -> technician_id = $request -> input('assign_to'))
+        Technicians::where('id', $incident -> technician_id = $request -> input('assign_to'))
         ->update(['status' => 'Unavailable']);
 
         $incident -> statusCheck = 'Pending';
@@ -94,7 +93,7 @@ class IncidentController extends Controller
                 return view('pages.assign-to',compact('incident', 'technician'));
             } elseif ($networkUser) {
                 $incident = Incident::find($id);
-                $technician = Technicians::where('cell', 'Network Cell') -> get();
+                $technician = Technicians::where('cell', 'Network Cell') -> where('status', 'Available') -> get();
                 return view('pages.assign-to',compact('incident', 'technician'));
             }
         }
@@ -107,22 +106,44 @@ class IncidentController extends Controller
     }
 
     // Dislpay Report
-    public function report() {
-        $technician = Technicians::all();
-        $search = Incident::query();
-        if(request('issue_type')) {
-            $search -> where('issue_type', 'LIKE', '%' .request('issue_type').'%');
+    public function report(Request $request) {
+        if (Auth::id()) {
+    
+            $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
+            $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
+
+        if ($hardwareUser) {
+            $technician = Technicians::where('cell', 'Tech Cell') -> get();
+
+            $search = $request -> input('issueType');
+            $tech = $request -> input('technician');
+    
+            $issueType = Incident::query()
+                    -> where('issue_type', 'LIKE', "%{$search}%")
+                    -> where('issue_type', 'Hardware')
+                    -> Where('technician_id', 'LIKE', "%{$tech}%")
+                    -> get();
+            return view('pages.report', compact('issueType', 'technician'));
+
+        } elseif ($networkUser) {
+
+            $technician = Technicians::where('cell', 'Network Cell') -> get();
+
+            $search = $request -> input('issueType');
+            $tech = $request -> input('technician');
+            $month = $request -> input('month');
+            $date = date('m');
+    
+            $issueType = Incident::query()
+                    -> where('issue_type', 'LIKE', "%{$search}%")
+                    -> where('issue_type', 'Network')
+                    -> where('technician_id', 'LIKE', "%{$tech}%")
+                    -> whereRaw('MONTH(created_at) = ?', [$date], 'LIKE', "%{$month}%")
+                    -> get();
+            return view('pages.report', compact('issueType', 'technician'));
         }
-
-        elseif(request('technician')) {
-            $search -> where('technician', 'LIKE', '%' .request('technician').'%');
-        }
-
-        return $search -> orderBy('id', 'DESC') -> paginate(5);
-
-        // $issueType = Incident::where('issue_type', '=', 'Hardware') -> orWhere('issue_type', '=', 'Software') -> orWhere('issue_type', '=', 'Network') -> get();
-        // return view('pages.report', compact('search', 'technician'));
     }
+}
 
     // Delete Incidents
     public function delete($id) {
@@ -140,20 +161,22 @@ class IncidentController extends Controller
         return redirect('/users');
     }
 
-    // Pending Incidents
+    // Display Pending Incidents
     public function pending() {
         if (Auth::id()) {
+
             $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
-            // $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
+
             if ($networkUser) {
-                // $incident = Incident::find($id);
                 $pending = Incident::where('issue_type', 'Network') -> where('statusCheck', 'pending') -> get();
-                return view('pages.pending-incident', compact('pending'));
+                $techName = Technicians::where('cell', 'Network Cell') -> get();
+                return view('pages.pending-incident', compact('pending', 'techName'));
             }
             else if ($hardwareUser) {
                 $pending = Incident::where('issue_type', 'Hardware') -> where('statusCheck', 'pending') -> get();
-                return view('pages.pending-incident', compact('pending'));
+                $techName = Technicians::where('cell', 'Tech Cell') -> get();
+                return view('pages.pending-incident', compact('pending', 'techName'));
             }
         }
     }
@@ -166,29 +189,35 @@ class IncidentController extends Controller
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
             if ($hardwareUser) {
+                $techName = Technicians::where('cell', 'Tech Cell') -> get();
                 $resolved = Incident::where('issue_type', 'Hardware') -> where('statusCheck', 'resolved') -> get();
-                return view('pages.resolved-incident', compact('resolved'));
+                return view('pages.resolved-incident', compact('resolved', 'techName'));
             }
 
             else if ($networkUser) {
+                $techName = Technicians::where('cell', 'Network Cell') -> get();
                 $resolved = Incident::where('issue_type', 'Network') -> where('statusCheck', 'resolved') -> get();
-                return view('pages.resolved-incident', compact('resolved'));
+                return view('pages.resolved-incident', compact('resolved', 'techName'));
             }
         }
     }
 
     // pending To Done Function
     public function pendingToDone($id) {
+        if (Auth::id()) {
+            $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
+            $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
+            if ($hardwareUser) {}
         $pending = Incident::findOrFail($id);
 
         $pending -> statusCheck = "Resolved";
 
-        DB::table('technicians')
-        ->where('id', $pending -> technician_id)
+        Technicians::where('id', $pending -> technician_id)
         ->update(['status' => 'Available']);
 
         $pending -> update();
         return redirect('/pending-incident');
+        }
     }
 
     // User Pending Function
@@ -226,7 +255,19 @@ class IncidentController extends Controller
     }
 
     public function viewMore($id) {
-        $incident = Incident::find($id);
-        return view('pages.view-more', compact('incident'));
+        if (Auth::id()) {
+            $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
+            $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
+            if ($hardwareUser) {
+                $incident = Incident::find($id);
+                $name = Technicians::where('cell', 'Tech Cell') -> get();
+                return view('pages.view-more', compact('incident', 'name'));
+            }
+            elseif($networkUser) {
+                $incident = Incident::find($id);
+                $name = Technicians::where('cell', 'Network Cell') -> get();
+                return view('pages.view-more', compact('incident', 'name'));
+            }
+        }
     }
 }

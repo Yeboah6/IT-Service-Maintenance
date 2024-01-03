@@ -92,16 +92,16 @@
 <style>
   
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 220px; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  height: 100%;
+  width: 220px;
+  position: fixed; 
+  z-index: 1;
   top: 0;
   left: 0;
-  background-color: #283655; /* Green*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: #283655; 
+  overflow-x: hidden;
+  padding-top: 60px; 
+  transition: 0.5s; 
 }
 
 .sidenav a:hover {

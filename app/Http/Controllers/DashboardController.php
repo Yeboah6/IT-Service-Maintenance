@@ -21,21 +21,37 @@ class DashboardController extends Controller
 
             // Hardware Dashboard 
             if ($hardwareUser) {
-                $incident = Incident::where('issue_type', 'Hardware') -> get();
-                $department = Department::all();
+                $incident = Incident::orderBy('created_at', 'desc') -> where('issue_type', 'Hardware') -> get();
 
                 $wordCount = Incident::where('issue_type', 'Hardware')->count();
                 $technicians = Technicians::where('cell', 'Tech Cell') -> count();
-                $technician = Technicians::where('cell', 'Tech Cell') -> get();
+                $techName = Technicians::where('cell', 'Tech Cell') -> get();
+                $technician = Technicians::where('status', 'Unavailable') -> where('cell', 'Tech Cell') -> count();
                 $users = User::all() -> count();
 
                 $resolved = Incident::where('issue_type', 'Hardware') -> where('statusCheck', 'resolved') -> count();
                 $assignCount = Incident::where('issue_type', 'Hardware') -> where('statusCheck','pending') -> count();
                 $assignResolved = $assignCount + $resolved;
-                $unassigned = Incident::where('statusCheck', 'submitted') -> count();
+                $unassigned = Incident::where('issue_type', 'Hardware') -> where('statusCheck', 'submitted') -> count();
 
-                return view('Dashboards.Admin.dashboard', compact('incident', 'department', 'technician', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
+                return view('Dashboards.Admin.dashboard', compact('incident', 'technician','techName', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
             }
+             else if ($networkUser) {
+                $incident = Incident::where('issue_type', 'Network') -> get();
+
+                $wordCount = Incident::where('issue_type', 'Network')->count();
+                $technicians = Technicians::where('cell', 'Network Cell') -> count();
+                $techName = Technicians::where('cell', 'Network Cell') -> get();
+                $technician = Technicians::where('status', 'Unavailable') -> where('cell', 'Network Cell') -> count();
+                $users = User::all() -> count();
+
+                $resolved = Incident::where('issue_type', 'Network') -> where('statusCheck', 'Resolved') -> count();
+                $assignCount = Incident::where('issue_type', 'Network') -> where('statusCheck','Pending') -> count();
+                $assignResolved = $assignCount + $resolved;
+                $unassigned = Incident::where('issue_type', 'Network') -> where('statusCheck', 'submitted') -> count();
+
+                return view('Dashboards.Admin.dashboard', compact('incident', 'techName', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'technician', 'resolved', 'unassigned'));
+             }
 
             // Software Dashboard
             // else if ($softwareUser) {
@@ -51,20 +67,6 @@ class DashboardController extends Controller
 
             //     return view('Dashboards.Admin.dashboard', compact('incident', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
             //  } 
-
-             else if ($networkUser) {
-                $incident = Incident::where('issue_type', 'Network') -> get();
-                $wordCount = Incident::where('issue_type', 'Network')->count();
-                $technicians = Technicians::where('cell', 'Network Cell') -> count();
-                $users = User::all() -> count();
-
-                $resolved = Incident::where('issue_type', 'Network') -> where('statusCheck', 'resolved') -> count();
-                $assignCount = Incident::where('issue_type', 'Network') -> where('statusCheck','pending') -> count();
-                $assignResolved = $assignCount + $resolved;
-                $unassigned = Incident::where('issue_type', 'Network') -> where('statusCheck', 'submitted') -> count();
-
-                return view('Dashboards.Admin.dashboard', compact('incident', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
-             }
              
              else {
                 $incident = Incident::where('reporter', auth()->user()-> name) -> get();

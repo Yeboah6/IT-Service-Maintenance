@@ -1,63 +1,55 @@
 <x-app-layout>
 <div class="report-container" id="cardId" style="margin-left: 0;">
-    <div class="py-12" style="margin-left: 20px;margin-top:50px;">
+    <div class="py-12" style="margin-left: -75px;margin-top:50px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="sm:rounded-lg" style="margin-top:-5px;margin-left:240px;">
                 <div class="container wrapper">
-                    <form action="{{url('report')}}" method="get" role="search">
+                    <form action="{{url('report')}}" method="GET" role="search">
                         @csrf
                     <ul>
                     <li>
                         <label>Issue Type</label>
                         <br>
-                        <select name="issue_type">
+                        <select name="issueType">
+                        <option>---Select Issue Type---</option>
                        <option value="Hardware">Hardware</option>
                        <option value="Network">Network</option>
-                       <option value="">Software</option>
+                       <!-- <option value="">Software</option> -->
                         </select>
                         <!-- <br> -->
                     </li>
 
-                    <li>
-                    <label for="">Technician</label>
-                    <br>
-                        <select name="technician">
-                        <option value="">---Select Technician---</option>
-                            @foreach ($technician as $tech)
-                                <option value="{{$tech -> name}}">{{$tech -> name}}</option>
-                            @endforeach
-                        
+                     <li>
+                    <label >Technician</label>
+                        <br>
+                    <select name="technician">
+                    <option>--Select Technician---</option>
+                        @foreach ($technician as $tech)
+                        <option value="{{ $tech -> id }}">{{$tech -> name}}</option>
+                        @endforeach
                     </select>
                     </li>
-                    <!-- <li>
-                    <label for="">Month</label>
+
+                    <li>
+                    <label>Month</label>
                     <br>
                         <select name="month">
-                        <option value="">January</option>
-                        <option value="">February</option>
-                        <option value="">March</option>
-                        <option value="">April</option>
-                        <option value="">May</option>
-                        <option value="">June</option>
-                        <option value="">July</option>
-                        <option value="">August</option>
-                        <option value="">September</option>
-                        <option value="">October</option>
-                        <option value="">November</option>
-                        <option value="">December</option>
-                    </select>
-                    </li> -->
-                    <!-- <li>
-                    <label for="">Month</label>
-                        <br>
-                    <select name="" id="">
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
+                        <option>---Select Month---</option>
+                        <option value="0">January</option>
+                        <option value="1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
                     </select>
                     </li>
-                    <li>
+                    <!--<li>
                         <label for="">Date</label>
                         <br>
                     <select name="" id="">
@@ -96,42 +88,62 @@
                 </div>
 
                
-                    <div class="table-wrapper" style="margin-top: 25px;">
+                    <div class="table-wrapper" style="margin-top: 25px;width:1100px;font-size:0.9rem;margin-left: -35px;">
                         <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <th>Reporter</th>
+                            <table class="table table-bordered table-hover">
+                            <thead class="table-light">
+                                    <th>Ticket No.</th>
+                                    <th>Reported By</th>
                                     <th>Issue Type</th>
                                     <th>Issue</th>
                                     <th>Urgency</th>
                                     <th>Description</th>
                                     <th>Status</th>
-                                    <th>From (Department)</th>
-                                    <th>Assigned To</th>
+                                    <th>From (Cell)</th> 
+                                    <th>Assign To</th> 
+                                    <th>Action</th>
                                 </thead>
-                            </table>
+                            
 
-                            <!-- <tbody>
-                                            @foreach ($search as $search)
+                            <tbody>
+                                @php
+                                    $hardwareUser = auth()->user()-> email == "hardwareadmin@gmail.com";
+                                    $networkUser = auth()->user()-> email == "networkadmin@gmail.com";
+                                @endphp
+
+                                
+                                            @foreach ($issueType as $issueType)
                                             <tr>
-                                                <td>{{$search -> ticket_no}}</td>
-                                                <td>{{ $search -> reporter }}</td>
-                                                <td>{{ $search -> issue_type }}</td>
-                                                <td>{{ $search -> issue }}</td>
-                                                <td>{{ $search -> urgency }}</td>
-                                                <td>{{ $search -> description }}</td>
-                                                <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $search -> statusCheck }}</span></td>
-                                                <td>{{ $search -> from }}</td>
-                                                <td>{{ $search -> assign_to }}</td>
-                                                <td><a href="{{url('/view-more/'.$search -> id)}}" class="btn btn-primary">Details</a></td>
+                                                <td>{{$issueType -> ticket_no}}</td>
+                                                <td>{{ $issueType -> reporter }}</td>
+                                                <td>{{ $issueType -> issue_type }}</td>
+                                                <td>{{ $issueType -> issue }}</td>
+                                                <td>{{ $issueType -> urgency }}</td>
+                                                <td>{{ $issueType -> description }}</td>
+                                            @if ($issueType -> statusCheck == "Submitted")
+                                                <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$issueType -> statusCheck}}</span></td>
+                                            @elseif ($issueType -> statusCheck == "Pending")
+                                                <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{$issueType -> statusCheck}}</span></td>
+                                            @else
+                                                <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$issueType -> statusCheck}}</span></td>
+                                            @endif
+                                                <td>{{ $issueType -> from}}</td>
+                                                
+                                                <td>
+                                                @foreach ($technician as $name)
+                                                    @if ($name -> id == $issueType -> technician_id)
+                                                        {{ $name -> name }}
+                                                    @endif
+                                                @endforeach
+                                                </td>
+                                                <td><a href="{{url('/view-more/'.$issueType -> id)}}" class="btn btn-primary">Details</a></td>
                                             </tr>
                                             @endforeach
-                                        </tbody> -->
+                                       
+                                        </tbody>
+                                        </table>
                         </div>
                     </div> 
-                     <!-- <button class="accordion" style="width: 200px;">January</button>
-                <div class="panel">
-                </div> -->
             </div> 
         </div>
         </div>
@@ -168,62 +180,4 @@
     margin: 10px;
 }
 
-/* .accordion:after {
-  content: '\02795';
-  font-size: 8px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-}
-
-.activebtn:after {
-  content: "\2796"; 
-} */
-
-
- /*
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.5s;
-}
-
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
-} */
 </style>
-
-
-<!-- <script>
-
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("activebtn");
-
-
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
-
-</script> -->

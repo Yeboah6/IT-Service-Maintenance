@@ -16,7 +16,6 @@
                                     <th>Description</th>
                                     <th>Status</th>
                                     <th>From (Cell)</th> 
-                                    <th>Assigned To</th>
                                     <th>Action</th> 
                                 </thead>
                                 
@@ -31,7 +30,6 @@
                                         <td>{{$incident -> description}}</td>
                                         <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
                                         <td>{{$incident -> from}}</td>
-                                        <td></td>
                                         <td><a href="{{'/assign-to/'.$incident -> id}}" class="btn btn-primary" style="font-size: 0.85rem;">Assign</a></td>
                                     </tr> 
                                     @endforeach

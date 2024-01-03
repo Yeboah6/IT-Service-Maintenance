@@ -7,7 +7,7 @@
                         <div class="card-wrapper" style="margin-left: 150px;margin-top: -170px;">
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
-                                <li>Incidents <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
+                                <li style="font-size: 1.15rem;">Incidents <span style="margin-left: 50px;font-size: 1.3rem;"><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
                                 <li>{{$wordCount}}</li>
                                 <li>{{$resolved}} Resolved</li>
                             </ul>
@@ -15,26 +15,23 @@
                             </div>
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
-                                <li> Assigned <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span></li>
+                                <li style="font-size: 1.15rem;"> Assigned <span style="margin-left: 50px;font-size: 1.1rem;"><i class="fa fa-list" aria-hidden="true"></i></span></li>
                                 <li>{{$assignResolved}}</li>
                                 <li>{{$unassigned}} Unassigned</li>
                             </ul>
                             </div>
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
-                                <li>Users <span><i class="fa fa-user-o" aria-hidden="true"></i></span></li>
+                                <li style="font-size: 1.15rem;">Users <span style="margin-left: 75px;font-size: 1.3rem;"><i class="fa fa-users" aria-hidden="true"></i></span></li>
                                 <li>{{$users}}</li>
                                 <li>Users</li>
                             </ul>
                             </div>
                             <div class="card card-3" style="font-weight: bold; font-size: 1rem;">
                             <ul>
-                                <li>Technicians <span><i class="fa fa-user-o" aria-hidden="true"></i></span></li>
+                                <li style="font-size: 1.15rem;">Technicians <span style="margin-left: 20px;font-size: 1.3rem;"><i class="fa fa-user-o" aria-hidden="true"></i></span></li>
                                 <li>{{$technicians}}</li>
-                                @foreach ($department as $department)
-                                    <li>{{$department -> cell}}</li>
-                                @endforeach
-                                
+                                <li>{{$technician}} Unavailable</li>
                             </ul>
                             </div>
                         </div>
@@ -69,17 +66,21 @@
                                         <td>{{$incident -> issue}}</td>
                                         <td>{{$incident -> urgency}}</td>
                                         <td>{{$incident -> description}}</td>
-                                        @if ($incident -> statusCheck == "Submitted")
+                                    @if ($incident -> statusCheck == "Submitted")
                                         <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
-                                        @elseif ($incident -> statusCheck == "Pending")
+                                    @elseif ($incident -> statusCheck == "Pending")
                                         <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
-
-                                        @else
+                                    @else
                                         <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
-
-                                        @endif
+                                    @endif
                                         <td>{{$incident -> from}}</td>
-                                        <td> {{ $incident -> reporter_name }} </td>
+                                        <td> 
+                                    @foreach ($techName as $name)
+                                        @if ($name -> id == $incident -> technician_id)
+                                            {{ $name -> name }}
+                                        @endif
+                                    @endforeach
+                                        </td>
                                         <td scope="col"><a href="{{url('/view-more/'.$incident -> id)}}" class="btn btn-primary" style="font-size: 0.85rem;">Details</a></td>
                                         <td scope="col"><a href="{{url('/delete/'.$incident -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>
                                     </tr>

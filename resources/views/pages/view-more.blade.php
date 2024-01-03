@@ -146,16 +146,24 @@
                 </ul>
                 <ul class="assignTo">
                     <li>Assigned To:</li>
-                    <li>Philip</li>
+                    @foreach ($name as $name)
+                    @if ($name -> id == $incident -> technician_id)
+                      <li>{{$name -> name}}</li>
+                    @endif
+                    
+                    @endforeach
+                    
                 </ul>
             <ul class="description">
                 <li>Description:</li>
                 <li>{{$incident -> description}}</li>
             </ul>
             </div>
-        <div class="assigned-details">
-            <h3>Reported By:</h3>
+        <div>
+          <h4>Reported By:</h4>
+          <ul class="assigned-details">
             <li>{{$incident -> reporter}}</li>
+          </ul>
         </div>
         </div>
     </div>
@@ -265,22 +273,25 @@
         display: flex;
     }
 
-    h1, h3 {
+    .assigned-details li {
+      /* display: flex; */
+      margin-left: 20px;
+    }
+
+    h1, h4 {
         font-size: 1.5rem;
         font-weight: bold;
         padding: 10px;
         margin-left: 10px;
         /* margin-top: 50px; */
     }
+
+    h4 {
+      font-size: 1.2rem;
+    }
 </style>
 
 <script>
-  //   Dashboard ToggleEvent
-function closeDashboard() {
-  document.getElementById("cardId").classList.toggle("toggleDashboard");
-  document.getElementById("mySidenav").classList.toggle("sidenavToggle");
-  // document.getElementById("inputId").classList.toggle("formToggle");
-}
 
 //   sideNav Dropdown
   var dropdown = document.getElementsByClassName("dropdown-btn");

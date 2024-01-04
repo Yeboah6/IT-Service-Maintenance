@@ -8,22 +8,27 @@
                         @csrf
                     <ul>
                     <li>
+
+                    @php
+                        $hardwareUser = auth()->user()-> email == "hardwareadmin@gmail.com";
+                        $networkUser = auth()->user()-> email == "networkadmin@gmail.com";
+                    @endphp
                         <label>Issue Type</label>
                         <br>
-                        <select name="issueType">
-                        <option>---Select Issue Type---</option>
-                       <option value="Hardware">Hardware</option>
-                       <option value="Network">Network</option>
-                       <!-- <option value="">Software</option> -->
-                        </select>
-                        <!-- <br> -->
+                            @if ($hardwareUser)
+                            <input type="text" class="form-control" style="width: 200px;border-radius:6px;padding-left: 50px;" name="Hardware" value="Hardware" readonly>
+                                
+                            @elseif ($networkUser)
+                            <input type="text" class="form-control" style="width: 210px;border-radius:6px" value="Network" readonly>
+                            @endif
+                       
                     </li>
 
                      <li>
                     <label >Technician</label>
                         <br>
                     <select name="technician">
-                    <option>--Select Technician---</option>
+                    <option selected>--Select Technician---</option>
                         @foreach ($technician as $tech)
                         <option value="{{ $tech -> id }}">{{$tech -> name}}</option>
                         @endforeach
@@ -31,35 +36,13 @@
                     </li>
 
                     <li>
-                    <label>Month</label>
+                    <label>Ticket No.</label>
                     <br>
-                        <select name="month">
-                        <option>---Select Month---</option>
-                        <option value="0">January</option>
-                        <option value="1">February</option>
-                        <option value="2">March</option>
-                        <option value="3">April</option>
-                        <option value="4">May</option>
-                        <option value="5">June</option>
-                        <option value="6">July</option>
-                        <option value="7">August</option>
-                        <option value="8">September</option>
-                        <option value="9">October</option>
-                        <option value="10">November</option>
-                        <option value="11">December</option>
-                    </select>
+                    <!-- <form action="{{url('report-search')}}" method="GET" role="search"> -->
+                        <input type="search" class="form-control" style="width: 210px;border-radius:6px" name="ticketNo" >
                     </li>
+                   
                     <!--<li>
-                        <label for="">Date</label>
-                        <br>
-                    <select name="" id="">
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                    </select>
-                    </li>
-                    <li>
                         <label for="">Date</label>
                         <br>
                     <select name="" id="">
@@ -84,6 +67,7 @@
                         <button class="btn btn-primary" type="submit">Search</button>
                     </li>
                     </ul>
+                    <!-- </form> -->
                     </form>
                 </div>
 

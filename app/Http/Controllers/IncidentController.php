@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
+use function PHPUnit\Framework\isEmpty;
+use function PHPUnit\Framework\isNull;
+
 class IncidentController extends Controller
 {
 
@@ -112,38 +115,49 @@ class IncidentController extends Controller
             $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
-        if ($hardwareUser) {
-            $technician = Technicians::where('cell', 'Tech Cell') -> get();
+            if ($hardwareUser) {
+                $technician = Technicians::where('cell', 'Tech Cell') -> get();
 
-            $search = $request -> input('issueType');
-            $tech = $request -> input('technician');
+                $search = $request -> input('issueType');
+                $tech = $request -> input('technician');
+                $ticket = $request -> input('ticketNo');
+
+                    $issueType = Incident::query()
+                        -> where('issue_type', 'LIKE', "%{$search}%")
+                        -> where('ticket_no', 'LIKE', "%{$ticket}%")
+                        -> where('technician_id', 'LIKE', "%{$tech}%")
+                        -> get();
+                    return view('pages.report', compact('issueType', 'technician'));
+
+            } elseif ($networkUser) {
+
+                $technician = Technicians::where('cell', 'Network Cell') -> get();
+
+                $search = $request -> input('issueType');
+                $tech = $request -> input('technician');
+                // $month = $request -> input('month');
+                $date = date('m');
     
-            $issueType = Incident::query()
-                    -> where('issue_type', 'LIKE', "%{$search}%")
-                    -> where('issue_type', 'Hardware')
-                    -> Where('technician_id', 'LIKE', "%{$tech}%")
-                    -> get();
-            return view('pages.report', compact('issueType', 'technician'));
-
-        } elseif ($networkUser) {
-
-            $technician = Technicians::where('cell', 'Network Cell') -> get();
-
-            $search = $request -> input('issueType');
-            $tech = $request -> input('technician');
-            // $month = $request -> input('month');
-            $date = date('m');
-    
-            $issueType = Incident::query()
-                    -> where('issue_type', 'LIKE', "%{$search}%")
-                    -> where('issue_type', 'Network')
-                    -> where('technician_id', 'LIKE', "%{$tech}%")
-                    // -> whereRaw('MONTH(created_at) = ?', [$date], 'LIKE', "%{$month}%")
-                    -> get();
-            return view('pages.report', compact('issueType', 'technician'));
+                $issueType = Incident::query()
+                        -> where('issue_type', 'LIKE', "%{$search}%")
+                        -> where('issue_type', 'Network')
+                        -> where('technician_id', 'LIKE', "%{$tech}%")
+                        // -> whereRaw('MONTH(created_at) = ?', [$date], 'LIKE', "%{$month}%")
+                        -> get();
+                return view('pages.report', compact('issueType', 'technician'));
+            }
         }
     }
-}
+
+    // public function reportSearch(Request $request) {
+    //     $ticket = $request -> input('ticketNo');
+
+    //     $issueType = Incident::query()
+    //     -> where('ticket_no', 'LIKE', "%{$ticket}%")
+    //     -> get();
+
+    //     return view('pages.report', compact('issueTpye'));
+    // }
 
     // Delete Incidents
     public function delete($id) {

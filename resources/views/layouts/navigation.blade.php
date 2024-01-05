@@ -4,15 +4,19 @@
         <div class="flex justify-between h-16">
             <div class="flex"> 
                 <!-- Navigation Links -->
-                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 250px;">
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 200px;">
                     <x-nav-link :href="route('dashboard')"  style="font-size:1.3rem;color:white;font-weight:bold;">
                         {{ __('IT Resolve System') }}
                     </x-nav-link>
                 </div> 
+                    <form action="{{url('display-search')}}" method="GET" role="search" class="form">
+                        <input type="search" class="form-control" style="width: 310px;border-radius:6px" placeholder="Search Ticket" name="ticketNo">
+                        <div class="button-wrapper">
+                            <button type="submit" class="btn btn-primary" style="background-color: blue;">Search</button>
+                        </div>
+                    </form>
             </div>
-<!-- <section onclick="inputToggle()">
-    expand
-</section> -->
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
@@ -93,3 +97,17 @@
         </div>
     </div>
 </nav>
+
+
+<style>
+    .form {
+        margin-top: 10px;
+        margin-left: 70px;
+    }
+
+    .button-wrapper {
+        position: absolute;
+        left: 850px;
+        top: 12px;
+    }
+</style>

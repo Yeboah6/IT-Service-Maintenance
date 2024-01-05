@@ -70,6 +70,7 @@ class DashboardController extends Controller
              
              else {
                 $incident = Incident::where('reporter', auth()->user()-> name) -> get();
+                // $incidentDetails = Incident::all();
                 return view('Dashboards.User.User-dashboard', compact('incident'));
             }
         }

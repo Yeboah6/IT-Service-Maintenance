@@ -2,12 +2,12 @@
 <div class="userDashboard-container" id="cardId">
     <div class="py-12" style="margin-top: 90px;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-left: 5px;margin-top: -40px;">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-left: -15px;margin-top: -40px;">
                 <div class="container wrapper">
-                    <div class="table-wrapper" style="margin-top: 30px;font-size:0.9rem;">
+                    <div class="table-wrapper" style="margin-top: 30px;font-size:0.9rem;width:1070px;margin-left: 0;">
                         <div class="table">
-                            <table class="table table-bordered table-striped">
-                                <thead>
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-light">
                                     <th>Ticket No.</th>
                                     <th>Reported By</th>
                                     <th>Issue Type</th>
@@ -17,6 +17,7 @@
                                     <th>Summary</th>
                                     <th>From (Department)</th> 
                                     <th>Assigned To</th>
+                                    <th>Action</th>
                                 </thead>
 
                                 <tbody>
@@ -31,6 +32,10 @@
                                         <td>{{$incident -> description}}</td>
                                         <td>{{$incident -> from}}</td>
                                         <td>{{$incident -> assignTo}}</td>
+                                    
+                                        <td scope="col"><a href="{{url('/view-more/'.$incident -> id)}}" class="btn btn-primary" style="font-size: 0.85rem;">Details</a></td>
+                                            
+                                     
                                     </tr>
                                     @endforeach
                                 </tbody>

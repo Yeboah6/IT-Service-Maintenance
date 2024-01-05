@@ -108,7 +108,7 @@ class IncidentController extends Controller
         return view('pages.user', compact('user'));
     }
 
-    // Dislpay Report
+    // Dislpay Report and Search Function
     public function report(Request $request) {
         if (Auth::id()) {
     
@@ -120,12 +120,12 @@ class IncidentController extends Controller
 
                 $search = $request -> input('issueType');
                 $tech = $request -> input('technician');
-                $ticket = $request -> input('ticketNo');
+                $reporter = $request -> input('reporter');
 
                     $issueType = Incident::query()
                         -> where('issue_type', 'LIKE', "%{$search}%")
-                        -> where('ticket_no', 'LIKE', "%{$ticket}%")
                         -> where('technician_id', 'LIKE', "%{$tech}%")
+                        -> where('reporter', 'LIKE', "%{$reporter}%")
                         -> get();
                     return view('pages.report', compact('issueType', 'technician'));
 
@@ -135,29 +135,29 @@ class IncidentController extends Controller
 
                 $search = $request -> input('issueType');
                 $tech = $request -> input('technician');
-                // $month = $request -> input('month');
                 $date = date('m');
     
                 $issueType = Incident::query()
                         -> where('issue_type', 'LIKE', "%{$search}%")
                         -> where('issue_type', 'Network')
                         -> where('technician_id', 'LIKE', "%{$tech}%")
-                        // -> whereRaw('MONTH(created_at) = ?', [$date], 'LIKE', "%{$month}%")
                         -> get();
                 return view('pages.report', compact('issueType', 'technician'));
             }
         }
     }
+    
+// Function for searching Ticket No
+    public function reportSearch(Request $request) {
+        $ticket = $request -> input('ticketNo');
+        $technician = Technicians::where('cell', 'Tech Cell') -> get();
 
-    // public function reportSearch(Request $request) {
-    //     $ticket = $request -> input('ticketNo');
+        $issueType = Incident::query()
+        -> where('ticket_no', 'LIKE', "%{$ticket}%")
+        -> get();
 
-    //     $issueType = Incident::query()
-    //     -> where('ticket_no', 'LIKE', "%{$ticket}%")
-    //     -> get();
-
-    //     return view('pages.report', compact('issueTpye'));
-    // }
+        return redirect('pages.report', compact('issueType', 'technician'));
+    }
 
     // Delete Incidents
     public function delete($id) {
@@ -281,7 +281,23 @@ class IncidentController extends Controller
                 $incident = Incident::find($id);
                 $name = Technicians::where('cell', 'Network Cell') -> get();
                 return view('pages.view-more', compact('incident', 'name'));
+            } 
+            else {
+                $incident = Incident::find($id);
+                $name = Technicians::all();
+                return view('pages.view-more', compact('incident', 'name'));
             }
         }
+    }
+
+    public function searchDisplay(Request $request) {
+
+        $ticket = $request -> input('ticketNo');
+        $techName = Technicians::all();
+
+        $displaySearch = Incident::query()
+            -> where('ticket_no', 'LIKE', "%{$ticket}%")
+            -> get();
+        return view('pages.display-search', compact('displaySearch', 'techName'));
     }
 }

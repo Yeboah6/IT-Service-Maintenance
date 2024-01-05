@@ -74,6 +74,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete/{id}', [IncidentController::class, 'delete']) -> name('delete');
     Route::get('/delete-user/{id}', [IncidentController::class, 'deleteUser']) -> name('delete-user');
     Route::get('/delete-technician/{id}', [technicianController::class, 'deleteTechnician']) -> name('delete-technician');
+
+    Route::get('/display-search', [IncidentController::class, 'searchDisplay']) -> name('display-search');
 });
 
 require __DIR__.'/auth.php';

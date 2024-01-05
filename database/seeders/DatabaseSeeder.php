@@ -23,16 +23,22 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('hardwareadmin@gmail.com')
         ]);
 
-        \App\Models\User::create([
-            'name' => 'Software Admin',
-            'email' => 'softwareadmin@gmail.com',
-            'password' => Hash::make('softwareadmin@gmail.com')
-        ]);
+        // \App\Models\User::create([
+        //     'name' => 'Software Admin',
+        //     'email' => 'softwareadmin@gmail.com',
+        //     'password' => Hash::make('softwareadmin@gmail.com')
+        // ]);
 
         \App\Models\User::create([
             'name' => 'Network Admin',
             'email' => 'networkadmin@gmail.com',
             'password' => Hash::make('networkadmin@gmail.com')
+        ]);
+
+        \App\Models\User::create([
+            'name' => 'Receptionist',
+            'email' => 'receptionist@gmail.com',
+            'password' => Hash::make('receptionist@gmail.com')
         ]);
     }
 }

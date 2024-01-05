@@ -21,32 +21,28 @@
                                     </thead>
 
                                     <tbody>
-                                            @foreach ($pending as $pending)
+                                        @foreach ($displaySearch as $display)
                                             <tr>
-                                                <td>{{$pending -> ticket_no}}</td>
-                                                <td>{{ $pending -> reporter }}</td>
-                                                <td>{{ $pending -> issue_type }}</td>
-                                                <td>{{ $pending -> issue }}</td>
-                                                <td>{{ $pending -> urgency }}</td>
-                                                <td>{{ $pending -> description }}</td>
-                                                <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $pending -> statusCheck }}</span></td>
-                                                <td>{{ $pending -> from }}</td>
+                                            <td>{{$display -> ticket_no}}</td>
+                                                <td>{{ $display -> reporter }}</td>
+                                                <td>{{ $display -> issue_type }}</td>
+                                                <td>{{ $display -> issue }}</td>
+                                                <td>{{ $display -> urgency }}</td>
+                                                <td>{{ $display -> description }}</td>
+                                                <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $display -> statusCheck }}</span></td>
+                                                <td>{{ $display -> from }}</td>
                                                 <td>
                                                 @foreach ($techName as $name)
-                                                @if ($name -> id == $pending -> technician_id)
+                                                @if ($name -> id == $display -> technician_id)
                                                     {{$name -> name}}
                                                 @endif
                                                     
                                                 @endforeach
                                                 </td>
                                                 
-                                                <td><a href="{{url('/view-more/'.$pending -> id)}}" class="btn btn-primary">Details</a></td>
-                                                <form action="{{url('/resolve-incident/'.$pending -> id)}}" method="post">
-                                                    @csrf
-                                                <td><button type="submit" class="btn btn-primary" style="background-color: blue;">Done</button></td>
-                                                </form>
+                                                <td><a href="{{url('/view-more/'.$display -> id)}}" class="btn btn-primary">Details</a></td>
                                             </tr>
-                                            @endforeach
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>        

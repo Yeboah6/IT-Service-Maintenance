@@ -36,38 +36,23 @@
                     </li>
 
                     <li>
-                    <label>Ticket No.</label>
-                    <br>
-                    <!-- <form action="{{url('report-search')}}" method="GET" role="search"> -->
-                        <input type="search" class="form-control" style="width: 210px;border-radius:6px" name="ticketNo" >
-                    </li>
-                   
-                    <!--<li>
-                        <label for="">Date</label>
+                    <label >Technician</label>
                         <br>
-                    <select name="" id="">
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
+                    <select name="reporter">
+                    <option selected>--Select Reporter---</option>
+                    @if ($hardwareUser)
+                        <option value="Hardware Admin">Hardware Admin</option>
+                        @elseif ($networkUser)
+                        <option value="Network Admin">Network Admin</option>
+                    @endif
+                        <option value="Melinda">Receptionist</option>
                     </select>
                     </li>
-                    <li>
-                        <label for="">Date</label>
-                        <br>
-                    <select name="" id="">
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                        <option value="">Hello There</option>
-                    </select>
-                    </li> -->
                     <li>
                         <br>
                         <button class="btn btn-primary" type="submit">Search</button>
                     </li>
                     </ul>
-                    <!-- </form> -->
                     </form>
                 </div>
 
@@ -128,7 +113,6 @@
 
 
 <style>
-
     .wrapper select {
         border-radius: 5px;
         border-top: 0;

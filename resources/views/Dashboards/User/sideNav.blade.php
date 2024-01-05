@@ -1,5 +1,5 @@
 
-<span onclick="closeDashboard()" style="position:absolute;top: 18px;left:250px;"><i class="fa fa-bars bars" aria-hidden="true"></i></span>
+<!-- <span onclick="closeDashboard()" style="position:absolute;top: 18px;left:250px;"><i class="fa fa-bars bars" aria-hidden="true"></i></span> -->
 <div id="mySidenav" class="sidenav">
   <div>
     <img src="image/GAF.png" alt="GAF" style="width: 30%;margin-left:85px;">

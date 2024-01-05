@@ -28,13 +28,10 @@
                 @endphp
                 @include('layouts.navigation')
                 @if($hardwareUser)
-                    @include('Dashboards.Admin.sideNav')
-                @elseif ($softwareUser)
-                    @include('Dashboards.Admin.sideNav')
+                    @include('Dashboards.Admin.sideNav')   
                 @elseif ($networkUser)
                     @include('Dashboards.Admin.sideNav')
                 @else
-                
                     @include('Dashboards.User.sideNav')
                 @endif
 

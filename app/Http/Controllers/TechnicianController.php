@@ -34,8 +34,7 @@ class TechnicianController extends Controller
 
     // Add Technician Page
     public function addTechnician() {
-        $cell = Department::all();
-        return view('pages.add-technician', compact('cell'));
+        return view('pages.add-technician');
     }
 
     // Store Technician 

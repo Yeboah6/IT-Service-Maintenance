@@ -36,7 +36,7 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label">Reported By</label>
-                <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="reporter" value="{{Auth::user()->name}}" readonly>
+                <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="reported_by" value="{{Auth::user()->name}}" readonly>
               </div>
               <div class="col-md-4">
                 <label class="form-label">Urgency <span style="color: red;">*</span></label>

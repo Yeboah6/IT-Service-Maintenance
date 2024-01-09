@@ -25,17 +25,17 @@
             </div>
             <div class="col-md-4">
               <label class="form-label">Cell <span style="color: red;">*</span></label>
-              <select name="cell" class="form-select" style="width: 450px;border-radius:6px">
-              <option>----Select Cell----</option>
-              @foreach ($cell as $cell)
-              <option value="{{$cell -> cell}}">{{$cell -> cell}}</option>
-              @endforeach
-              </select>
-              <!-- <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="department" required> -->
+              @php
+                $hardwareUser = auth()->user()-> email == "hardwareadmin@gmail.com";
+                $networkUser = auth()->user()-> email == "networkadmin@gmail.com";
+              @endphp
+
+              @if ($hardwareUser)
+                <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="cell" value="Tech Cell" readonly>
+                @elseif ($networkUser)
+                <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="cell" value="Network Cell" readonly>
+              @endif
             </div>
-
-            <input type="text" class="form-control" name="status" hidden>
-
             <div class="col-12">
               <button type="submit" class="btn btn-primary" style="margin-left:900px;margin-top:60px;">Submit</button>
             </div>

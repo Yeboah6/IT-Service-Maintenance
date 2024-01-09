@@ -23,7 +23,7 @@
                                     @foreach($incident as $incident)
                                     <tr>
                                         <td>{{$incident -> ticket_no}}</td>
-                                        <td>{{$incident -> reporter}}</td>
+                                        <td>{{$incident -> reported_by}}</td>
                                         <td>{{$incident -> issue_type}}</td>
                                         <td>{{$incident -> issue}}</td>
                                         <td>{{$incident -> urgency}}</td>

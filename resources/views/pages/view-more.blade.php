@@ -21,6 +21,7 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-left: -7px;margin-top:40px;width: 1080px;">
         <h1 style="margin-top: 30px;">Personel Details</h1>
+        
         <div class="list-container">
             <ul class="list-service">
                 <li>Service Number:</li>
@@ -85,19 +86,22 @@
                 <li>{{$incident -> description}}</li>
             </ul>
             </div>
-        <div>
+        <div class="assignedDetails">
           <h4>Reported By:</h4>
           <ul class="assigned-details">
-            <li>{{$incident -> reporter}}</li>
+            <li>{{$incident -> reported_by}}</li>
           </ul>
         </div>
+        
         </div>
+       
     </div>
 </div>
 </div>
 </x-app-layout>
 
 <style>
+
 
 .view-more-container {
     position: relative;
@@ -109,9 +113,13 @@
     transition: 0.5s;
 }
 
+.assignedDetails {
+    margin-left: 900px;
+    margin-bottom: 30px;
+}
+
     .list-container {
-        display: flex; 
-        /* border: 1px solid #1995AD; */
+        display: flex;
         justify-content: space-around;
     }
 
@@ -126,8 +134,6 @@
 
     .list-name  {
         display: flex;
-  
-
     }
 
     .list-name li {
@@ -152,8 +158,6 @@
     }
 
     .inner-display {
-        /* display: flex; */
-        /* border: 1px solid red; */
         justify-content: space-around;
     }
 
@@ -181,12 +185,6 @@
         display: flex;
     }
 
-    /* .middle-display {
-        display: flex;
-        border: 1px solid red;
-        justify-content: space-around;
-    } */
-
     .urgency {
         display: flex;
     }
@@ -200,7 +198,6 @@
     }
 
     .assigned-details li {
-      /* display: flex; */
       margin-left: 20px;
     }
 
@@ -209,7 +206,6 @@
         font-weight: bold;
         padding: 10px;
         margin-left: 10px;
-        /* margin-top: 50px; */
     }
 
     h4 {
@@ -234,5 +230,6 @@
       }
     });
   }
+
 
 </script>

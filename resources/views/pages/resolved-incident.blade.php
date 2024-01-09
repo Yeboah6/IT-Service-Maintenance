@@ -24,7 +24,7 @@
                                             @foreach ($resolved as $resolved)
                                             <tr>
                                                 <td>{{$resolved -> ticket_no}}</td>
-                                                <td>{{ $resolved -> reporter }}</td>
+                                                <td>{{ $resolved -> reported_by }}</td>
                                                 <td>{{ $resolved -> issue_type }}</td>
                                                 <td>{{ $resolved -> issue }}</td>
                                                 <td>{{ $resolved -> urgency }}</td>

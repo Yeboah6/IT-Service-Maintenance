@@ -30,11 +30,10 @@ return new class extends Migration
             $table->string('issue')->nullable();
             $table->string('issue_type')->nullable();
             $table->string('description')->nullable();
-            $table->string('reporter')->nullable();
+            $table->string('reported_by')->nullable();
             $table->string('urgency')->nullable();
             $table->string('statusCheck')->nullable();
             $table->string('from')->nullable();
-
             $table->string('service_number');
             $table->string('reporter_name');
             $table->string('number');

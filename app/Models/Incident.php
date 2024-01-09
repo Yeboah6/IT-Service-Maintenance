@@ -14,7 +14,7 @@ class Incident extends Model
         'issue',
         'issue_type',
         'description',
-        'reporter',
+        'reported_by',
         'urgency',
         'statusCheck',
         'from',

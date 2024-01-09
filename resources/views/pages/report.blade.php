@@ -77,7 +77,7 @@
                                      @foreach ($issueType as $issueType)
                                         <tr>
                                             <td>{{$issueType -> ticket_no}}</td>
-                                            <td>{{ $issueType -> reporter }}</td>
+                                            <td>{{ $issueType -> reported_by }}</td>
                                             <td>{{ $issueType -> issue_type }}</td>
                                             <td>{{ $issueType -> issue }}</td>
                                             <td>{{ $issueType -> urgency }}</td>

@@ -16,7 +16,7 @@ class DashboardController extends Controller
     {
         if (Auth::id()) {
             $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
-            // $softwareUser = Auth()->user()->email === "softwareadmin@gmail.com";
+            $receptionist = Auth()->user()->email === "receptionist@gmail.com";
             $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
             // Hardware Dashboard 
@@ -37,7 +37,9 @@ class DashboardController extends Controller
                 return view('Dashboards.Admin.dashboard', compact('incident', 'technician','techName', 'assignResolved', 'wordCount', 'assignCount', 'users', 'technicians', 'resolved', 'unassigned'));
             }
              else if ($networkUser) {
-                $incident = Incident::where('issue_type', 'Network') -> get();
+                $incident = Incident::orderBy('created_at', 'desc') -> where('issue_type', 'Hardware') -> get();
+
+                // $incident = Incident::where('issue_type', 'Network') -> get();
 
                 $wordCount = Incident::where('issue_type', 'Network')->count();
                 $technicians = Technicians::where('cell', 'Network Cell') -> count();
@@ -69,7 +71,7 @@ class DashboardController extends Controller
             //  } 
              
              else {
-                $incident = Incident::where('reporter', auth()->user()-> name) -> get();
+                $incident = Incident::all();
                 // $incidentDetails = Incident::all();
                 return view('Dashboards.User.User-dashboard', compact('incident'));
             }

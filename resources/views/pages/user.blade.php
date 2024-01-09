@@ -21,7 +21,6 @@
                                         <td>{{$user -> id}}</td>
                                         <td>{{$user -> name}}</td>
                                         <td>{{$user -> email}}</td>
-                                        <!-- <td>{{$user -> role}}</td> -->
                                         <td>{{$user -> created_at}}</td>
                                         <td>{{$user -> updated_at}}</td>
                                         <td><a href="{{url('/delete-user/'.$user -> id)}}" class="btn btn-danger" style="font-size: 0.85rem;">Delete</a></td>

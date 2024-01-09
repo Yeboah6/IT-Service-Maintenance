@@ -24,12 +24,18 @@
                                         @foreach ($displaySearch as $display)
                                             <tr>
                                             <td>{{$display -> ticket_no}}</td>
-                                                <td>{{ $display -> reporter }}</td>
+                                                <td>{{ $display -> reported_by }}</td>
                                                 <td>{{ $display -> issue_type }}</td>
                                                 <td>{{ $display -> issue }}</td>
                                                 <td>{{ $display -> urgency }}</td>
                                                 <td>{{ $display -> description }}</td>
-                                                <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{ $display -> statusCheck }}</span></td>
+                                            @if ($display -> statusCheck == "Submitted")
+                                                <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$display -> statusCheck}}</span></td>
+                                            @elseif ($display -> statusCheck == "Pending")
+                                                <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{$display -> statusCheck}}</span></td>
+                                            @else
+                                                <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$display -> statusCheck}}</span></td>
+                                            @endif
                                                 <td>{{ $display -> from }}</td>
                                                 <td>
                                                 @foreach ($techName as $name)

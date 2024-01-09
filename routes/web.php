@@ -76,6 +76,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete-technician/{id}', [technicianController::class, 'deleteTechnician']) -> name('delete-technician');
 
     Route::get('/display-search', [IncidentController::class, 'searchDisplay']) -> name('display-search');
+
+    Route::get('/testing', function() {
+        return view('pages.testing');
+    });
 });
 
 require __DIR__.'/auth.php';

@@ -32,7 +32,7 @@ class IncidentController extends Controller
         $data = new Incident();
         $data -> issue = $request -> input('issue');
         $data -> issue_type = $request -> input('issue_type');
-        $data -> reporter = $request -> input('reporter');
+        $data -> reported_by = $request -> input('reported_by');
         $data -> urgency = $request -> input('urgency');
         $data -> from = $request -> input('from');
         $data -> description = $request -> input('description');
@@ -69,7 +69,7 @@ class IncidentController extends Controller
         
         $incident -> issue = $request -> input('issue');
         $incident -> issue_type = $request -> input('issue_type');
-        $incident -> reporter = $request -> input('reporter');
+        $incident -> reported_by = $request -> input('reported_by');
         $incident -> urgency = $request -> input('urgency');
         $incident -> from = $request -> input('from');
         $incident -> description = $request -> input('description');
@@ -120,12 +120,13 @@ class IncidentController extends Controller
 
                 $search = $request -> input('issueType');
                 $tech = $request -> input('technician');
-                $reporter = $request -> input('reporter');
+                $reportedBy = $request -> input('reported_by');
 
                     $issueType = Incident::query()
                         -> where('issue_type', 'LIKE', "%{$search}%")
+                        -> where('issue_type', 'Hardware')
                         -> where('technician_id', 'LIKE', "%{$tech}%")
-                        -> where('reporter', 'LIKE', "%{$reporter}%")
+                        -> where('reported_by', 'LIKE', "%{$reportedBy}%")
                         -> get();
                     return view('pages.report', compact('issueType', 'technician'));
 
@@ -135,28 +136,17 @@ class IncidentController extends Controller
 
                 $search = $request -> input('issueType');
                 $tech = $request -> input('technician');
-                $date = date('m');
+                $reportedBy = $request -> input('reported_by');
     
                 $issueType = Incident::query()
                         -> where('issue_type', 'LIKE', "%{$search}%")
+                        -> where('reported_by', 'LIKE', "%{$reportedBy}%")
                         -> where('issue_type', 'Network')
                         -> where('technician_id', 'LIKE', "%{$tech}%")
                         -> get();
                 return view('pages.report', compact('issueType', 'technician'));
             }
         }
-    }
-    
-// Function for searching Ticket No
-    public function reportSearch(Request $request) {
-        $ticket = $request -> input('ticketNo');
-        $technician = Technicians::where('cell', 'Tech Cell') -> get();
-
-        $issueType = Incident::query()
-        -> where('ticket_no', 'LIKE', "%{$ticket}%")
-        -> get();
-
-        return redirect('pages.report', compact('issueType', 'technician'));
     }
 
     // Delete Incidents
@@ -236,13 +226,13 @@ class IncidentController extends Controller
 
     // User Pending Function
     public function userPending() {
-        $incident = Incident::where('reporter', auth()->user()-> name) -> where('statusCheck','pending') -> get();
+        $incident = Incident::where('reported_by', auth()->user()-> name) -> where('statusCheck','pending') -> get();
         return view('pages.user-pending', compact('incident'));
     }
 
     // User Resolved Function
     public function userResolved() {
-        $incident = Incident::where('reporter', auth()->user()-> name) -> where('statusCheck','resolved') -> get();
+        $incident = Incident::where('reported_by', auth()->user()-> name) -> where('statusCheck','resolved') -> get();
         return view('pages.user-resolved', compact('incident'));
     }
 
@@ -268,6 +258,7 @@ class IncidentController extends Controller
         return redirect('/department');
     }
 
+    // View More Function
     public function viewMore($id) {
         if (Auth::id()) {
             $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
@@ -290,14 +281,42 @@ class IncidentController extends Controller
         }
     }
 
+    // Search By Ticket Function
     public function searchDisplay(Request $request) {
+        if (Auth::id()) {
+            $hardwareUser = Auth()->user()->email === "hardwareadmin@gmail.com";
+            $networkUser = Auth()->user()->email === "networkadmin@gmail.com";
 
-        $ticket = $request -> input('ticketNo');
+            if($hardwareUser) {
+                $ticket = $request -> input('ticketNo');
         $techName = Technicians::all();
 
         $displaySearch = Incident::query()
             -> where('ticket_no', 'LIKE', "%{$ticket}%")
+            -> where('issue_type','Hardware')
             -> get();
         return view('pages.display-search', compact('displaySearch', 'techName'));
+            } 
+            elseif ($networkUser) {
+                $ticket = $request -> input('ticketNo');
+                $techName = Technicians::all();
+
+        $displaySearch = Incident::query()
+            -> where('ticket_no', 'LIKE', "%{$ticket}%")
+            -> where('issue_type','Network')
+            -> get();
+        return view('pages.display-search', compact('displaySearch', 'techName'));
+        }
+        else {
+            $ticket = $request -> input('ticketNo');
+            $techName = Technicians::all();
+
+        $displaySearch = Incident::query()
+            -> where('ticket_no', 'LIKE', "%{$ticket}%")
+            // -> where('issue_type','Network')
+            -> get();
+        return view('pages.display-search', compact('displaySearch', 'techName'));
+        }
     }
+}
 }

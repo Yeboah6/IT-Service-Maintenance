@@ -60,7 +60,6 @@ Route::middleware('auth')->group(function () {
 
     // View More Route
     Route::get('/view-more/{id}', [IncidentController::class, 'viewMore']) -> name('view-more');
-    // Route::get('/view-more', [IncidentController::class, 'viewMore']) -> name('view-more');
 
     Route::get('/report', [IncidentController::class, 'report'])->name('report');
     // Route::get('/report-search', [IncidentController::class, 'reportSearch'])->name('report-search');
@@ -76,17 +75,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete-user/{id}', [IncidentController::class, 'deleteUser']) -> name('delete-user');
     Route::get('/delete-technician/{id}', [technicianController::class, 'deleteTechnician']) -> name('delete-technician');
 
-    Route::get('/request-item', [IncidentController::class, 'requestItem']) -> name('request-item');
-
     Route::get('/display-search', [IncidentController::class, 'searchDisplay']) -> name('display-search');
-
-    Route::get('/personnel-details', function() {
-        return view('pages.personnel-detail');
-    });
-
-    Route::get('/testing', function() {
-        return view('pages.testing');
-    });
 });
 
 require __DIR__.'/auth.php';

@@ -316,7 +316,11 @@ class IncidentController extends Controller
             // -> where('issue_type','Network')
             -> get();
         return view('pages.display-search', compact('displaySearch', 'techName'));
+            }
         }
     }
-}
+
+    public function requestItem() {
+        return view('pages.request-item');
+    }
 }

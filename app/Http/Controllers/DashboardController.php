@@ -72,8 +72,8 @@ class DashboardController extends Controller
              
              else {
                 $incident = Incident::all();
-                // $incidentDetails = Incident::all();
-                return view('Dashboards.User.User-dashboard', compact('incident'));
+                $techName = Technicians::all();
+                return view('Dashboards.User.User-dashboard', compact('incident', 'techName'));
             }
         }
     }

@@ -8,15 +8,31 @@
     <span><i class="fa fa-home" aria-hidden="true"></i></span>
       <x-nav-link :href="route('dashboard')" class="font" :active="request()->routeIs('dashboard')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
         {{ __('Dashboard') }}
-      </x-nav-link>
+      </x-nav-link>q
   </div>
 
-  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:30px">
+  <button class="dropdown-btn" style="margin-left: -15px;margin-top: 10px;"><span><i class="fa fa-user-o" aria-hidden="true" style="margin: 15px;margin-top:15px;"></i></span>Submit a Request</button>
+    <div class="dropdown-container">
+      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 5px;margin-top:15px;">
+        <span><i class="fa fa-user-plus" aria-hidden="true" style="color: whitesmoke;margin-top:7px;"></i></span>
+        <x-nav-link :href="route('create-incident')" class="font" :active="request()->routeIs('request-service')" style="font-size:0.9rem;color:aliceblue;margin-left:10px;">
+          {{ __('Service Request') }} 
+        </x-nav-link>
+      </div>
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 5px;margin-top:15px;">
+    <span><i class="fa fa-user-o" aria-hidden="true" style="color: whitesmoke;margin-top:7px;"></i></span>
+    <x-nav-link :href="route('request-item')" class="font" :active="request()->routeIs('request-item')" style="font-size:0.9rem;color:aliceblue;margin-left:10px;">
+      {{ __('Item Request') }} 
+    </x-nav-link>
+  </div>
+  </div>
+
+  <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:30px">
         <span><i class="fa fa-plus-square-o" aria-hidden="true"></i></span>
           <x-nav-link :href="route('create-incident')" :active="request()->routeIs('create-incident')" style="font-size:1rem;color:aliceblue;margin-left:10px;">
             {{ __('Create Incident') }}
           </x-nav-link>
-      </div>
+      </div> -->
     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin: 25px;margin-top:30px">
         <span><i class="fa fa-hourglass-half"></i></span>
           <x-nav-link :href="route('user-pending')" class="font" :active="request()->routeIs('user-pending')" style="font-size:1rem;color:aliceblue;margin-left:10px;">

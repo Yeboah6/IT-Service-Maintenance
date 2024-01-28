@@ -28,10 +28,22 @@
                                         <td>{{$incident -> issue_type}}</td>
                                         <td>{{$incident -> issue}}</td>
                                         <td>{{$incident -> urgency}}</td>
+                                    @if ($incident -> statusCheck == "Submitted")
                                         <td><span style="background-color: blue;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
+                                    @elseif ($incident -> statusCheck == "Pending")
+                                        <td><span style="background-color: yellow;font-size:0.85rem;padding:4px;color:black;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
+                                    @else
+                                        <td><span style="background-color: green;font-size:0.85rem;padding:4px;color:white;border-radius: 6px">{{$incident -> statusCheck}}</span></td>
+                                    @endif
                                         <td>{{$incident -> description}}</td>
                                         <td>{{$incident -> from}}</td>
-                                        <td>{{$incident -> assignTo}}</td>
+                                        <td>
+                                    @foreach ($techName as $name)
+                                        @if ($name -> id == $incident -> technician_id)
+                                            {{ $name -> name }}
+                                        @endif
+                                    @endforeach
+                                        </td>
                                     
                                         <td scope="col"><a href="{{url('/view-more/'.$incident -> id)}}" class="btn btn-primary" style="font-size: 0.85rem;">Details</a></td>
                                             

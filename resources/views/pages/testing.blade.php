@@ -11,32 +11,32 @@
 <div class="timeline">
   <div class="container right">
     <div class="content">
-      <h2>2017</h2>
-      <!-- <p>Lorem ipsum..</p> -->
+      <p>submitted a request</p>
+      <p class="move-left">25 Jan</p>
     </div>
   </div>
   <div class="container right">
     <div class="content">
-      <h2>2016</h2>
-      <!-- <p>Lorem ipsum..</p> -->
+    <p>request received</p>
+    <p class="move-left">29 Jan</p>
     </div>
   </div>
   <div class="container right">
     <div class="content">
-      <h2>2015</h2>
-      <!-- <p>Lorem ipsum..</p> -->
+    <p>request assigned</p>
+    <p class="move-left">30 Jan</p>
     </div>
   </div>
   <div class="container right">
     <div class="content">
-      <h2>2014</h2>
-      <!-- <p>Lorem ipsum..</p> -->
+    <p>request received</p>
+    <p class="move-left">1 Feb</p>
     </div>
   </div>
   <div class="container right">
     <div class="content">
-      <h2>2014</h2>
-      <!-- <p>Lorem ipsum..</p> -->
+    <p>request resolved</p>
+    <p class="move-left">1 Feb</p>
     </div>
   </div>
 </div>
@@ -52,6 +52,13 @@
 
 
 <style>
+
+.move-left {
+  position: absolute;
+  top: 20px;
+  left: -80px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -63,19 +70,20 @@ body {
 }
 
 /* The actual timeline (the vertical ruler) */
-/* .timeline { */
-  /* position: relative; */
-  /* max-width: 500px; */
-  /* margin: 30px; */
-/* } */
+/* .timeline {
+  position: relative;
+  max-width: 500px;
+  margin: 30px;
+} */
 
 /* The actual timeline (the vertical ruler) */
 .timeline::after {
   content: '';
   position: absolute;
   width: 3px;
+  height: 330px;
   background-color: red;
-  top: 0;
+  top: 30px;
   bottom: 0;
   left: 45.3%;
   margin-left: -3px;
@@ -83,7 +91,7 @@ body {
 
 /* Container around content */
 .container {
-  padding: 10px 40px;
+  padding: 15px 20px;
   position: relative;
   top: 60px;
   /* background-color: inherit; */
@@ -108,9 +116,9 @@ body {
 }
 
 /* Place the container to the left */
-/* .left {
-  left: 0;
-} */
+.left {
+  left: 50px;
+}
 
 /* Place the container to the right */
 .right {
@@ -118,7 +126,7 @@ body {
 }
 
 /* Add arrows to the left container (pointing right) */
-/* .left::before {
+.left::before {
   content: " ";
   height: 0;
   position: absolute;
@@ -129,10 +137,10 @@ body {
   border: medium solid white;
   border-width: 10px 0 10px 10px;
   border-color: transparent transparent transparent white;
-} */
+}
 
 /* Add arrows to the right container (pointing left) */
-/* .right::before {
+.right::before {
   content: " ";
   height: 0;
   position: absolute;
@@ -143,7 +151,7 @@ body {
   border: medium solid white;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
-} */
+}
 
 /* Fix the circle for containers on the right side */
 .right::after {
@@ -152,11 +160,11 @@ body {
 
 /* The actual content */
 .content {
-  padding: 20px 30px;
+  padding: 20px 10px;
   /* background-color: white; */
   position: relative;
   /* top: -30px; */
-  left: -40px;
+  left: -20px;
   /* border-radius: 6px; */
 }
 

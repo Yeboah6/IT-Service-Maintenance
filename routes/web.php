@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\IncidentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\technicianController;
+use App\Models\Incident;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -75,7 +76,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete-user/{id}', [IncidentController::class, 'deleteUser']) -> name('delete-user');
     Route::get('/delete-technician/{id}', [technicianController::class, 'deleteTechnician']) -> name('delete-technician');
 
+    Route::get('/request-item', [IncidentController::class, 'requestItem']) -> name('request-item');
+
     Route::get('/display-search', [IncidentController::class, 'searchDisplay']) -> name('display-search');
+
+    Route::get('/personnel-details', function() {
+        return view('pages.personnel-detail');
+    });
 
     Route::get('/testing', function() {
         return view('pages.testing');

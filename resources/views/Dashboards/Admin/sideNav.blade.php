@@ -98,7 +98,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #283655; 
+  background-color: #283655;
   overflow-x: hidden;
   padding-top: 60px; 
   transition: 0.5s; 

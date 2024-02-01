@@ -10,20 +10,36 @@
             <form action="{{url('/assign-to/'.$incident -> id)}}" method="POST" class="row g-3">
               @csrf
               <label class="form-label" style="font-weight: bold;font-size:1.5rem">Reporter Details</label>
-              <div class="col-md-6">
+              <!-- <div class="col-md-6">
                 <label class="form-label">Reporter Name </label>
                 <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="reporter_name" value="{{$incident -> reporter_name}}" readonly>
-              </div>
+              </div> -->
               <div class="col-md-6">
                 <label class="form-label">Service Number </label>
                 <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="service_number" value="{{$incident -> service_number}}" readonly>
               </div>
-              <div class="">
+              <div class="col-md-6">
+                <label class="form-label">First Name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="first_name" value="{{$incident -> first_name}}" readonly>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Last Name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="last_name" value="{{$incident -> last_name}}" readonly>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email </label>
+                <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="email" value="{{$incident -> email}}" readonly>
+              </div>
+              <div class="col-md-6">
                 <label class="form-label">Number </label>
                 <input type="text" class="form-control" style="width: 510px;border-radius:6px" name="number" value="{{$incident -> number}}" readonly>
               </div>
 
               <label class="form-label" style="font-weight: bold;font-size:1.5rem">Issue Details</label>
+              <div class="col-12">
+                <label class="form-label">Summary <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" style="border-radius:6px; height: 50px; width: 1040px;" name="summary" value="{{$incident -> summary}}" readonly>
+              </div>
               <div class="col-md-6">
                 <label class="form-label">Type of Issue</label>
                 <input type="text" class="form-control" style="width: 500px;border-radius:6px" name="issue_type" value="{{$incident -> issue_type}}" readonly>

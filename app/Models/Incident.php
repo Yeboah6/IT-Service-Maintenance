@@ -14,6 +14,7 @@ class Incident extends Model
         'issue',
         'issue_type',
         'description',
+        'summary',
         'reported_by',
         'urgency',
         'statusCheck',
@@ -21,11 +22,9 @@ class Incident extends Model
         'ticket_no',
         'service_number',
         'number',
-        'reporter_name',
+        'first_name',
+        'last_name',
+        'email',
         'technician_id'
     ];
-
-    // public function technician() {
-    //     return $this -> belongsTo(Technicians::class, 'assign_to');
-    // }
 }

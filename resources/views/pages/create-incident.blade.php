@@ -22,7 +22,7 @@
               </div>
               <div class="col-md-6">
                 <label class="form-label">Last Name <span style="color: red;">*</span></label>
-                <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="last_name" value="{{Auth::user() -> name}}" readonly>
+                <input type="text" class="form-control" style="width: 450px;border-radius:6px" name="last_name" required>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Number <span style="color: red;">*</span></label>

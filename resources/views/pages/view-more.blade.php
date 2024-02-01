@@ -24,16 +24,24 @@
         
         <div class="list-container">
             <ul class="list-service">
-                <li>Service Number:</li>
+                <li style="font-size: 0.93rem;">Service Number:</li>
                 <li>{{$incident -> service_number}}</li>
             </ul>
 
             <ul class="list-name">
-                <li>Name:</li>
-                <li>{{$incident -> reporter_name}}</li>
+                <li style="font-size: 0.93rem;">First Name:</li>
+                <li>{{$incident -> first_name}}</li>
+            </ul>
+            <ul class="list-name">
+                <li style="font-size: 0.93rem;">Last Name:</li>
+                <li>{{$incident -> last_name}}</li>
+            </ul>
+            <ul class="list-name">
+                <li style="font-size: 0.93rem;">email:</li>
+                <li>{{$incident -> email}}</li>
             </ul>
             <ul class="list-number">
-                <li>Number:</li>
+                <li style="font-size: 0.93rem;">Number:</li>
                 <li>{{$incident -> number}}</li>
             </ul> 
         </div>
@@ -44,9 +52,13 @@
                     <li>Ticket No.:</li>
                     <li>{{$incident -> ticket_no}}</li>
                 </ul>
+                <ul class="issue">
+                    <li>Issue:</li>
+                    <li>{{$incident -> issue}}</li>
+                </ul>
                 <ul class="issueType">
-                    <li>Issue Type:</li>
-                    <li>{{$incident -> issue_type}}</li>
+                    <li>Summary:</li>
+                    <li>{{$incident -> summary}}</li>
                 </ul>
                 <ul class="issue">
                     <li>Issue:</li>
@@ -121,6 +133,7 @@
     .list-container {
         display: flex;
         justify-content: space-around;
+        font-size: 0.95rem;
     }
 
     .list-service {

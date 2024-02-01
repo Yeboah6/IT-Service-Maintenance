@@ -30,12 +30,15 @@ return new class extends Migration
             $table->string('issue')->nullable();
             $table->string('issue_type')->nullable();
             $table->string('description')->nullable();
+            $table->string('summary')->nullable();
             $table->string('reported_by')->nullable();
             $table->string('urgency')->nullable();
             $table->string('statusCheck')->nullable();
             $table->string('from')->nullable();
             $table->string('service_number');
-            $table->string('reporter_name');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
             $table->string('number');
             $table->unsignedBigInteger('technician_id')->nullable();
             $table->foreign('technician_id')->references('id')->on('technicians')->onDelete('cascade');
